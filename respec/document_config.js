@@ -29,8 +29,8 @@ var documentConfig =
   specType: "hr",
   license: "cc-by",
 //  latestVersion: [
-    "https://docs.geostandaarden.nl/NL-SBB"
-  ],
+//    "https://docs.geostandaarden.nl/NL-SBB"
+//  ],
 //  publishDate: "2024-04-16",
 //  previousPublishDate: "2024-03-01",
 //  previousMaturity: "vv",
