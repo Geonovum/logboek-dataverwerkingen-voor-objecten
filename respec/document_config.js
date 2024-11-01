@@ -52,7 +52,7 @@ var documentConfig =
         }
   ],
   
-    github: "geonovum/NL-SBB",
+    github: "geonovum/logboek-dataverwerkingen-voor-objecten",
     issueBase: "https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten/issues",
     maxTocLevel: 3,
     
