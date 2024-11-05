@@ -4,7 +4,7 @@ De standaard voor het loggen van dataverwerkingen gaat over het verantwoorden va
 
 ## Huidige situatie
 
-De huidige (concept) standaard [Logboek dataverwerkingen](https://logius-standaarden.github.io/logboek-dataverwerkingen) definieert de scope van wat er gelogd moet worden sterk in de context van de AVG:
+De huidige (concept) standaard Logboek dataverwerkingen [[LDV]] definieert de scope van wat er gelogd moet worden sterk in de context van de AVG:
 
 *Functioneel toepassingsgebied: De standaard Logboek Dataverwerkingen moet worden toegepast als persoonsgegevens worden verwerkt ten behoeve van het ontsluiten van overheidsinformatie en/of functionaliteit.*
 
@@ -16,7 +16,7 @@ Als de standaard uitgebreid wordt met het loggen van transacties op (geo)objecte
 
 Voor dit onderzoek kiezen we voor het [Algoritmeregister](https://algoritmes.overheid.nl/nl) als kader om te bepalen of een verwerking gelogd moet worden of niet.
 
-Met de uitbreiding van de scope van de te loggen verwerkingen wordt de semantische duiding van de verwerking en het object waar de verwerking op van toepassing is ook belangrijker. Hiervoor onderzoeken we of er een relatie gelegd kan worden naar een definitie op basis van de [NL-SBB](https://geonovum.github.io/NL-SBB) standaard om eenduidig vast te leggen op welk object de verwerking betrekking heeft.
+Met de uitbreiding van de scope van de te loggen verwerkingen wordt de semantische duiding van de verwerking en het object waar de verwerking op van toepassing is ook belangrijker. Hiervoor onderzoeken we of er een relatie gelegd kan worden naar een definitie op basis van de [[NLSBB]] standaard om eenduidig vast te leggen op welk object de verwerking betrekking heeft.
 
 Ten slotte willen we onderzoeken of de standaard in een bredere context geduid kan worden door de mapping naar de [PROV-O](https://www.w3.org/TR/prov-o/) standaard te maken. 
 

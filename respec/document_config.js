@@ -157,6 +157,26 @@ var documentConfig =
             id: "vocab-adms-asset",
             date: "1 August 2013"
         },
+        LDV: {
+            title: "Logboek Dataverwerkingen",
+            href: "https://logius-standaarden.github.io/logboek-dataverwerkingen/",
+            publisher: "Logius"
+        },
+        JB_LDV: {
+            title: "Juridisch Beleidskader - Logboek Dataverwerking",
+            href: "https://logius-standaarden.github.io/publicatie/api/Logboek_Juridisch/",
+            publisher: "Logius"
+        },
+        NLSBB: {
+            title: "NL-SBB - Standaard voor het beschrijven van begrippen",
+            href: "https://docs.geostandaarden.nl/nl-sbb/def-st-nl-sbb-20241010/",
+            publisher: "Geonovum"
+        },
+        PROV_O: {
+            title: "PROV-O: The PROV Ontology",
+            href: "https://www.w3.org/TR/prov-o/",
+            publisher: "W3C"
+        }
   },
   preProcess: [loadTurtle],
 }

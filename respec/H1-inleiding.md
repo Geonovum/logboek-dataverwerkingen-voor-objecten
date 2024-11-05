@@ -11,7 +11,7 @@ We willen deze standaard uitbreiden zodanig dat ook transacties met (geo)objecte
 
 ## Relaties met andere projecten
 
-- [logboek dataverwerkingen](https://logius-standaarden.github.io/logboek-dataverwerkingen/)
+- [logboek dataverwerkingen](https://logius-standaarden.github.io/logboek-dataverwerkingen/) ([[LDV]])
 - [DCAT-AP-NL 3.0](https://docs.geostandaarden.nl/dcat/dcat-ap-nl30)
-- [NL-SBB](https://geonovum.github.io/NL-SBB/)
+- [NL-SBB](https://geonovum.github.io/NL-SBB/) ([[NLSBB]])
 - [DTaaS](https://www.geonovum.nl/over-geonovum/actueel/werken-aan-digital-twin-as-a-service) (de use case om een aanvullende standaard mee te beproeven wordt gezocht binnen het DTaaS project)
