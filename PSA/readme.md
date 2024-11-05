@@ -94,10 +94,73 @@ Als de scope van het loggen van een dataverwerking 'opgerekt' wordt met het vast
 => is dat misschien het Algoritme register? En biedt dat het kader? Als een dataverwerking gedaan wordt die gebruik maakt van een geregistreerd algoritme dan moet de verwerking gelogd worden via een logboek implementatie.
 
 ## Architectuur
-#### klanten en dienstverlening
-#### processen en organisatie
-#### informatie en applicaties
-#### technologie
+### klanten en dienstverlening
+### processen en organisatie
+
+Welke implicaties levert het loggen van bijv. een wateroverlast OGC Processing API op?
+(een van de use cases van DMI/DTaaS)
+
+- het is een algoritme wat gepubliceerd is in een beschikbare catalogus.
+- het algoritme wat gepubliceerd is, is ook geregistreerd in een algoritme register (?)
+    - als een kennisinstituut dit rekenmodel aanbiedt wie heeft dan welke verantwoordelijkheid?
+- als we willen loggen welke organisatie de berekening heeft gemaakt hebben we niet genoeg aan alleen de OGC processing API, maar hebben we ook de 'flow' eromheen nodig om de geauthoriseerde organisatie uit te lezen.
+- waar vindt de logging plaats van de berekening als het proces 'generiek' aangeboden wordt?
+
+
+### informatie en applicaties
+
+Basis PROV-O model:
+
+
+```mermaid
+classDiagram
+Activity : startedAtTime
+Activity : endAtTime 
+Entity : 
+Entity --> Activity : wasGeneratedBy
+Agent 
+Agent <-- Activity : wasAssociatedWith
+Entity --> Agent : wasAttributedTo
+Agent --> Agent : actedOnBehalfOf
+Activity --> Activity : wasInformedBy
+Entity --> Entity : wasDerivedFrom
+Entity <-- Activity : used
+```
+
+---
+plaatje van de relaties in een gedistribueerde LDV omgeving:
+![ldv-traces](ldv-traces.png)
+
+
+Als we proberen te mappen tussen de concepten van LDV en PROV-O.
+Dan gelden mogelijk de volgende uitspraken:
+- Logboek Interface = Activity
+
+
+attributes dpl.core.processing_activity_id  *"URI; Verwijzing naar register met meer informatie over de verwerkingsactiviteit"*
+
+=> prov:qualifiedAssociation *"An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity."*
+
+-> hadPlan => prov:Plan *"A plan is an entity that represents a set of actions or steps intended by one or more agents to achieve some goals."*
+
+attributes dpl.core.data_subject_id *"ID van de Betrokkene; versleuteld. Dit is bijvoorbeeld een BSN of Vreemdelingennummer waarmee wordt aangeduid welke persoon Betrokkene is bij de verwerking, gelet op de AVG."*
+
+-> data_subject_id is de Agent/Object van de qualifiedAssociation
+
+parent_operation_id = prov:wasInformedBy
+
+```mermaid
+classDiagram
+operation --> prov_Association : qualifiedAssociation 
+prov_Association --> data_subject_id : qualifiedAssociation
+prov_Association --> processing_activity_id : hadPlan
+operation --> operation : parent_operation_id
+```
+
+
+
+
+### technologie
 
 ## Beveiliging en privacy
 
