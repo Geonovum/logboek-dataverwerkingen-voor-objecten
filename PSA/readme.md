@@ -1,10 +1,12 @@
+# PSA
+
 ## Aanleiding en doelstelling
 
-BZK heeft op basis van een aanvraag in samenwerking met Geonovum innovatiebudget toegewezen gekregen voor het onderwerp 'Standaard voor transparantie besluitvorming ' (IDO240584K). Het belang dat de overheid verantwoording en transparantie biedt aan burgers en bedrijven over hoe zij handelt, is groot. Burgers en bedrijven dienen op de hoogte te zijn van de gebruikte gegevens en besluitvormingsprocessen van de overheid. Hiervoor worden niet alleen persoonsgegevens maar bijvoorbeeld ook data over objecten uit de fysieke leefomgeving gebruikt. Het ministerie van Binnenlandse Zaken en Koninkrijksrelaties directie digitale overheid (regievoerder) heeft aan Geonovum gevraagd hierin ondersteuning te bieden en een offerte uit te brengen voor het uitbreiden voor het Logboek Dataverwerking. 
+BZK heeft op basis van een aanvraag in samenwerking met Geonovum innovatiebudget toegewezen gekregen voor het onderwerp 'Standaard voor transparantie besluitvorming ' (IDO240584K). Het belang dat de overheid verantwoording en transparantie biedt aan burgers en bedrijven over hoe zij handelt, is groot. Burgers en bedrijven dienen op de hoogte te zijn van de gebruikte gegevens en besluitvormingsprocessen van de overheid. Hiervoor worden niet alleen persoonsgegevens maar bijvoorbeeld ook data over objecten uit de fysieke leefomgeving gebruikt. Het ministerie van Binnenlandse Zaken en Koninkrijksrelaties directie digitale overheid (regievoerder) heeft aan Geonovum gevraagd hierin ondersteuning te bieden en een offerte uit te brengen voor het uitbreiden voor het Logboek Dataverwerking.
 
 ## De opdracht, het resultaat en te bereiken effect
 
-Het probleem dat BZK en Geonovum signaleren is dat het steeds lastiger maar ook steeds belangrijker wordt om aan te geven welke gegevens op welke manier worden gebruikt door de overheid, bijvoorbeeld bij het nemen van besluiten of formuleren van beleid. BZK ziet namelijk dat de informatievoorziening van de overheid steeds meer toe gaat naar een federatieve opzet waarbij meerdere bronnen van verschillende overheidsorganisaties gecombineerd worden om informatievragen te beantwoorden of om besluiten te nemen over een aanvraag van een burger. Daarbij is het heel belangrijk om verantwoording af te kunnen leggen hoe een antwoord op een informatievraag of een besluit tot stand is gekomen. Dit verhoogt de transparantie in het handelen van de overheid. De conceptstandaard voor loggen van verwerkingen (Logboek Dataverwerkingen) is daar een belangrijke bouwsteen in. 
+Het probleem dat BZK en Geonovum signaleren is dat het steeds lastiger maar ook steeds belangrijker wordt om aan te geven welke gegevens op welke manier worden gebruikt door de overheid, bijvoorbeeld bij het nemen van besluiten of formuleren van beleid. BZK ziet namelijk dat de informatievoorziening van de overheid steeds meer toe gaat naar een federatieve opzet waarbij meerdere bronnen van verschillende overheidsorganisaties gecombineerd worden om informatievragen te beantwoorden of om besluiten te nemen over een aanvraag van een burger. Daarbij is het heel belangrijk om verantwoording af te kunnen leggen hoe een antwoord op een informatievraag of een besluit tot stand is gekomen. Dit verhoogt de transparantie in het handelen van de overheid. De conceptstandaard voor loggen van verwerkingen (Logboek Dataverwerkingen) is daar een belangrijke bouwsteen in.
 
 *We willen die uitbreiden met geografische informatie om transparantie over gebruik van geo data te bevorderen. Zo nodig dient ook de toepassing van de NL-SBB en DCAT standaarden in dit licht getoetst te worden.*
 
@@ -22,11 +24,12 @@ Er is een (concept) standaard waar dit project een extensie op zou moeten worden
 In de standaard zitten een aantal onderwerpen waar specifiek aandacht voor is in relatie tot deze extensie.
 
 begrippen Logboek gegevensverwerking
+
 - [Applicatie](https://logius-standaarden.github.io/logboek-dataverwerkingen/#dfn-applicaties)
 - [Betrokkene](https://logius-standaarden.github.io/logboek-dataverwerkingen/#dfn-betrokkenen)
 
 - [Dataverwerking](https://logius-standaarden.github.io/logboek-dataverwerkingen/#dfn-dataverwerkingen)
-Aansluitend bij de Algemene Verordening Gegevensbescherming (art. 4 lid 2), maar breder toegepast dan alleen persoonsgegevens, wordt voor deze standaard ‘elke bewerking of elk geheel van bewerkingen met betrekking tot gegevens, al dan niet uitgevoerd via geautomatiseerde procedures, zoals het verzamelen, vastleggen, ordenen, structureren, opslaan, bijwerken of wijzigen, opvragen, raadplegen, gebruiken, verstrekken door middel van doorzending, verspreiden of op andere wijze ter beschikking stellen, aligneren of combineren, afschermen, wissen of vernietigen van gegevens’ opgevat als een dataverwerking. 
+Aansluitend bij de Algemene Verordening Gegevensbescherming (art. 4 lid 2), maar breder toegepast dan alleen persoonsgegevens, wordt voor deze standaard ‘elke bewerking of elk geheel van bewerkingen met betrekking tot gegevens, al dan niet uitgevoerd via geautomatiseerde procedures, zoals het verzamelen, vastleggen, ordenen, structureren, opslaan, bijwerken of wijzigen, opvragen, raadplegen, gebruiken, verstrekken door middel van doorzending, verspreiden of op andere wijze ter beschikking stellen, aligneren of combineren, afschermen, wissen of vernietigen van gegevens’ opgevat als een dataverwerking.
 
 - [Inzage](https://logius-standaarden.github.io/logboek-dataverwerkingen/#dfn-inzage)
 - [Logboek](https://logius-standaarden.github.io/logboek-dataverwerkingen/#dfn-logboeken)
@@ -43,6 +46,7 @@ Applicaties loggen metadata over Dataverwerkingen in een daarvoor ingerichte sof
 
 ---
 Logboek Interface
+
 | Veld                  | Type           | optioneel | Omschrijving |
 |-----------------------|----------------|---------------|--------------|
 | `trace_id`            | 16 byte        | verplicht     | Uniek ID van *Trace*, een groep bij elkaar behorende Dataverwerkingen |
@@ -63,6 +67,7 @@ Het veld `status_code` is een enumeratie die de volgende waarden kan bevatten:
 - 2: STATUS_CODE_ERROR:
 
 Het veld `foreign_operation` is een `message`, opgebouwd uit de volgende velden:
+
 | Veld                  | Type           | optioneel | Omschrijving |
 |-----------------------|----------------|---------------|--------------|
 | `trace_id`            | 16 byte        | verplicht     | Uniek ID van *Trace* bij externe partij |
@@ -94,7 +99,9 @@ Als de scope van het loggen van een dataverwerking 'opgerekt' wordt met het vast
 => is dat misschien het Algoritme register? En biedt dat het kader? Als een dataverwerking gedaan wordt die gebruik maakt van een geregistreerd algoritme dan moet de verwerking gelogd worden via een logboek implementatie.
 
 ## Architectuur
+
 ### klanten en dienstverlening
+
 ### processen en organisatie
 
 Welke implicaties levert het loggen van bijv. een wateroverlast OGC Processing API op?
@@ -102,15 +109,13 @@ Welke implicaties levert het loggen van bijv. een wateroverlast OGC Processing A
 
 - het is een algoritme wat gepubliceerd is in een beschikbare catalogus.
 - het algoritme wat gepubliceerd is, is ook geregistreerd in een algoritme register (?)
-    - als een kennisinstituut dit rekenmodel aanbiedt wie heeft dan welke verantwoordelijkheid?
+  - als een kennisinstituut dit rekenmodel aanbiedt wie heeft dan welke verantwoordelijkheid?
 - als we willen loggen welke organisatie de berekening heeft gemaakt hebben we niet genoeg aan alleen de OGC processing API, maar hebben we ook de 'flow' eromheen nodig om de geauthoriseerde organisatie uit te lezen.
 - waar vindt de logging plaats van de berekening als het proces 'generiek' aangeboden wordt?
-
 
 ### informatie en applicaties
 
 Basis PROV-O model:
-
 
 ```mermaid
 classDiagram
@@ -131,11 +136,10 @@ Entity <-- Activity : used
 plaatje van de relaties in een gedistribueerde LDV omgeving:
 ![ldv-traces](ldv-traces.png)
 
-
 Als we proberen te mappen tussen de concepten van LDV en PROV-O.
 Dan gelden mogelijk de volgende uitspraken:
-- Logboek Interface = Activity
 
+- Logboek Interface = Activity
 
 attributes dpl.core.processing_activity_id  *"URI; Verwijzing naar register met meer informatie over de verwerkingsactiviteit"*
 
@@ -157,8 +161,11 @@ prov_Association --> processing_activity_id : hadPlan
 operation --> operation : parent_operation_id
 ```
 
-
-
+| Logboek dataverwerking | PROV-O|
+|------------------------|-------|
+|Applicatie | Entity |
+|Logboek | |
+| Register | |
 
 ### technologie
 
@@ -166,9 +173,20 @@ operation --> operation : parent_operation_id
 
 ## Risico's en openstaande issues
 
-- onderzoeken of de interface van het logboek met de PROV-O ontologie te matchen is. 
-- 
+- onderzoeken of de interface van het logboek met de PROV-O ontologie te matchen is.
+  - een PROV-O mapping is vooral interessant in relatie tot een 'inzage' extensie waar je de gegevens waar je inzage in geeft representeert in een PROV-O structuur.
 
 ## Implementatie
+
+1
+
+Aan het doorgeven van trace id's over omgevingen heen zitten potentieel wel wat implementatie haken en ogen als een algoritme/OGC Processing functie generiek aangeboden kan worden.
+
+optie: altijd een W3CBaggagePropagator in de header context meegeven?
+[https://opentelemetry.io/docs/languages/python/propagation/]
+
+2
+
+duidelijke richtlijnen meegeven wanneer een (geo)object gelogd kan worden. Er zijn een hoop algoritmen denkbaar (raster processing) waar het niet eenduidig is welke objecten er 'geraakt' worden.
 
 ## Beheer
