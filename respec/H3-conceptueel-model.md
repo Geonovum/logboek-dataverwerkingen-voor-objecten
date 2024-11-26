@@ -1,5 +1,7 @@
 # Conceptueel model
 
+Om de interoperabiliteit tussen de standaard logboek dataverwerking en andere systemen te verbeteren kijken we naar de mapping van het gebruikte model (op basis van open telemetry) naar PROV-O.
+  
 De kern van het [[PROV_O]] model bestaat uit een Activiteit, een Entiteit en een Agent.
 
 ![prov-dm](./respec/media/prov-dm.png)
