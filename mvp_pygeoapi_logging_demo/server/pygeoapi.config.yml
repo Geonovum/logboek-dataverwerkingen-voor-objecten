@@ -58,9 +58,8 @@ logging:
 
 metadata:
     identification:
-        title: Demo pygeoapi instance voor Logboek dataverwerking voor objecteb 
-        description: pygeoapi provides an API to geospatial data. 
-            Deze instance dient als MVP demo voor OGC API Process logging met OpenTelemetry.
+        title: Demo pygeoapi instance voor Logboek dataverwerking voor objecten 
+        description: Deze instance dient als MVP demo voor OGC API Process logging met OpenTelemetry.
         keywords:
             - geospatial
             - logboek
