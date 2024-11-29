@@ -1,0 +1,81 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix schema: <https://schema.org/> .
+@prefix :     <http://example.com/> .    
+@prefix nen3610-def: <http://definities.geostandaarden.nl/nen3610-2022/id/begrip/> .
+    
+    :63bbb396834c646c0598f7cd9118504d a prov:Activity ;
+    rdfs:label "trace"@nl ;
+        rdfs:comment "Traces in OpenTelemetry are defined implicitly by their Spans."@en ;
+    .
+
+    :27d458ec67e6fb68 a prov:Activity ;
+        rdfs:label "parent span"@nl ;
+        rdfs:comment "span voor de hele berekening"@nl ;
+        prov:wasGeneratedBy :63bbb396834c646c0598f7cd9118504d ;
+        prov:startedAtTime "2024-11-29 10:50:54.162958793 +0000 UTC"^^xsd:dateTime ;
+        prov:endedAtTime "2024-11-29 10:50:55.123923577 +0000 UTC"^^xsd:dateTime ;
+        schema:eventStatus :Unset ;
+        schema:name "LocalOutlierFactor" ;
+        schema:additionalType "Internal";
+        prov:qualifiedAssociation :plan_localoutlier ;
+        .
+    :plan_localoutlier a prov:Association;
+            prov:hadPlan :localoutlier ;
+            rdfs:comment "dpl.core.processing_activity_id"@nl ;
+        .
+    :localoutlier a prov:Entity ;
+        rdfs:label "Entity, Algoritme" ;
+        rdfs:comment "localoutlier algoritme" ;
+        rdfs:seeAlso <http://localhost:5000/processes/localoutlier> ;
+        .
+
+    :172eb326776d35e0 a prov:Activity ;
+        rdfs:label "child span 172eb326776d35e0"@nl ;
+        rdfs:comment "span voor een individueel geobject wat gebruikt wordt"@nl ;
+        prov:wasGeneratedBy :63bbb396834c646c0598f7cd9118504d ;
+        prov:startedAtTime "2024-11-29 10:50:55.013648473 +0000 UTC"^^xsd:dateTime ;
+        prov:endedAtTime "2024-11-29 10:50:55.023225036 +0000 UTC"^^xsd:dateTime ;
+        schema:eventStatus :Unset ;
+        schema:name "LocalOutlierFactor_items" ;
+        schema:additionalType "Internal";
+        prov:wasStartedBy :27d458ec67e6fb68 ;
+        prov:qualifiedAssociation :association_990 ;
+        .
+
+    :association_990 a prov:Association ;
+        prov:agent "990" ;
+        rdfs:comment "dpl.core.data_subject_id"@nl ;
+        rdfs:seeAlso <http://localhost:5000/collections/knmi_meetstations/items/990> ;
+        .
+    <http://localhost:5000/collections/knmi_meetstations/items/990> a nen3610-def:geo-object ;
+        rdfs:label "nen3610 geo-object met ID 990" ;
+        .
+
+    :da0b18610f3b3d7e a prov:Activity ;
+        rdfs:label "child span da0b18610f3b3d7e"@nl ;
+        rdfs:comment "span voor een individueel geobject wat gebruikt wordt"@nl ;
+        prov:wasGeneratedBy :63bbb396834c646c0598f7cd9118504d ;
+        prov:startedAtTime "2024-11-29 10:50:55.01269507 +0000 UTC"^^xsd:dateTime ;
+        prov:endedAtTime "2024-11-29 10:50:55.012715858 +0000 UTC"^^xsd:dateTime ;
+        schema:eventStatus :Unset ;
+        schema:name "LocalOutlierFactor_items" ;
+        schema:additionalType "Internal";
+        prov:wasStartedBy :27d458ec67e6fb68 ;
+        prov:qualifiedAssociation :association_391 ;
+        .
+        
+    :association_391 a prov:Association ;
+        prov:agent "391" ;
+        rdfs:comment "dpl.core.data_subject_id"@nl ;
+        rdfs:seeAlso <http://localhost:5000/collections/knmi_meetstations/items/391> ;
+        .
+
+    <http://localhost:5000/collections/knmi_meetstations/items/391> a nen3610-def:geo-object ;
+        rdfs:label "nen3610 geo-object met ID 391" ;
+        .
+
+    :Unset a schema:eventStatusType ;
+        rdfs:label "status Unset"@nl ;
+        .
