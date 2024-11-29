@@ -57,6 +57,7 @@ Via een 'prov:qualifiedAssociation' kan een Activiteit (dus een regel in het Log
         rdfs:comment "logregel_X verwijst naar algoritme_Z"@nl;
     ];
     .
+
     :algoritme_Z a prov:Plan, prov:Entity;
     rdfs:comment "algoritme om Z te berekenen..."@nl;
     .
@@ -73,9 +74,93 @@ Via een 'prov:qualifiedAssociation' kan een Activiteit (dus een regel in het Log
         rdfs:comment "logregel_X verwijst naar betrokkene subject_Y"@nl;
     ];
     .
-    :subject_Y a prov:Agent, prov:Entity;
-    rdfs:comment "subject_Y is de betrokken partij in de verwerking"@nl;
+
+    :subject_Y a prov:Entity;
+    rdfs:comment "subject_Y is de betrokken partij (persoon/object) in de verwerking"@nl;
+    .
+
+    :betrokkene a prov:Role;
+    rdfs:comment "een betrokkene kan ook een (geo)object zijn in de context van de standaard logboek dataverwerkingen voor (geo)objecten"@nl;
     .
 ```
 
 De mapping van het technisch model van de Logboek Dataverwerking standaard naar PROV-O maakt het vervolgens makkelijker om te verwijzen naar een externe definitie van het register of subject.
+
+## voorbeeld uitwerking
+
+Onderstaand een voorbeeld van een log vanuit opentelemetry:
+
+```bash
+Span #76                                                                                                                                                                                        
+Trace ID       : 63bbb396834c646c0598f7cd9118504d
+Parent ID      : 27d458ec67e6fb68                                                                                                                                                           
+ID             : 172eb326776d35e0
+Name           : LocalOutlierFactor_items                                                                                                                                                   
+Kind           : Internal                                                                                                                                                                   
+Start time     : 2024-11-29 10:50:55.013648473 +0000 UTC
+End time       : 2024-11-29 10:50:55.023225036 +0000 UTC
+Status code    : Unset                                                                                                                                                                      
+Status message :                                                                                                                                                                            
+Attributes:
+      -> dpl.core.data_subject_id: Int(990)
+
+Span #77                                                                                                                                                                                        
+Trace ID       : 63bbb396834c646c0598f7cd9118504d                                                                                                                                           
+Parent ID      :                                                                                                                                                                            
+ID             : 27d458ec67e6fb68                                                                                                                                                           
+Name           : LocalOutlierFactor
+Kind           : Internal
+Start time     : 2024-11-29 10:50:54.162958793 +0000 UTC
+End time       : 2024-11-29 10:50:55.123923577 +0000 UTC
+Status code    : Unset                                                                                                                                                                      
+Status message : 
+    Attributes:                                                                                                                                                                                     
+    -> dpl.core.processing_activity_id: Str(http://localhost:5000/processes/localoutlier)
+    -> dpl.core.data_subject_id: Str(not_set)                                                           
+```
+
+Een voorbeeld in RDF zou er als volgt uit kunnen zien:
+
+```turtle
+    :27d458ec67e6fb68 a prov:Activity ;
+        rdfs:comment "span voor de hele berekening"@nl ;
+        prov:wasGeneratedBy [
+            :63bbb396834c646c0598f7cd9118504d a prov:Activity ;
+            rdfs:comment "Traces in OpenTelemetry are defined implicitly by their Spans."@en ;
+        ] ;
+        prov:startedAtTime "2024-11-29 10:50:54.162958793 +0000 UTC"^^xsd:dateTime ;
+        prov:endedAtTime "2024-11-29 10:50:55.123923577 +0000 UTC"^^xsd:dateTime ;
+        schema:eventStatus :Unset ;
+        schema:name "LocalOutlierFactor" ;
+        schema:additionalType "Internal";
+        prov:qualifiedAssociation [
+            a prov:Association;
+            prov:hadPlan <http://localhost:5000/processes/localoutlier>;
+            rdfs:comment "dpl.core.processing_activity_id"@nl ;
+        ] ;
+        .
+```
+
+
+```turtle
+    :172eb326776d35e0 a prov:Activity ;
+        rdfs:comment "span voor een individueel geobject wat gebruikt wordt"@nl ;
+        prov:wasGeneratedBy [
+            :63bbb396834c646c0598f7cd9118504d a prov:Activity ;
+            rdfs:comment "Traces in OpenTelemetry are defined implicitly by their Spans."@en ;
+        ] ;
+        prov:startedAtTime "2024-11-29 10:50:55.013648473 +0000 UTC"^^xsd:dateTime ;
+        prov:endedAtTime "2024-11-29 10:50:55.023225036 +0000 UTC"^^xsd:dateTime ;
+        schema:eventStatus :Unset ;
+        schema:name "LocalOutlierFactor_items" ;
+        schema:additionalType "Internal";
+        prov:wasStartedBy :27d458ec67e6fb68 ;
+        prov:qualifiedAssociation [
+            a prov:Association ;
+            prov:agent "990" ;
+            rdfs:comment "dpl.core.data_subject_id"@nl ;
+        ] ;
+        .
+```
+
+![instanties voorbeeld](./respec/media/prov-o-instances-voorbeeld.png)
