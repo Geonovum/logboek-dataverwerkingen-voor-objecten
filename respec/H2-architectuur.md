@@ -17,8 +17,7 @@ Bij de bredere toepassing van de standaard voor het loggen van (geo)objecten die
 
 Voor dit onderzoek kiezen we voor het [Algoritmeregister](https://algoritmes.overheid.nl/nl) als kader om te bepalen of een verwerking gelogd moet worden of niet.
 
-Met de uitbreiding van de scope van de te loggen verwerkingen wordt de semantische duiding van de verwerking en het object waar de verwerking op van toepassing is belangrijker. De logging gaat immers niet altijd meer alleen over persoonsgegevens.
-In de standaard wordt de duiding gepositioneerd als [extensie 'Inzage'](https://logius-standaarden.github.io/logboek-dataverwerkingen/#extensies). Voor deze inzage denken we dat het meerwaarde heeft om de gegevens te kunnen definieren in termen van de [PROV-O](https://www.w3.org/TR/prov-o/) standaard. Vanuit deze mapping is een verbinding naar bijvoorbeeld de  [[NLSBB]] of de [[DCAT_AP_NL]] standaard interessant.
+Met de uitbreiding van de scope van de te loggen verwerkingen wordt de semantische duiding van de verwerking en het object waar de verwerking op van toepassing is belangrijker. Daar waar de scope van een persoonsgegeven redelijk eenduidig is, kan de scope van een gelogd objectgegeven zeer divers zijn. Het kan gaan om een object uit een van de basisregistraties, maar ook een object uit een geheel andere dataset. Daarom is het voor het loggen van (geo)objectgegevens extra interessant om een uitbreiding op de standaard te realiseren die specificeert op welke manier het objectgegeven geinterpreteerd moet worden. Voor deze uitbreiding denken we dat het meerwaarde heeft om de gegevens te kunnen definieren in termen van de [PROV-O](https://www.w3.org/TR/prov-o/) standaard. Vanuit deze mapping is een verbinding naar bijvoorbeeld de  [[NLSBB]] of de [[DCAT_AP_NL]] standaard interessant.
 
 ## Positionering
 
@@ -46,6 +45,6 @@ Bij het implementeren van de loggingstandaard speelt de dynamiek van het digital
 
 ![Dynamiek in Digitaal Tweelingen Ecosysteem](./respec/media/Front-Backend_achtergrond.png)
 
-### Uitbreiding Inzage
+### Extensie Metadata
 
-Omdat de scope van de gelogde gegevens breder is dan de context van persoonsgegevens is het van groter belang om inzage te hebben in het kader van welke verwerking gegevens gelogd zijn. Is dit bijvoorbeeld een verwerking op basis van een hoog risico algoritme, of voldoen de objecten wel aan de juiste definities voor toepassing in het betreffende rekenmodel.
+In de standaard wordt de basisfunctionaliteit beschreven, en wordt een [extensie aanpak](https://logius-standaarden.github.io/logboek-dataverwerkingen/#extensies) beschreven om de standaard uit te breiden. Voor het semantisch verbinden van de gelogde (geo)objectgegevens aan andere informatie maken we een conceptuele mapping naar [[PROV-O]], deze is uitgewerk in hoofdstuk 3. In de use case voorbeelden in hoofdtuk 4 onderzoeken we hoe deze mapping toegepast kan worden om de gelogde gegevens in context te plaatsen.
