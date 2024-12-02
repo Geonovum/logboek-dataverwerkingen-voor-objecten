@@ -121,6 +121,8 @@ Status message :
 
 Een voorbeeld in RDF zou er als volgt uit kunnen zien:
 
+Parent span:
+
 ```turtle
     :27d458ec67e6fb68 a prov:Activity ;
         rdfs:comment "span voor de hele berekening"@nl ;
@@ -135,12 +137,16 @@ Een voorbeeld in RDF zou er als volgt uit kunnen zien:
         schema:additionalType "Internal";
         prov:qualifiedAssociation [
             a prov:Association;
-            prov:hadPlan <http://localhost:5000/processes/localoutlier>;
+            prov:hadPlan [
+                rdfs:comment "localoutlier algoritme" ;
+                rdfs:seeAlso <http://localhost:5000/processes/localoutlier> ;
+            ] ;
             rdfs:comment "dpl.core.processing_activity_id"@nl ;
         ] ;
         .
 ```
 
+Child span:
 
 ```turtle
     :172eb326776d35e0 a prov:Activity ;
@@ -157,7 +163,11 @@ Een voorbeeld in RDF zou er als volgt uit kunnen zien:
         prov:wasStartedBy :27d458ec67e6fb68 ;
         prov:qualifiedAssociation [
             a prov:Association ;
-            prov:agent "990" ;
+            prov:agent [
+                a nen3610-def:geo-object ;
+                rdfs:comment "object met STN 990" ;
+                rdfs:seeAlso <http://localhost:5000/collections/knmi_meetstations/items/990> ;
+            ] ;
             rdfs:comment "dpl.core.data_subject_id"@nl ;
         ] ;
         .
