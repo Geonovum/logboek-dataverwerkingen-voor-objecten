@@ -12,6 +12,8 @@ De basis van de standaard kent het Logboek (met de [interface](https://logius-st
 
 ![ldv](./respec/media/architecture-grenzen.svg)
 
+[figuur afkomstig uit de logboek dataverwerkingen standaard](https://logius-standaarden.github.io/logboek-dataverwerkingen/#fig-componenten-in-context)
+
 Het Logboek is in essentie een lijst van (PROV-O) Activiteiten. Het resultaat van die activiteit (oftewel de PROV-O Entity) is de gewijzigde data in de applicatie. Een PROV-O Agent is hier zowel de betrokkene of het object waar de datawijziging over gaat en de actor die de wijziging doorvoert.
 Zowel Agent als Entity komen daarmee niet rechtstreeks in het kernmodel voor.
 En we kunnen daarmee het Register ook niet eenduidig mappen op een van de kernconcepten van het PROV-O model.
