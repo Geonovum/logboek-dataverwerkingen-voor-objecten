@@ -1,0 +1,218 @@
+@prefix rr: <http://www.w3.org/ns/r2rml#>.
+@prefix rml: <http://semweb.mmlab.be/ns/rml#>.
+@prefix ql: <http://semweb.mmlab.be/ns/ql#>.
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix schema: <http://schema.org/>.
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@base <http://example.com/ns#>.
+
+<#TraceMapping> a rr:TriplesMap;
+  rml:logicalSource [
+    # rml:source "./trace_test.json";
+    rml:source "./trace_dd3c8b1da6f5af99fcb1e5d1eadde192.json";
+    rml:referenceFormulation ql:JSONPath;
+    # rml:iterator "$.spans[*]"
+    rml:iterator "$.batches[*].scopeSpans[*].spans[0]"
+  ];
+
+  rr:subjectMap [
+    rr:template "http://trace.example.com/trace/{traceId}";
+    rr:class prov:Activity
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate rdfs:label;
+    rr:objectMap [
+      rml:reference "traceId"
+    ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate rdfs:comment;
+    rr:objectMap [
+      rml:reference "Trace"
+    ]
+  ];
+  .
+
+<#EntityMapping> a rr:TriplesMap;
+    rml:logicalSource [
+    # rml:source "./trace_test.json";
+    rml:source "./trace_dd3c8b1da6f5af99fcb1e5d1eadde192.json";
+    rml:referenceFormulation ql:JSONPath;
+    # rml:iterator "$.spans[*]"
+    rml:iterator "$.batches[*].scopeSpans[*].spans[*].attributes[?(@.key=='service.name')]"
+  ];
+
+    rr:subjectMap [
+    rr:template "http://trace.example.com/entity/{value.stringValue}";
+    rr:class prov:Entity
+  ];
+
+    rr:predicateObjectMap [
+    rr:predicate rdfs:label;
+    rr:objectMap [
+      rml:reference "value.stringValue"
+    ]
+  ];
+
+    rr:predicateObjectMap [
+    rr:predicate rdfs:comment;
+    rr:objectMap [
+      rml:reference "algoritme"
+    ]
+  ];
+.
+
+<#EntityAssociationMapping> a rr:TriplesMap;
+    rml:logicalSource [
+    # rml:source "./trace_test.json";
+    rml:source "./trace_dd3c8b1da6f5af99fcb1e5d1eadde192.json";
+    rml:referenceFormulation ql:JSONPath;
+    # rml:iterator "$.spans[*]"
+    rml:iterator "$.batches[*].scopeSpans[*].spans[*].attributes[?(@.key=='service.name')]"
+  ];
+
+  rr:subjectMap [
+    rr:template "http://trace.example.com/association/{value.stringValue}";
+    rr:class prov:Association
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate rdfs:comment;
+    rr:objectMap [
+      rml:reference "de associatierelatie naar de verwerkingsactiviteit"
+    ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate rdfs:label;
+    rr:objectMap [
+      rml:reference "value.stringValue"
+    ]
+  ];
+
+   rr:predicateObjectMap [
+    rr:predicate prov:hadPlan;
+    rr:objectMap [
+      rr:parentTriplesMap <#EntityMapping>;
+       rr:joinCondition [
+           rr:child "value.stringValue";
+           rr:parent "value.stringValue"
+        ]
+    ]
+  ];
+.
+
+<#AgentMapping> a rr:TriplesMap;
+    rml:logicalSource [
+    # rml:source "./trace_test.json";
+    rml:source "./trace_dd3c8b1da6f5af99fcb1e5d1eadde192.json";
+    rml:referenceFormulation ql:JSONPath;
+    # rml:iterator "$.spans[*]"
+    rml:iterator "$.batches[*].scopeSpans[*].spans[*].attributes[?(@.key=='dpl.core.data_subject_id')]"
+  ];
+
+  rr:subjectMap [
+    rr:template "http://trace.example.com/agent/{value.intValue}";
+    rr:class prov:Association
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate rdfs:label;
+    rr:objectMap [
+      rml:reference "value.intValue"
+    ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate rdfs:comment;
+    rr:objectMap [
+      rml:reference "Het Subject waar de verwerking naar verwijst"
+    ]
+  ];
+.
+
+<#SpanMapping> a rr:TriplesMap;
+  rml:logicalSource [
+    # rml:source "./trace_test.json";
+    rml:source "./trace_dd3c8b1da6f5af99fcb1e5d1eadde192.json";
+    rml:referenceFormulation ql:JSONPath;
+    # rml:iterator "$.spans[*]"
+    rml:iterator "$.batches[*].scopeSpans[*].spans[*]"
+  ];
+
+  rr:subjectMap [
+    rr:template "http://trace.example.com/span/{spanId}";
+    rr:class prov:Activity
+  ];
+
+   rr:predicateObjectMap [
+    rr:predicate prov:startedAtTime;
+    rr:objectMap [
+      rml:reference "startTimeUnixNano";
+      rml:datatype xsd:dateTime
+    ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate prov:endedAtTime;
+    rr:objectMap [
+      rml:reference "endTimeUnixNano";
+      rml:datatype xsd:dateTime
+    ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate schema:name;
+    rr:objectMap [
+      rml:reference "name";
+      rml:datatype xsd:string
+    ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate prov:wasGeneratedBy;
+    rr:objectMap [
+       rr:parentTriplesMap <#TraceMapping>;
+       rr:joinCondition [
+           rr:child "traceId";
+           rr:parent "traceId"
+        ]
+    ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate prov:wasStartedBy;
+    rr:objectMap [
+       rr:parentTriplesMap <#SpanMapping>;
+       rr:joinCondition [
+           rr:child "parentSpanId";
+           rr:parent "spanId"
+        ]
+    ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate prov:qualifiedAssociation;
+    rr:objectMap [
+       rr:parentTriplesMap <#AgentMapping>;
+       rr:joinCondition [
+           rr:child "attributes[0].value.intValue";
+           rr:parent "value.intValue"
+        ]
+    ]
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate prov:qualifiedAssociation;
+    rr:objectMap [
+       rr:parentTriplesMap <#EntityAssociationMapping>;
+       rr:joinCondition [
+           rr:child "attributes[0].value.stringValue";
+           rr:parent "value.stringValue"
+        ]
+    ]
+  ];
+  
+  .

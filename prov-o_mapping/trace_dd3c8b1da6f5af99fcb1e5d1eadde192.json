@@ -1,0 +1,1442 @@
+{
+    "batches": [
+        {
+            "resource": {
+                "attributes": [
+                    {
+                        "key": "service.name",
+                        "value": {
+                            "stringValue": "pygeoapi.process.localoutlier.LOFProcessor"
+                        }
+                    }
+                ]
+            },
+            "scopeSpans": [
+                {
+                    "scope": {
+                        "name": "my.tracer.name"
+                    },
+                    "spans": [
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "PXuTjAp8o1Q=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691090276409",
+                            "endTimeUnixNano": "1733240691090316012",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "201"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "pfUBvEPPuGk=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691090372944",
+                            "endTimeUnixNano": "1733240691090387116",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "203"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "WhRq+3FbOYg=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691090413509",
+                            "endTimeUnixNano": "1733240691090424774",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "204"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "tghb6sE+xQs=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691090447864",
+                            "endTimeUnixNano": "1733240691090458409",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "205"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "jiKMcfyrSD4=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691090480632",
+                            "endTimeUnixNano": "1733240691090490835",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "206"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "PQ6bGDmMaIg=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691090522930",
+                            "endTimeUnixNano": "1733240691090533521",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "207"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "8HmmnnWPGCQ=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691090561154",
+                            "endTimeUnixNano": "1733240691090571621",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "208"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "xqDJ35ipbRs=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691090597425",
+                            "endTimeUnixNano": "1733240691090608206",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "209"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "EA1kzFIDl/c=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691090636611",
+                            "endTimeUnixNano": "1733240691090646988",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "210"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "7TOr+9hdEOs=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691090672990",
+                            "endTimeUnixNano": "1733240691090683387",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "211"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "4Ai5nBcHghM=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691090708752",
+                            "endTimeUnixNano": "1733240691090718465",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "212"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "OLiyT8smgCU=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691090739867",
+                            "endTimeUnixNano": "1733240691090749310",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "213"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "+CF0ftri5Wo=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691090770510",
+                            "endTimeUnixNano": "1733240691090780406",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "214"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "VjgU8VNXTQU=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691090801636",
+                            "endTimeUnixNano": "1733240691090812462",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "215"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "fM9kh1AF+D8=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691090835114",
+                            "endTimeUnixNano": "1733240691090844857",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "216"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "IEg+EmDZ93E=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691090867000",
+                            "endTimeUnixNano": "1733240691090876469",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "218"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "2rVh7QOJ6lk=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691090897321",
+                            "endTimeUnixNano": "1733240691090906739",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "225"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "0fMU9Iwh3+s=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691090928022",
+                            "endTimeUnixNano": "1733240691090937590",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "229"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "uWE49iKstDU=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691090958324",
+                            "endTimeUnixNano": "1733240691090967712",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "233"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "eq2nPu/zRk4=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691091210184",
+                            "endTimeUnixNano": "1733240691091327032",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "235"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "XfA84s3B3bs=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691091760389",
+                            "endTimeUnixNano": "1733240691091832644",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "236"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "3iwEAw+btME=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691092190648",
+                            "endTimeUnixNano": "1733240691092256723",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "237"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "SO6cqPyn5p4=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691092378577",
+                            "endTimeUnixNano": "1733240691092452463",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "238"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "pxZMLezEu8c=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691092748146",
+                            "endTimeUnixNano": "1733240691092821427",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "239"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "IHSc9RtFuSQ=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691092952679",
+                            "endTimeUnixNano": "1733240691093034979",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "240"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "wmMaqN+8rc4=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691093160163",
+                            "endTimeUnixNano": "1733240691093206724",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "242"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "lJaDSRQUXvQ=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691093301570",
+                            "endTimeUnixNano": "1733240691093343107",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "248"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "8Ogs+3w1jpw=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691093433099",
+                            "endTimeUnixNano": "1733240691093474928",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "249"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "gPF3lwGtGcY=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691093614562",
+                            "endTimeUnixNano": "1733240691093677163",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "251"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "jlkt3wLqqPs=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691093800254",
+                            "endTimeUnixNano": "1733240691093854089",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "252"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "yChszjaXigo=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691094027870",
+                            "endTimeUnixNano": "1733240691094089535",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "257"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "/UCSh+ea/5o=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691094187602",
+                            "endTimeUnixNano": "1733240691094211816",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "258"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "3xWdkRUcGk4=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691094260484",
+                            "endTimeUnixNano": "1733240691094287279",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "260"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "Asr7ergnQSc=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691094328484",
+                            "endTimeUnixNano": "1733240691094346471",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "265"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "DOxKrw/3I2w=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691094386138",
+                            "endTimeUnixNano": "1733240691094403127",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "267"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "QIdu7KcuKbU=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691094440510",
+                            "endTimeUnixNano": "1733240691094457280",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "269"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "ZovM0zhAOgA=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691094497773",
+                            "endTimeUnixNano": "1733240691094518842",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "270"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "8b30vsA8nnc=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691094557274",
+                            "endTimeUnixNano": "1733240691094575259",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "273"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "3fh4HXo1gbk=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691094613360",
+                            "endTimeUnixNano": "1733240691094630749",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "275"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "7CV/zBVnYV0=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691094667313",
+                            "endTimeUnixNano": "1733240691094684513",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "277"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "b+Cx6bnKR+0=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691094722512",
+                            "endTimeUnixNano": "1733240691094739928",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "278"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "imyaXhPvAhk=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691094781511",
+                            "endTimeUnixNano": "1733240691094800607",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "279"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "NQURJ3S9bMM=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691094841479",
+                            "endTimeUnixNano": "1733240691094858807",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "280"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "tRXSy3UVpzU=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691094898537",
+                            "endTimeUnixNano": "1733240691094916084",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "283"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "Bq7Jk+1p3wM=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691094955673",
+                            "endTimeUnixNano": "1733240691094977083",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "285"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "pZLloyvTqBI=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691095019847",
+                            "endTimeUnixNano": "1733240691095039839",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "286"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "9+1QlQ7OnhU=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691095115885",
+                            "endTimeUnixNano": "1733240691095135809",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "290"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "qRjwjMRhURY=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691095181109",
+                            "endTimeUnixNano": "1733240691095321214",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "308"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "l6NE3j7vmF4=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691095395035",
+                            "endTimeUnixNano": "1733240691095418597",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "310"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "H1YPudv3i7Y=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691095464780",
+                            "endTimeUnixNano": "1733240691095485589",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "311"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "3J+a5j4oBkk=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691095532917",
+                            "endTimeUnixNano": "1733240691095553557",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "312"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "Buj5qDNB79w=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691095601461",
+                            "endTimeUnixNano": "1733240691095629111",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "313"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "qiOwKKy2MoM=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691095723661",
+                            "endTimeUnixNano": "1733240691095825035",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "315"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "qRZOZWUiDe8=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691096187994",
+                            "endTimeUnixNano": "1733240691096225408",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "316"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "uPk/p9sOXFs=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691096337919",
+                            "endTimeUnixNano": "1733240691096364043",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "317"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "GriC0yx6dJA=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691096413195",
+                            "endTimeUnixNano": "1733240691096438282",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "319"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "IBPm99t9Cx0=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691096526585",
+                            "endTimeUnixNano": "1733240691096554250",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "320"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "Xi9Ekqa1q10=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691096599138",
+                            "endTimeUnixNano": "1733240691096617078",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "321"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "rxSeId6sm6I=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691096652893",
+                            "endTimeUnixNano": "1733240691096665765",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "323"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "AJgnZwEQCiQ=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691096710609",
+                            "endTimeUnixNano": "1733240691096749998",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "324"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "I6ovBdsTpbg=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691096803569",
+                            "endTimeUnixNano": "1733240691096828722",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "330"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "KQ+bxHBhELs=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691096876335",
+                            "endTimeUnixNano": "1733240691096890509",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "331"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "OVec5mn2hI8=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691096922600",
+                            "endTimeUnixNano": "1733240691096940877",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "340"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "NoRuoJAHJLE=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691096963963",
+                            "endTimeUnixNano": "1733240691096974075",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "343"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "5Vj40fdThe4=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691096998606",
+                            "endTimeUnixNano": "1733240691097013976",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "344"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "fQ9OsMNv9vk=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691097044996",
+                            "endTimeUnixNano": "1733240691097058856",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "348"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "OEtE0Yf4Q2E=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691097094788",
+                            "endTimeUnixNano": "1733240691097107072",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "350"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "XEmtTK/sXO8=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691097155597",
+                            "endTimeUnixNano": "1733240691097173035",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "356"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "wOkcVEG1ziw=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691097210601",
+                            "endTimeUnixNano": "1733240691097225005",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "370"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "flo8+oGlkXI=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691097247708",
+                            "endTimeUnixNano": "1733240691097257006",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "375"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "zRUpR0C0SVA=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691097278144",
+                            "endTimeUnixNano": "1733240691097288413",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "377"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "ynH9l0vYTEo=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691097309251",
+                            "endTimeUnixNano": "1733240691097318563",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "380"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "F5WAQ17K1DM=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691097340058",
+                            "endTimeUnixNano": "1733240691097349523",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "391"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "xcx2deaSXpo=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691097371398",
+                            "endTimeUnixNano": "1733240691097380519",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "392"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "jANZOTNxBaE=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691097401709",
+                            "endTimeUnixNano": "1733240691097413738",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "871"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "zxn6n/tCulY=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691097435768",
+                            "endTimeUnixNano": "1733240691097445390",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "873"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "DCdJNsHKBUw=",
+                            "parentSpanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor_items",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240691097467378",
+                            "endTimeUnixNano": "1733240691097477114",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "intValue": "990"
+                                    }
+                                }
+                            ],
+                            "status": {}
+                        },
+                        {
+                            "traceId": "3TyLHab1r5n8seXR6t3hkg==",
+                            "spanId": "ytWrHSoLrkI=",
+                            "name": "LocalOutlierFactor",
+                            "kind": "SPAN_KIND_INTERNAL",
+                            "startTimeUnixNano": "1733240690905320708",
+                            "endTimeUnixNano": "1733240691107301360",
+                            "attributes": [
+                                {
+                                    "key": "service.name",
+                                    "value": {
+                                        "stringValue": "LocalOutlierFactor"
+                                    }
+                                },
+                                {
+                                    "key": "dpl.core.processing_activity_id",
+                                    "value": {
+                                        "stringValue": "http://localhost:5000/processes/localoutlier"
+                                    }
+                                },
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "stringValue": "not_set"
+                                    }
+                                }
+                            ],
+                            "status": {
+                                "code": "STATUS_CODE_OK"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
