@@ -6,13 +6,15 @@ De kern van het [[PROV_O]] model bestaat uit een Activiteit, een Entiteit en een
 
 ![prov-dm](./respec/media/prov-dm.png)
 
+[Illustratie van het prov kernmodel](https://www.w3.org/TR/prov-dm/#prov-core-structures)
+
 Om een goede mapping te kunnen maken tussen de standaard Logboek dataverwerkingen  en PROV-O volstaat het kernmodel niet. We kijken daarom naar de complete ontologie om alle constructies goed te kunnen mappen.
 
 De basis van de standaard kent het Logboek (met de [interface](https://logius-standaarden.github.io/logboek-dataverwerkingen/#interface) beschrijving), de Applicatie die naar het Logboek schrijft en het Register waarnaar verwezen wordt ter verantwoording van de verwerkingsactiviteit.
 
 ![ldv](./respec/media/architecture-grenzen.svg)
 
-[figuur afkomstig uit de logboek dataverwerkingen standaard](https://logius-standaarden.github.io/logboek-dataverwerkingen/#fig-componenten-in-context)
+[Illustratie uit de Logboek dataverwerkingen standaard, componenten in context](https://logius-standaarden.github.io/logboek-dataverwerkingen/#fig-componenten-in-context)
 
 Het Logboek is in essentie een lijst van (PROV-O) Activiteiten. Het resultaat van die activiteit (oftewel de PROV-O Entity) is de gewijzigde data in de applicatie. Een PROV-O Agent is hier zowel de betrokkene of het object waar de datawijziging over gaat en de actor die de wijziging doorvoert.
 Zowel Agent als Entity komen daarmee niet rechtstreeks in het kernmodel voor.
@@ -176,3 +178,5 @@ Child span:
 ```
 
 ![instanties voorbeeld](./respec/media/prov-o-instances-voorbeeld.png)
+
+Visualisatie van de PROV-O structuur van het RDF voorbeeld.
