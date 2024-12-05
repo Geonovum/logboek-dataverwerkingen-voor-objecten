@@ -21,7 +21,7 @@ Met de uitbreiding van de scope van de te loggen verwerkingen wordt de semantisc
 
 <aside class='example'><!-- markdownlint-disable-line -->
 Als er uit de log blijkt dat er een object 'Station' gebruikt is, gaat het dan om een 'Waarnemingsstation' in de context van een sensor waarneming, of over een 'Treinstation' in de context van vertraging op het spoor?
-<aside><!-- markdownlint-disable-line -->
+</aside><!-- markdownlint-disable-line -->
 
 Daarom is het voor het loggen van (geo)objectgegevens extra interessant om een uitbreiding op de standaard te realiseren die specificeert op welke manier het objectgegeven geinterpreteerd moet worden. Voor deze uitbreiding denken we dat het meerwaarde heeft om de gegevens te kunnen definieren in termen van de [PROV-O](https://www.w3.org/TR/prov-o/) standaard. Vanuit deze mapping is een verbinding naar bijvoorbeeld de  [[NLSBB]] of de [[DCAT_AP_NL]] standaard interessant.
 
