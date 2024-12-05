@@ -36,6 +36,7 @@ from opentelemetry.sdk.resources import SERVICE_NAME, Resource
 from opentelemetry import trace
 from opentelemetry.exporter.otlp.proto.http.trace_exporter import OTLPSpanExporter
 from opentelemetry.sdk.trace import TracerProvider
+from opentelemetry.trace import Status, StatusCode
 from opentelemetry.sdk.trace.export import (
     BatchSpanProcessor,
     ConsoleSpanExporter
@@ -108,7 +109,7 @@ provider.add_span_processor(processor)
 trace.set_tracer_provider(provider)
 
 # Creates a tracer from the global tracer provider
-tracer = trace.get_tracer("my.tracer.name")
+tracer = trace.get_tracer("squared.tracer")
 
 class SquaredProcessor(BaseProcessor):
     """Squared Processor example"""
@@ -140,9 +141,9 @@ class SquaredProcessor(BaseProcessor):
         with tracer.start_as_current_span("calculate") as span:
             value = number_or_integer * number_or_integer
             span.set_attribute("squared.value", value)
-            span.set_attribute("dpl.core.processing_activity_id", "http://localhost:5000/processes/squared")
-            span.set_attribute("dpl.core.data_subject_id", 'not_set')
-            span.set_status("STATUS_CODE_OK")
+            span.set_attribute("dpl.objects.processing_association_id", "http://localhost:5000/processes/squared")
+            span.set_attribute("dpl.objects.data_association_id", 'not_set')
+            span.set_status(Status(StatusCode.OK))
 
             sc = span.get_span_context()
 

@@ -23,8 +23,8 @@ LOGGER = getLogger(__name__)
 
 PROCESS_METADATA = {
     'version': '0.1',
-    'id': 'localoutlier',
-    'title': 'Local outlier factor (LOF)',
+    'id': 'localoutlier_simple',
+    'title': 'Local outlier factor (LOF) simple logging',
     'description': 'The local outlier factor (LOF) algorithm computes a score indicating the degree of abnormality of each input (observation), in a set of such observations. It measures the local density deviation of a given data point with respect to its neighbors. It considers as outliers the samples that have a substantially lower density than their neighbors.',
     'keywords': ['local outliter factor', 'LOF', 'outlier detection'],
     "jobControlOptions": [
@@ -92,7 +92,7 @@ PROCESS_METADATA = {
 
 # Service name is required for most backends
 resource = Resource(attributes={
-    SERVICE_NAME: "pygeoapi.process.localoutlier.LOFProcessor"
+    SERVICE_NAME: "pygeoapi.process.localoutlier_simple.LOFProcessor"
 })
 
 provider = TracerProvider(resource=resource)
@@ -104,7 +104,7 @@ provider.add_span_processor(processor)
 trace.set_tracer_provider(provider)
 
 # Creates a tracer from the global tracer provider
-tracer = trace.get_tracer("localoutlier.tracer")
+tracer = trace.get_tracer("localoutlier_simple.tracer")
 
 # Parameters that are NOT passed directly to sklearn.neighbors.LocalOutlierFactor
 LOF_OMIT = ['training_dataset', 'dataset', 'output_column']
@@ -127,7 +127,7 @@ class LOFProcessor(BaseProcessor):
         with tracer.start_as_current_span("LocalOutlierFactor") as span: #parent
             # create a parent log record
             span.set_attribute("dpl.objects.processing_association_id", "http://localhost:5000/processes/localoutlier")
-            span.set_attribute("dpl.objects.data_association_id", 'not_set')
+            # span.set_attribute("dpl.objects.data_association_id", 'not_set')
             span.set_status(Status(StatusCode.OK)) # does not work yet
 
             data['p'] = int(data.get('p', 2))
@@ -156,12 +156,10 @@ class LOFProcessor(BaseProcessor):
                 raise Exception(f'{colName} exists in input and will not be overwritten')
             gdf[colName] = y_pred
             
-            #loop through dataframe to create a logrecord for each object referring to the parent operation
-            for row in gdf.itertuples():
-                # Create a nested span to track nested work
-                with tracer.start_as_current_span("LocalOutlierFactor_items") as cs: #child
-                    cs.set_attribute("dpl.objects.data_association_id", row.STN)
-
+            #In the 'simple' implementation we do not create a separate span for each feature, but log 1 activity with the list of all processed feature plus extra metadata tbd.
+            
+            span.set_attribute("dpl.objects.data_association_ids", gdf['STN'].tolist())
+            span.set_attribute("dpl.objects.data_association_def", "http://localhost:5000/collections/knmi_meetstations/queryables?f=json")
             #timestamp does not serialize properly to json, so for now do a subset as workaround
             gdf_out = gdf[['STN','TYPE','geometry','abnormality']]
             mimetype = 'application/geo+json'

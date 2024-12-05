@@ -120,3 +120,8 @@ resources:
         type: process
         processor:
             name: pygeoapi.process.localoutlier.LOFProcessor
+
+    localoutlier_simple:
+        type: process
+        processor:
+            name: pygeoapi.process.localoutlier_simple.LOFProcessor
