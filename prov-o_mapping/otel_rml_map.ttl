@@ -30,7 +30,7 @@
   rr:predicateObjectMap [
     rr:predicate rdfs:comment;
     rr:objectMap [
-      rml:reference "Trace"
+      rr:constant "Trace"
     ]
   ];
   .
@@ -59,7 +59,7 @@
     rr:predicateObjectMap [
     rr:predicate rdfs:comment;
     rr:objectMap [
-      rml:reference "algoritme"
+      rr:constant "algoritme"
     ]
   ];
 .
@@ -81,7 +81,7 @@
   rr:predicateObjectMap [
     rr:predicate rdfs:comment;
     rr:objectMap [
-      rml:reference "de associatierelatie naar de verwerkingsactiviteit"
+      rr:constant "de associatierelatie naar de verwerkingsactiviteit"
     ]
   ];
 
@@ -128,7 +128,7 @@
   rr:predicateObjectMap [
     rr:predicate rdfs:comment;
     rr:objectMap [
-      rml:reference "Het Subject waar de verwerking naar verwijst"
+      rr:constant "Het Subject waar de verwerking naar verwijst"
     ]
   ];
 .

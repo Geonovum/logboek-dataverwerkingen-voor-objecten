@@ -9,5 +9,8 @@ Deze bestanden zijn nog in concept, er is geen enkele garantie dat deze mapping 
 - tempo-query.ipynb is een jupyternotebook om de api van een grafana tempo backend aan te spreken om opentelemetry tracedata op te halen.
 
 - otel_rml_map.ttl is een RML mapping file om de JSON data te converteren naar RDF/Turtle met RMLMapper.
+    zie [https://rml.io/docs/rml/introduction/](https://rml.io/docs/rml/introduction/) voor informatie over RML
+
+    `java -jar rmlmapper-7.1.2-r374-all.jar -m otel_rml_map.ttl -o trace-prov.ttl`
 
 - trace-prov.ttl is het voorlopige resultaat uit de RMLMapper
