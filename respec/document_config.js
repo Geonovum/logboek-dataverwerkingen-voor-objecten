@@ -22,7 +22,7 @@ async function loadTurtle() {
 
 var documentConfig =
 {
-  title: "Standaard logboek dataverwerkingen voor (geo) objecten",
+  title: "Onderzoek logboek dataverwerkingen voor (geo) objecten",
   shortName: "logboek-dataverwerkingen-voor-objecten",
   pubDomain: "logboek-dataverwerkingen-voor-objecten",
   specStatus: "wv",
