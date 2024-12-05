@@ -11,7 +11,7 @@ In de kern is de standaard zo generiek gehouden dat deze zeker toe te passen is 
 
 ## Verwijzingen
 
-De Logboek Dataverwerkingen (LDV) standaard bestaat uit de volgende documenten:
+De standaard Logboek Dataverwerkingen (LDV) bestaat uit de volgende documenten:
 
 | Beschrijving van het document           | Gepubliceerde versie                  | Werk versie                             | Repository                                                   |
 | --------------------------------------- | ------------------------------------- | --------------------------------------- | ------------------------------------------------------------ |

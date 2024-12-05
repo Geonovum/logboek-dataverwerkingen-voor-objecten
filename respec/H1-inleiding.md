@@ -6,7 +6,7 @@ BZK heeft op basis van een aanvraag in samenwerking met Geonovum innovatiebudget
 
 Het probleem dat BZK en Geonovum signaleren is dat het steeds lastiger maar ook steeds belangrijker wordt om aan te geven welke gegevens op welke manier worden gebruikt door de overheid, bijvoorbeeld bij het nemen van besluiten of formuleren van beleid. BZK ziet namelijk dat de informatievoorziening van de overheid steeds meer toe gaat naar een federatieve opzet waarbij meerdere bronnen van verschillende overheidsorganisaties gecombineerd worden om informatievragen te beantwoorden of om besluiten te nemen over een aanvraag van een burger. Daarbij is het heel belangrijk om verantwoording af te kunnen leggen hoe een antwoord op een informatievraag of een besluit tot stand is gekomen. Dit verhoogt de transparantie in het handelen van de overheid. De conceptstandaard voor loggen van verwerkingen (Logboek Dataverwerkingen) is daar een belangrijke bouwsteen in.
 
-We willen deze standaard beproeven bij het loggen van transacties met (geo)objecten, in hoeverre is de standaard daar toereikend voor en welke aanvullende aandachtspunten komen er naar voren. Verder willen we onderzoeken hoe de verbinding tussen de logging standaard en semantische standaarden zoals NL-SBB en DCAT-AP-NL gelegd kan worden.
+We willen deze standaard beproeven bij het loggen van transacties met (geo)objecten, in hoeverre is de standaard daar toereikend voor en welke aanvullende aandachtspunten komen er naar voren. Verder willen we onderzoeken hoe de verbinding tussen de Standaard Logboek dataverwerkingen en semantische standaarden zoals NL-SBB en DCAT-AP-NL gelegd kan worden.
 
 ## Relaties met andere projecten
 

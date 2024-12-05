@@ -1,12 +1,12 @@
 # Conceptueel model
 
-Om de interoperabiliteit tussen de standaard logboek dataverwerking en andere systemen te verbeteren kijken we naar de mapping van het gebruikte model (op basis van open telemetry) naar PROV-O.
+Om de interoperabiliteit tussen de standaard Logboek dataverwerkingen en andere systemen te verbeteren kijken we naar de mapping van het gebruikte model (op basis van open telemetry) naar PROV-O.
   
 De kern van het [[PROV_O]] model bestaat uit een Activiteit, een Entiteit en een Agent.
 
 ![prov-dm](./respec/media/prov-dm.png)
 
-Om een goede mapping te kunnen maken tussen de Logboek dataverwerkingen standaard en PROV-O volstaat het kernmodel niet. We kijken daarom naar de complete ontologie om alle constructies goed te kunnen mappen.
+Om een goede mapping te kunnen maken tussen de standaard Logboek dataverwerkingen  en PROV-O volstaat het kernmodel niet. We kijken daarom naar de complete ontologie om alle constructies goed te kunnen mappen.
 
 De basis van de standaard kent het Logboek (met de [interface](https://logius-standaarden.github.io/logboek-dataverwerkingen/#interface) beschrijving), de Applicatie die naar het Logboek schrijft en het Register waarnaar verwezen wordt ter verantwoording van de verwerkingsactiviteit.
 
@@ -86,7 +86,7 @@ Via een 'prov:qualifiedAssociation' kan een Activiteit (dus een regel in het Log
     .
 ```
 
-De mapping van het technisch model van de Logboek Dataverwerking standaard naar PROV-O maakt het vervolgens makkelijker om te verwijzen naar een externe definitie van het register of subject.
+De mapping van het technisch model van de standaard Logboek dataverwerkingen naar PROV-O maakt het vervolgens makkelijker om te verwijzen naar een externe definitie van het register of subject.
 
 ## voorbeeld uitwerking
 
