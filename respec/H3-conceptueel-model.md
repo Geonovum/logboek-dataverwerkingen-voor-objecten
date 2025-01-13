@@ -16,13 +16,12 @@ De basis van de standaard kent het Logboek (met de [interface](https://logius-st
 
 [Illustratie uit de Logboek dataverwerkingen standaard, componenten in context](https://logius-standaarden.github.io/logboek-dataverwerkingen/#fig-componenten-in-context)
 
-Het Logboek is in essentie een lijst van (PROV-O) Activiteiten. Het resultaat van die activiteit (oftewel de PROV-O Entity) is de gewijzigde data in de applicatie. Een PROV-O Agent is hier zowel de betrokkene of het object waar de datawijziging over gaat en de actor die de wijziging doorvoert.
-Zowel Agent als Entity komen daarmee niet rechtstreeks in het kernmodel voor.
-En we kunnen daarmee het Register ook niet eenduidig mappen op een van de kernconcepten van het PROV-O model.
+Het Logboek is in essentie een lijst van (PROV-O) Activiteiten. Het resultaat van die activiteit (oftewel de PROV-O Entity) is de gewijzigde data in de applicatie. Een PROV-O Agent is hier zowel de betrokkene, of het object waar de datawijziging over gaat, en de actor die de wijziging doorvoert.
+Zowel Agent als Entity komen daarmee niet rechtstreeks in het kernmodel van het logboek voor.
 
 Als we een laag dieper kijken naar de [interface](https://logius-standaarden.github.io/logboek-dataverwerkingen/#interface) beschrijving vinden we daar echter wel aanknopingspunten voor een verdere mapping.
 
-## Logboek Interface
+## Logboek Interface (core)
 
 ```text
     Een van de gedefinieerde attributen is het veld `resource`. 
@@ -57,17 +56,17 @@ Via een 'prov:qualifiedAssociation' kan een Activiteit (dus een regel in het Log
     :logregel_X a prov:Activity ;
     prov:qualifiedAssociation [
         a prov:Association;
-        prov:hadPlan :algoritme_Z;
-        rdfs:comment "logregel_X verwijst naar algoritme_Z"@nl;
+        prov:hadPlan :verwerkingsactiviteit_Z;
+        rdfs:comment "logregel_X verwijst naar verwerkingsactiviteit_Z"@nl;
     ];
     .
 
-    :algoritme_Z a prov:Plan, prov:Entity;
-    rdfs:comment "algoritme om Z te berekenen..."@nl;
+    :Verwerkingsactiviteit_Z a prov:Plan, prov:Entity;
+    rdfs:comment "Verwerkingsactiviteit in het verwerkingenregister..."@nl;
     .
 ```
 
-Via een 'prov:qualifiedAssociation' kan een Activiteit (dus een regel in het Logboek) ook geassocieerd worden met een betrokkene/(geo)object.
+Via een 'prov:qualifiedAssociation' kan een Activiteit (dus een regel in het Logboek) ook geassocieerd worden met een betrokkene.
 
 ```turtle
     :logregel_X a prov:Activity ;
@@ -80,15 +79,60 @@ Via een 'prov:qualifiedAssociation' kan een Activiteit (dus een regel in het Log
     .
 
     :subject_Y a prov:Entity;
-    rdfs:comment "subject_Y is de betrokken partij (persoon/object) in de verwerking"@nl;
+    rdfs:comment "subject_Y is de betrokken persoon in de verwerking"@nl;
     .
 
     :betrokkene a prov:Role;
-    rdfs:comment "een betrokkene kan ook een (geo)object zijn in de context van de standaard logboek dataverwerkingen voor (geo)objecten"@nl;
+    rdfs:comment "extra rolduiding van de betrokken in het kader van de verwerkingsactiviteit"@nl;
     .
 ```
 
-De mapping van het technisch model van de standaard Logboek dataverwerkingen naar PROV-O maakt het vervolgens makkelijker om te verwijzen naar een externe definitie van het register of subject.
+De mapping van het technisch (opentemetry) model van de standaard Logboek dataverwerkingen naar PROV-O maakt het vervolgens makkelijker om de loggegevens interoperabel te maken met andere systemn.
+
+## Logboek Interface (objecten)
+
+Net zoals de core standaard attributen definieert in de `dpl.core` namespace, definieren we attributen voor (geo)objecten in de `dpl.objects` namespace. Ook deze zijn op een vergelijkbare wijze te mappen naar PROV-O.
+
+Via een 'prov:qualifiedAssociation' kan een Activiteit (dus een regel in het Logboek) geassocieerd worden met een Plan. (in dit geval een algoritme in  in het algoritmeregister).
+
+```turtle
+    :logregel_A a prov:Activity ;
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:hadPlan :algoritme_B;
+        rdfs:comment "logregel_A verwijst naar algoritme_B"@nl;
+    ];
+    .
+
+    :algoritme_B a prov:Plan, prov:Entity;
+    rdfs:comment "algoritme B in het algoritmeregister..."@nl;
+    .
+```
+
+Via een 'prov:qualifiedAssociation' kan een Activiteit (dus een regel in het Logboek) ook geassocieerd worden met een (Geo)object.
+
+```turtle
+    :logregel_A a prov:Activity ;
+    prov:qualifiedAssociation [
+        a prov:Association;
+        prov:agent :list_of_objects;
+        prov:hadRole :input_for_activity;
+        rdfs:comment "logregel_A verwijst naar betreffende list_of_objects"@nl;
+    ];
+    .
+
+    :list_of_objects a prov:Entity;
+    rdfs:comment "list_of_objects is de lijst van objecten in de verwerking"@nl;
+    .
+
+    :input_for_activity a prov:Role;
+    rdfs:comment "extra rolduiding van de betrokken objecten in het kader van het algoritme"@nl;
+    .
+```
+
+TODO: data_association_def in mapping verwerken...
+
+
 
 ## voorbeeld uitwerking
 

@@ -46,9 +46,14 @@ In het kader van het NORA Nationaal Semantisch Vlak kan de logboek dataverwerkin
 De voorlopige conclusie is dat de kern van de standaard zodanig generiek is dat deze in principe ook toegepast kan worden voor het loggen van (geo)objecten.
 De aandachtspunten liggen vooral in de te maken keuzes in de implementatie of het uitbreiden met een extensie voor inzage.
 
+<aside class="note">
+
+Vanuit het juridisch beleidskader wordt duidelijk dat `dpl.core.data_subject_id` alleen gebruikt dient te worden voor het verwijzen naar een persoonsgegeven. Bij het loggen van (geo)objecten maken we dan ook geen gebruik van `dpl.core.data_subject_id` maar definieren we een extensie: `dpl.objects` om informatie over (geo)objecten te loggen. `dpl.core.data_subject_id` blijft leeg als er niet naar een persoonsgegeven verwezen wordt.
+</aside>
+
 ### Implementatie keuzes
 
-Voor dit onderzoek kiezen we ervoor om een implementatie te doen in een Digitale Tweeling.
+Voor dit onderzoek kiezen we ervoor om de standaard te beproeven met een implementatie in een Digitale Tweeling.
 
 [Digitale tweelingen zijn een praktisch hulpmiddel om alles wat bekend is over de leefomgeving, integraal inzichtelijk te maken.](https://www.geonovum.nl/themas/digital-twins) Een digitale tweeling wordt gevormd door een aantal bouwblokken. Door de functionaliteit van Logboek dataverwerkingen in te zetten in het bouwblok 'rekenen' leggen we data vast die gebruikt kan worden in het bouwblok 'vertrouwen'. Zie het rapport [Beleidsprocessen en bouwblokken voor Digitale Tweelingen](https://www.geonovum.nl/uploads/documents/Eindrapport%20Advies%20Beleid%20en%20Digital%20Twins%20-%20provincie%20Utrecht%20v1.3d.pdf) voor een uitleg van de verschillende bouwblokken.
 
@@ -57,6 +62,25 @@ Bij het onderzoek naar het implementeren van de Logboek dataverwerkingen standaa
 ![Dynamiek in Digitaal Tweelingen Ecosysteem](./respec/media/Front-Backend_achtergrond.png)
 Illustratieve indicatie van de verschillende bouwblokken in een digitale tweelingen ecosysteem. bron: Geonovum
 
+
+## Extensies
+
+In de standaard wordt de basisfunctionaliteit beschreven, en wordt een [extensie aanpak](https://logius-standaarden.github.io/logboek-dataverwerkingen/#extensies) beschreven om de standaard uit te breiden. 
+
+### Extensie (Geo)objecten
+
+`dpl.core.processing_activity_id` is gereserveerd voor het verwijzen naar een verwerkingsregister in het kader van de AVG en `dpl.core.data_subject_id` is gereserveerd voor het verwijzen naar een persoonsgegeven.
+
+Voor het loggen van (geo)objectgegevens definieren we de volgende extensie:
+`dpl.objects`
+
+Binnen deze namespace kennen we de volgende eigenschappen:
+
+- dpl.objects.processing_association_id : Verwijzing naar het register waar de verwerking van de betreffende (geo)objecten in staat beschreven.
+- dpl.objects.data_association_id : Verwijzing naar een lijst van betrokken (geo)objecten.
+- dpl.objects.data_association_def : Verwijzing naar een definitie van het betreffende (geo)object.
+
+
 ### Extensie Metadata
 
-In de standaard wordt de basisfunctionaliteit beschreven, en wordt een [extensie aanpak](https://logius-standaarden.github.io/logboek-dataverwerkingen/#extensies) beschreven om de standaard uit te breiden. Voor het semantisch verbinden van de gelogde (geo)objectgegevens aan andere informatie maken we een conceptuele mapping naar [[PROV-O]], deze is uitgewerk in hoofdstuk 3. In de use case voorbeelden in hoofdtuk 4 onderzoeken we hoe deze mapping toegepast kan worden om de gelogde gegevens in context te plaatsen.
+Voor het semantisch verbinden van de gelogde (geo)objectgegevens aan andere informatie maken we een conceptuele mapping naar [[PROV-O]], deze is uitgewerk in hoofdstuk 3. In de use case voorbeelden in hoofdtuk 4 onderzoeken we hoe deze mapping toegepast kan worden om de gelogde gegevens in context te plaatsen.
