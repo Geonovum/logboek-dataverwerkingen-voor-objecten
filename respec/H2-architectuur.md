@@ -62,17 +62,29 @@ Bij het onderzoek naar het implementeren van de Logboek dataverwerkingen standaa
 ![Dynamiek in Digitaal Tweelingen Ecosysteem](./respec/media/Front-Backend_achtergrond.png)
 Illustratieve indicatie van de verschillende bouwblokken in een digitale tweelingen ecosysteem. bron: Geonovum
 
+### Afwegingskader
+
+In de kern van de standaard wordt een [Register](https://logius-standaarden.github.io/logboek-dataverwerkingen/#register) gedefinieerd. Als de standaard toegepast wordt voor het loggen van persoonsgegevens wordt hier het Register van Verwerkingsactiviteiten in het kader van de AVG voor gebruikt. Voor het bepalen of een dataverwerking van een objectgegeven gelogd moet worden gaan wij in dit onderzoek uit van het Algoritmeregister als afwegingskader.
+
+<aside class="note">
+
+Als een organisatie dataverwerkingen doet in het kader van een algoritme wat in het Algoritmeregister is geregistreerd, dan zouden deze dataverwerkingen gelogd moeten worden op basis van deze standaard.
+</aside>
 
 ## Extensies
 
 In de standaard wordt de basisfunctionaliteit beschreven, en wordt een [extensie aanpak](https://logius-standaarden.github.io/logboek-dataverwerkingen/#extensies) beschreven om de standaard uit te breiden. 
 
+![postionering extensies](./respec/media/extensie-metadata.drawio.png)
+
+postionering extensies
+
 ### Extensie (Geo)objecten
 
 `dpl.core.processing_activity_id` is gereserveerd voor het verwijzen naar een verwerkingsregister in het kader van de AVG en `dpl.core.data_subject_id` is gereserveerd voor het verwijzen naar een persoonsgegeven.
 
-Voor het loggen van (geo)objectgegevens definieren we de volgende extensie:
-`dpl.objects`
+__Voor het loggen van (geo)objectgegevens definieren we de volgende extensie:
+`dpl.objects`__
 
 Binnen deze namespace kennen we de volgende eigenschappen:
 

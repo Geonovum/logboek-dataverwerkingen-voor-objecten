@@ -158,7 +158,7 @@ class LOFProcessor(BaseProcessor):
             
             #In the 'simple' implementation we do not create a separate span for each feature, but log 1 activity with the list of all processed feature plus extra metadata tbd.
             
-            span.set_attribute("dpl.objects.data_association_ids", gdf['STN'].tolist())
+            span.set_attribute("dpl.objects.data_association_id", gdf['STN'].tolist())
             span.set_attribute("dpl.objects.data_association_def", "http://localhost:5000/collections/knmi_meetstations/queryables?f=json")
             #timestamp does not serialize properly to json, so for now do a subset as workaround
             gdf_out = gdf[['STN','TYPE','geometry','abnormality']]

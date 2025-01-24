@@ -21,7 +21,7 @@ Zowel Agent als Entity komen daarmee niet rechtstreeks in het kernmodel van het 
 
 Als we een laag dieper kijken naar de [interface](https://logius-standaarden.github.io/logboek-dataverwerkingen/#interface) beschrijving vinden we daar echter wel aanknopingspunten voor een verdere mapping.
 
-## Logboek Interface (core)
+## Logboek Interface (Normatieve standaard)
 
 ```text
     Een van de gedefinieerde attributen is het veld `resource`. 
@@ -38,15 +38,16 @@ Als we een laag dieper kijken naar de [interface](https://logius-standaarden.git
     in een namespace met prefix `dpl.` (data processing log). 
     De volgende attributen zijn mogelijk in de namespace `core`:
 
-    - `dpl.core.processing_activity_id`: URI; 
-    Verwijzing naar register met meer informatie over de verwerkingsactiviteit
-    - `dpl.core.data_subject_id`: ID van de Betrokkene; versleuteld. 
-    Dit is bijvoorbeeld een `BSN` of `Vreemdelingennummer` 
-    waarmee wordt aangeduid welke persoon Betrokkene is bij de verwerking, 
-    gelet op de AVG.
+    - `dpl.core.processing_activity_id`: URI; Verwijzing naar Register 
+    met meer informatie over de Verwerkingsactiviteit
+    - `dpl.core.data_subject_id`: Unieke identificerende code van de Betrokkene; versleuteld. 
+    Hiermee wordt aangeduid welke persoon Betrokkene is bij de verwerking, gelet op de AVG.
+    - `dpl.core.data_subject_id_type`: Type van het veld data_subject_id. 
+    Dit is bijvoorbeeld BSN, Personeelsnummer of Vreemdelingennummer, 
+    of een URI naar een Register waar het veld meer precies wordt geduid.
 ```
 
-In de attributes zien we dus de constructie om te verwijzen naar het register via `dpl.core.processing_activity_id`. En we zien met `dpl.core.data_subject_id` een constructie om te verwijzen naar het subject van de verwerking.
+In de attributes zien we dus de constructie om te verwijzen naar het register via `dpl.core.processing_activity_id`. En we zien met `dpl.core.data_subject_id` een constructie om te verwijzen naar het subject van de verwerking, en met `dpl.core.data_subject_id_type` een nadere duiding van het soort subject.
 
 Prov:Entity kent een subclass [prov:Plan](https://www.w3.org/TR/2013/REC-prov-o-20130430/#Plan): 'A plan is an entity that represents a set of actions or steps intended by one or more agents to achieve some goals.'
 
@@ -83,7 +84,7 @@ Via een 'prov:qualifiedAssociation' kan een Activiteit (dus een regel in het Log
     .
 
     :betrokkene a prov:Role;
-    rdfs:comment "extra rolduiding van de betrokken in het kader van de verwerkingsactiviteit"@nl;
+    rdfs:comment "extra rolduiding (type) van de betrokken in het kader van de verwerkingsactiviteit"@nl;
     .
 ```
 
@@ -126,12 +127,9 @@ Via een 'prov:qualifiedAssociation' kan een Activiteit (dus een regel in het Log
     .
 
     :input_for_activity a prov:Role;
-    rdfs:comment "extra rolduiding van de betrokken objecten in het kader van het algoritme"@nl;
+    rdfs:comment "extra rolduiding (verwijzing naar definitie) van de betrokken objecten in het kader van het algoritme"@nl;
     .
 ```
-
-TODO: data_association_def in mapping verwerken...
-
 
 
 ## voorbeeld uitwerking
@@ -139,19 +137,6 @@ TODO: data_association_def in mapping verwerken...
 Onderstaand een voorbeeld van een log vanuit opentelemetry:
 
 ```bash
-Span #76                                                                                                                                                                                        
-Trace ID       : 63bbb396834c646c0598f7cd9118504d
-Parent ID      : 27d458ec67e6fb68                                                                                                                                                           
-ID             : 172eb326776d35e0
-Name           : LocalOutlierFactor_items                                                                                                                                                   
-Kind           : Internal                                                                                                                                                                   
-Start time     : 2024-11-29 10:50:55.013648473 +0000 UTC
-End time       : 2024-11-29 10:50:55.023225036 +0000 UTC
-Status code    : Unset                                                                                                                                                                      
-Status message :                                                                                                                                                                            
-Attributes:
-      -> dpl.core.data_subject_id: Int(990)
-
 Span #77                                                                                                                                                                                        
 Trace ID       : 63bbb396834c646c0598f7cd9118504d                                                                                                                                           
 Parent ID      :                                                                                                                                                                            
@@ -160,67 +145,13 @@ Name           : LocalOutlierFactor
 Kind           : Internal
 Start time     : 2024-11-29 10:50:54.162958793 +0000 UTC
 End time       : 2024-11-29 10:50:55.123923577 +0000 UTC
-Status code    : Unset                                                                                                                                                                      
+Status code    : Ok                                                                                                                                                                      
 Status message : 
     Attributes:                                                                                                                                                                                     
-    -> dpl.core.processing_activity_id: Str(http://localhost:5000/processes/localoutlier)
-    -> dpl.core.data_subject_id: Str(not_set)                                                           
+    -> dpl.objects.processing_association_id: Str(http://localhost:5000/processes/localoutlier)
+    -> dpl.objects.data_association_id: Slice([201,203,204,205,206])
+    -> dpl.objects.data_association_def: Str(http://localhost:5000/collections/knmi_meetstations/queryables?f=json)                                                          
 ```
 
 Een voorbeeld in RDF zou er als volgt uit kunnen zien:
 
-Parent span:
-
-```turtle
-    :27d458ec67e6fb68 a prov:Activity ;
-        rdfs:comment "span voor de hele berekening"@nl ;
-        prov:wasGeneratedBy [
-            :63bbb396834c646c0598f7cd9118504d a prov:Activity ;
-            rdfs:comment "Traces in OpenTelemetry are defined implicitly by their Spans."@en ;
-        ] ;
-        prov:startedAtTime "2024-11-29 10:50:54.162958793 +0000 UTC"^^xsd:dateTime ;
-        prov:endedAtTime "2024-11-29 10:50:55.123923577 +0000 UTC"^^xsd:dateTime ;
-        schema:eventStatus :Unset ;
-        schema:name "LocalOutlierFactor" ;
-        schema:additionalType "Internal";
-        prov:qualifiedAssociation [
-            a prov:Association;
-            prov:hadPlan [
-                rdfs:comment "localoutlier algoritme" ;
-                rdfs:seeAlso <http://localhost:5000/processes/localoutlier> ;
-            ] ;
-            rdfs:comment "dpl.core.processing_activity_id"@nl ;
-        ] ;
-        .
-```
-
-Child span:
-
-```turtle
-    :172eb326776d35e0 a prov:Activity ;
-        rdfs:comment "span voor een individueel geobject wat gebruikt wordt"@nl ;
-        prov:wasGeneratedBy [
-            :63bbb396834c646c0598f7cd9118504d a prov:Activity ;
-            rdfs:comment "Traces in OpenTelemetry are defined implicitly by their Spans."@en ;
-        ] ;
-        prov:startedAtTime "2024-11-29 10:50:55.013648473 +0000 UTC"^^xsd:dateTime ;
-        prov:endedAtTime "2024-11-29 10:50:55.023225036 +0000 UTC"^^xsd:dateTime ;
-        schema:eventStatus :Unset ;
-        schema:name "LocalOutlierFactor_items" ;
-        schema:additionalType "Internal";
-        prov:wasStartedBy :27d458ec67e6fb68 ;
-        prov:qualifiedAssociation [
-            a prov:Association ;
-            prov:agent [
-                a nen3610-def:geo-object ;
-                rdfs:comment "object met STN 990" ;
-                rdfs:seeAlso <http://localhost:5000/collections/knmi_meetstations/items/990> ;
-            ] ;
-            rdfs:comment "dpl.core.data_subject_id"@nl ;
-        ] ;
-        .
-```
-
-![instanties voorbeeld](./respec/media/prov-o-instances-voorbeeld.png)
-
-Visualisatie van de PROV-O structuur van het RDF voorbeeld.
