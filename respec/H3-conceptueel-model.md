@@ -49,87 +49,42 @@ Als we een laag dieper kijken naar de [interface](https://logius-standaarden.git
 
 In de attributes zien we dus de constructie om te verwijzen naar het register via `dpl.core.processing_activity_id`. En we zien met `dpl.core.data_subject_id` een constructie om te verwijzen naar het subject van de verwerking, en met `dpl.core.data_subject_id_type` een nadere duiding van het soort subject.
 
-Prov:Entity kent een subclass [prov:Plan](https://www.w3.org/TR/2013/REC-prov-o-20130430/#Plan): 'A plan is an entity that represents a set of actions or steps intended by one or more agents to achieve some goals.'
+~~Prov:Entity kent een subclass [prov:Plan](https://www.w3.org/TR/2013/REC-prov-o-20130430/#Plan): 'A plan is an entity that represents a set of actions or steps intended by one or more agents to achieve some goals.'~~
 
-Via een 'prov:qualifiedAssociation' kan een Activiteit (dus een regel in het Logboek) geassocieerd worden met een Plan. (in dit geval een verwerkingsactiviteit in het Register).
+~~Via een 'prov:qualifiedAssociation' kan een Activiteit (dus een regel in het Logboek) geassocieerd worden met een Plan. (in dit geval een verwerkingsactiviteit in het Register).~~
 
-```turtle
-    :logregel_X a prov:Activity ;
-    prov:qualifiedAssociation [
-        a prov:Association;
-        prov:hadPlan :verwerkingsactiviteit_Z;
-        rdfs:comment "logregel_X verwijst naar verwerkingsactiviteit_Z"@nl;
-    ];
-    .
-
-    :Verwerkingsactiviteit_Z a prov:Plan, prov:Entity;
-    rdfs:comment "Verwerkingsactiviteit in het verwerkingenregister..."@nl;
-    .
-```
-
-Via een 'prov:qualifiedAssociation' kan een Activiteit (dus een regel in het Logboek) ook geassocieerd worden met een betrokkene.
+Via een `prov:qualifiedUsage` relatie kan een Activiteit (dus een regel in het Logboek) gerelateerd worden aan een verwerkingsactiviteit in het Register.
 
 ```turtle
-    :logregel_X a prov:Activity ;
-    prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent :subject_Y;
-        prov:hadRole :betrokkene;
-        rdfs:comment "logregel_X verwijst naar betrokkene subject_Y"@nl;
+    :logregel_X a prov:Activity;
+prov:used  :data_subject_Y;
+prov:qualifiedUsage [
+    a prov:Usage;
+      prov:entity :data_subject_Y;
+      :verwerkingsactiviteit :pai_Z;
     ];
-    .
+.
 
-    :subject_Y a prov:Entity;
-    rdfs:comment "subject_Y is de betrokken persoon in de verwerking"@nl;
-    .
+:data_subject_Y a prov:Entity;
+    :data_subject_Y_type "BSN" 
+.
 
-    :betrokkene a prov:Role;
-    rdfs:comment "extra rolduiding (type) van de betrokken in het kader van de verwerkingsactiviteit"@nl;
-    .
+:pai_Z a prov:Agent ;
+    :verwerkingsactiviteit_naam "uitgeven paspoort" 
+.
 ```
+![qualified usage voorbeeld](./respec/media/qualified_usage_voorbeeld.png)
+
+qualified usage voorbeeld
 
 De mapping van het technisch (opentemetry) model van de standaard Logboek dataverwerkingen naar PROV-O maakt het vervolgens makkelijker om de loggegevens interoperabel te maken met andere systemn.
 
 ## Logboek Interface (objecten)
 
-Net zoals de core standaard attributen definieert in de `dpl.core` namespace, definieren we attributen voor (geo)objecten in de `dpl.objects` namespace. Ook deze zijn op een vergelijkbare wijze te mappen naar PROV-O.
+Net zoals de core standaard attributen definieert in de `dpl.core` namespace, definieren we attributen voor (geo)objecten in de `dpl.objects` namespace. 
+Deze mapping is niet op dezelfde wijze te doen omdat we in de logging niet een individueel aanwijsbaar object vastleggen maar een lijst met objecten.
 
-Via een 'prov:qualifiedAssociation' kan een Activiteit (dus een regel in het Logboek) geassocieerd worden met een Plan. (in dit geval een algoritme in  in het algoritmeregister).
-
-```turtle
-    :logregel_A a prov:Activity ;
-    prov:qualifiedAssociation [
-        a prov:Association;
-        prov:hadPlan :algoritme_B;
-        rdfs:comment "logregel_A verwijst naar algoritme_B"@nl;
-    ];
-    .
-
-    :algoritme_B a prov:Plan, prov:Entity;
-    rdfs:comment "algoritme B in het algoritmeregister..."@nl;
-    .
-```
-
-Via een 'prov:qualifiedAssociation' kan een Activiteit (dus een regel in het Logboek) ook geassocieerd worden met een (Geo)object.
-
-```turtle
-    :logregel_A a prov:Activity ;
-    prov:qualifiedAssociation [
-        a prov:Association;
-        prov:agent :list_of_objects;
-        prov:hadRole :input_for_activity;
-        rdfs:comment "logregel_A verwijst naar betreffende list_of_objects"@nl;
-    ];
-    .
-
-    :list_of_objects a prov:Entity;
-    rdfs:comment "list_of_objects is de lijst van objecten in de verwerking"@nl;
-    .
-
-    :input_for_activity a prov:Role;
-    rdfs:comment "extra rolduiding (verwijzing naar definitie) van de betrokken objecten in het kader van het algoritme"@nl;
-    .
-```
+- optie: onderzoeken of het waardevol is een mapping naar [MLDCAT-AP](https://semiceu.github.io/MLDCAT-AP/releases/2.0.0/) te doen.
 
 
 ## voorbeeld uitwerking

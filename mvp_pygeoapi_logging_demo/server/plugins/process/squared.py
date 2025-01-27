@@ -142,7 +142,7 @@ class SquaredProcessor(BaseProcessor):
             value = number_or_integer * number_or_integer
             span.set_attribute("squared.value", value)
             span.set_attribute("dpl.objects.processing_association_id", "http://localhost:5000/processes/squared")
-            span.set_attribute("dpl.objects.data_association_id", 'not_set')
+            span.set_attribute("dpl.objects.data_object_id", 'not_set')
             span.set_status(Status(StatusCode.OK))
 
             sc = span.get_span_context()

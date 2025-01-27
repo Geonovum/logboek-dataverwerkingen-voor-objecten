@@ -89,8 +89,8 @@ __Voor het loggen van (geo)objectgegevens definieren we de volgende extensie:
 Binnen deze namespace kennen we de volgende eigenschappen:
 
 - dpl.objects.processing_association_id : Verwijzing naar het register waar de verwerking van de betreffende (geo)objecten in staat beschreven.
-- dpl.objects.data_association_id : Verwijzing naar een lijst van betrokken (geo)objecten.
-- dpl.objects.data_association_def : Verwijzing naar een definitie van het betreffende (geo)object.
+- dpl.objects.data_object_id : Verwijzing naar een lijst van betrokken (geo)objecten.
+- dpl.objects.data_object_def : Verwijzing naar een definitie van het betreffende (geo)object.
 
 
 ### Extensie Metadata

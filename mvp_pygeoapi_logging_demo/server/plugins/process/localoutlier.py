@@ -127,7 +127,8 @@ class LOFProcessor(BaseProcessor):
         with tracer.start_as_current_span("LocalOutlierFactor") as span: #parent
             # create a parent log record
             span.set_attribute("dpl.objects.processing_association_id", "http://localhost:5000/processes/localoutlier")
-            span.set_attribute("dpl.objects.data_association_id", 'not_set')
+            span.set_attribute("dpl.objects.data_object_def", "http://localhost:5000/collections/knmi_meetstations/queryables?f=json")
+            span.set_attribute("dpl.objects.data_object_id", 'not_set')
             span.set_status(Status(StatusCode.OK)) # does not work yet
 
             data['p'] = int(data.get('p', 2))
@@ -160,7 +161,7 @@ class LOFProcessor(BaseProcessor):
             for row in gdf.itertuples():
                 # Create a nested span to track nested work
                 with tracer.start_as_current_span("LocalOutlierFactor_items") as cs: #child
-                    cs.set_attribute("dpl.objects.data_association_id", row.STN)
+                    cs.set_attribute("dpl.objects.data_object_id", row.STN)
 
             #timestamp does not serialize properly to json, so for now do a subset as workaround
             gdf_out = gdf[['STN','TYPE','geometry','abnormality']]
