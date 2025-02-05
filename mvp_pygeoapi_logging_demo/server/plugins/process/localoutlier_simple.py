@@ -92,7 +92,7 @@ PROCESS_METADATA = {
 
 # Service name is required for most backends
 resource = Resource(attributes={
-    SERVICE_NAME: "pygeoapi.process.localoutlier_simple.LOFProcessor"
+    SERVICE_NAME: "http://localhost:5000/processes/localoutlier_simple"
 })
 
 provider = TracerProvider(resource=resource)
@@ -126,7 +126,7 @@ class LOFProcessor(BaseProcessor):
     def execute(self, data):
         with tracer.start_as_current_span("LocalOutlierFactor") as span: #parent
             # create a parent log record
-            span.set_attribute("dpl.objects.processing_association_id", "http://localhost:5000/processes/localoutlier")
+            span.set_attribute("dpl.objects.processing_association_id", "http://localhost:5000/processes/localoutlier_simple")
             # span.set_attribute("dpl.objects.data_association_id", 'not_set')
             span.set_status(Status(StatusCode.OK)) # does not work yet
 

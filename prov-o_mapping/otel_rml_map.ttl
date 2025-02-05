@@ -6,13 +6,12 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @base <http://example.com/ns#>.
 
+#Trace object
 <#TraceMapping> a rr:TriplesMap;
   rml:logicalSource [
-    # rml:source "./trace_test.json";
-    rml:source "./trace_dd3c8b1da6f5af99fcb1e5d1eadde192.json";
+    rml:source "./trace.json";
     rml:referenceFormulation ql:JSONPath;
-    # rml:iterator "$.spans[*]"
-    rml:iterator "$.batches[*].scopeSpans[*].spans[0]"
+    rml:iterator "$.resourceSpans[*].scopeSpans[*].spans[0]"
   ];
 
   rr:subjectMap [
@@ -30,116 +29,19 @@
   rr:predicateObjectMap [
     rr:predicate rdfs:comment;
     rr:objectMap [
-      rr:constant "Trace"
+      # rr:constant "Trace"
+      rml:reference "name"
     ]
   ];
   .
 
-<#EntityMapping> a rr:TriplesMap;
-    rml:logicalSource [
-    # rml:source "./trace_test.json";
-    rml:source "./trace_dd3c8b1da6f5af99fcb1e5d1eadde192.json";
-    rml:referenceFormulation ql:JSONPath;
-    # rml:iterator "$.spans[*]"
-    rml:iterator "$.batches[*].scopeSpans[*].spans[*].attributes[?(@.key=='service.name')]"
-  ];
-
-    rr:subjectMap [
-    rr:template "http://trace.example.com/entity/{value.stringValue}";
-    rr:class prov:Entity
-  ];
-
-    rr:predicateObjectMap [
-    rr:predicate rdfs:label;
-    rr:objectMap [
-      rml:reference "value.stringValue"
-    ]
-  ];
-
-    rr:predicateObjectMap [
-    rr:predicate rdfs:comment;
-    rr:objectMap [
-      rr:constant "algoritme"
-    ]
-  ];
-.
-
-<#EntityAssociationMapping> a rr:TriplesMap;
-    rml:logicalSource [
-    # rml:source "./trace_test.json";
-    rml:source "./trace_dd3c8b1da6f5af99fcb1e5d1eadde192.json";
-    rml:referenceFormulation ql:JSONPath;
-    # rml:iterator "$.spans[*]"
-    rml:iterator "$.batches[*].scopeSpans[*].spans[*].attributes[?(@.key=='service.name')]"
-  ];
-
-  rr:subjectMap [
-    rr:template "http://trace.example.com/association/{value.stringValue}";
-    rr:class prov:Association
-  ];
-
-  rr:predicateObjectMap [
-    rr:predicate rdfs:comment;
-    rr:objectMap [
-      rr:constant "de associatierelatie naar de verwerkingsactiviteit"
-    ]
-  ];
-
-  rr:predicateObjectMap [
-    rr:predicate rdfs:label;
-    rr:objectMap [
-      rml:reference "value.stringValue"
-    ]
-  ];
-
-   rr:predicateObjectMap [
-    rr:predicate prov:hadPlan;
-    rr:objectMap [
-      rr:parentTriplesMap <#EntityMapping>;
-       rr:joinCondition [
-           rr:child "value.stringValue";
-           rr:parent "value.stringValue"
-        ]
-    ]
-  ];
-.
-
-<#AgentMapping> a rr:TriplesMap;
-    rml:logicalSource [
-    # rml:source "./trace_test.json";
-    rml:source "./trace_dd3c8b1da6f5af99fcb1e5d1eadde192.json";
-    rml:referenceFormulation ql:JSONPath;
-    # rml:iterator "$.spans[*]"
-    rml:iterator "$.batches[*].scopeSpans[*].spans[*].attributes[?(@.key=='dpl.core.data_subject_id')]"
-  ];
-
-  rr:subjectMap [
-    rr:template "http://trace.example.com/agent/{value.intValue}";
-    rr:class prov:Association
-  ];
-
-  rr:predicateObjectMap [
-    rr:predicate rdfs:label;
-    rr:objectMap [
-      rml:reference "value.intValue"
-    ]
-  ];
-
-  rr:predicateObjectMap [
-    rr:predicate rdfs:comment;
-    rr:objectMap [
-      rr:constant "Het Subject waar de verwerking naar verwijst"
-    ]
-  ];
-.
-
+#span object (indivduele acties binnen een trace)
+# wasgeneratedby -> trace
 <#SpanMapping> a rr:TriplesMap;
   rml:logicalSource [
-    # rml:source "./trace_test.json";
-    rml:source "./trace_dd3c8b1da6f5af99fcb1e5d1eadde192.json";
+    rml:source "./trace.json";
     rml:referenceFormulation ql:JSONPath;
-    # rml:iterator "$.spans[*]"
-    rml:iterator "$.batches[*].scopeSpans[*].spans[*]"
+    rml:iterator "$.resourceSpans[*].scopeSpans[*].spans[*]"
   ];
 
   rr:subjectMap [
@@ -182,37 +84,166 @@
     ]
   ];
 
-  rr:predicateObjectMap [
-    rr:predicate prov:wasStartedBy;
-    rr:objectMap [
-       rr:parentTriplesMap <#SpanMapping>;
-       rr:joinCondition [
-           rr:child "parentSpanId";
-           rr:parent "spanId"
-        ]
-    ]
-  ];
+  # rr:predicateObjectMap [
+  #   rr:predicate prov:qualifiedAssociation;
+  #   rr:objectMap [
+  #      rr:parentTriplesMap <#EntityAssociationMapping>;
+  #      rr:joinCondition [
+  #          rr:child "attributes[0].value.stringValue";
+  #          rr:parent "value.stringValue"
+  #       ]
+  #   ]
+  # ];
 
-  rr:predicateObjectMap [
-    rr:predicate prov:qualifiedAssociation;
-    rr:objectMap [
-       rr:parentTriplesMap <#AgentMapping>;
-       rr:joinCondition [
-           rr:child "attributes[0].value.intValue";
-           rr:parent "value.intValue"
-        ]
-    ]
-  ];
-
-  rr:predicateObjectMap [
-    rr:predicate prov:qualifiedAssociation;
-    rr:objectMap [
-       rr:parentTriplesMap <#EntityAssociationMapping>;
-       rr:joinCondition [
-           rr:child "attributes[0].value.stringValue";
-           rr:parent "value.stringValue"
-        ]
-    ]
-  ];
+  # rr:predicateObjectMap [
+  #   rr:predicate prov:qualifiedAssociation;
+  #   rr:objectMap [
+  #      rr:parentTriplesMap <#DefinitionAssociationMapping>;
+  #      rr:joinCondition [
+  #          rr:child "attributes[0].value.stringValue";
+  #          rr:parent "value.stringValue"
+  #       ]
+  #   ]
+  # ];
   
   .
+
+#algoritme object (wordt nog niet aangemaakt?)
+<#EntityMapping> a rr:TriplesMap;
+    rml:logicalSource [
+    rml:source "./trace.json";
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.resourceSpans[*].resource[*].attributes[?(@.key=='service.name')]"
+    # rml:iterator "$.resourceSpans[*].resource[0].attributes[0]"
+  ];
+
+    rr:subjectMap [
+    rr:template "http://trace.example.com/entity/{value.stringValue}";
+    rr:class prov:Entity
+  ];
+
+    rr:predicateObjectMap [
+    rr:predicate rdfs:label;
+    rr:objectMap [
+      rml:reference "value.stringValue"
+    ]
+  ];
+
+    rr:predicateObjectMap [
+    rr:predicate rdfs:comment;
+    rr:objectMap [
+      rr:constant "algoritme"
+    ]
+  ];
+.
+
+#definitie object
+<#DefinitionMapping> a rr:TriplesMap;
+    rml:logicalSource [
+    rml:source "./trace.json";
+    rml:referenceFormulation ql:JSONPath;
+    rml:iterator "$.resourceSpans[*].scopeSpans[*].spans[*].attributes[?(@.key=='dpl.objects.data_object_def')]"
+  ];
+
+  rr:subjectMap [
+    rr:template "http://trace.example.com/entity/{value.stringValue}";
+    rr:class prov:Entity
+  ];
+
+  rr:predicateObjectMap [
+    rr:predicate rdfs:label;
+    rr:objectMap [
+      rml:reference "value.stringValue"
+    ]
+  ];
+
+    rr:predicateObjectMap [
+    rr:predicate rdfs:comment;
+    rr:objectMap [
+      rr:constant "definitie"
+    ]
+  ];
+.
+
+# # relatie tussen algoritme en span
+# #logica mist nog..
+# <#ProcessingAssociationMapping> a rr:TriplesMap;
+#     rml:logicalSource [
+#     rml:source "./trace.json";
+#     rml:referenceFormulation ql:JSONPath;
+#     # rml:iterator "$.spans[*]"
+#     rml:iterator "$.resourceSpans[*].scopeSpans[*].spans[*].attributes[?(@.key=='dpl.objects.processing_association_id')]"
+#   ];
+
+#   rr:subjectMap [
+#     rr:template "http://trace.example.com/association/{value.stringValue}";
+#     rr:class prov:Association
+#   ];
+
+#   rr:predicateObjectMap [
+#     rr:predicate rdfs:comment;
+#     rr:objectMap [
+#       rr:constant "de associatierelatie naar het algoritme"
+#     ]
+#   ];
+
+#   rr:predicateObjectMap [
+#     rr:predicate rdfs:label;
+#     rr:objectMap [
+#       rml:reference "value.stringValue"
+#     ]
+#   ];
+
+#    rr:predicateObjectMap [
+#     rr:predicate prov:hadPlan;
+#     rr:objectMap [
+#       rr:parentTriplesMap <#EntityMapping>;
+#        rr:joinCondition [
+#            rr:child "value.stringValue";
+#            rr:parent "value.stringValue"
+#         ]
+#     ]
+#   ];
+# .
+
+# #relatie tussen definitie en span
+# <#DefinitionAssociationMapping> a rr:TriplesMap;
+#     rml:logicalSource [
+#     rml:source "./trace.json";
+#     rml:referenceFormulation ql:JSONPath;
+#     # rml:iterator "$.spans[*]"
+#     rml:iterator "$.resourceSpans[*].scopeSpans[*].spans[*].attributes[?(@.key=='dpl.objects.data_object_def')]"
+#   ];
+
+#   rr:subjectMap [
+#     rr:template "http://trace.example.com/association/{value.stringValue}";
+#     rr:class prov:Association
+#   ];
+
+#   rr:predicateObjectMap [
+#     rr:predicate rdfs:comment;
+#     rr:objectMap [
+#       rr:constant "de associatierelatie naar de definitie"
+#     ]
+#   ];
+
+#   rr:predicateObjectMap [
+#     rr:predicate rdfs:label;
+#     rr:objectMap [
+#       rml:reference "value.stringValue"
+#     ]
+#   ];
+
+#    rr:predicateObjectMap [
+#     rr:predicate prov:hadPlan;
+#     rr:objectMap [
+#       rr:parentTriplesMap <#DefinitionMapping>;
+#        rr:joinCondition [
+#            rr:child "value.stringValue";
+#            rr:parent "value.stringValue"
+#         ]
+#     ]
+#   ];
+# .
+
+

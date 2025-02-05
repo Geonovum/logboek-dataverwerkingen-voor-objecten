@@ -16,6 +16,7 @@ services:
       - ./plugins/process/squared.py:/pygeoapi/pygeoapi/process/squared.py
       - ./plugins/process/localoutlier.py:/pygeoapi/pygeoapi/process/localoutlier.py
       - ./plugins/process/localoutlier_simple.py:/pygeoapi/pygeoapi/process/localoutlier_simple.py
+      - ./plugins/process/aanvraag.py:/pygeoapi/pygeoapi/process/aanvraag.py
 
 
   collector:
@@ -26,6 +27,7 @@ services:
           
     volumes:
       - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
+      - ./tracelog:/var/log/tracelog
 
 networks:
   default:

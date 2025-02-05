@@ -30,3 +30,5 @@ de orchestratie van de docker containers.
 Via een Jupyter notebook kunnen de beschikbare OGC API Processes functies aangeroepen worden.
 
 Hiervoor is een python omgeving nodig met jupyter notebook, requests, geopandas en eventueel folium.
+
+__scenarios.ipynb__ laat een uitwerking zien van de verschillende volwassenheidsniveaus en de combinatie van het gebruiken van de core en de dpl.objects extensie
