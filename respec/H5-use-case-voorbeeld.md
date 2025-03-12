@@ -57,6 +57,7 @@ Niveau 3:
     - feature_attribute [
         - attribute_name
         - attribute_value
+        - attribute_def
     ]
 ]
 ​
