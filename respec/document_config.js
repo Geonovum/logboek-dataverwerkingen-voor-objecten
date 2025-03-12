@@ -84,7 +84,7 @@ var documentConfig =
             href: "https://logius-standaarden.github.io/publicatie/api/Logboek_Juridisch/",
             publisher: "Logius"
         },
-        NLSBB: {
+        NL_SBB: {
             title: "NL-SBB - Standaard voor het beschrijven van begrippen",
             href: "https://docs.geostandaarden.nl/nl-sbb/def-st-nl-sbb-20241010/",
             publisher: "Geonovum"

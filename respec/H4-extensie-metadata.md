@@ -1,7 +1,6 @@
-# Conceptueel model
+# Mapping PROV-O Conceptueel model 
 
-Om de interoperabiliteit tussen de standaard Logboek dataverwerkingen en andere systemen te verbeteren kijken we naar de mapping van het gebruikte model (op basis van open telemetry) naar PROV-O.
-  
+
 De kern van het [[PROV_O]] model bestaat uit een Activiteit, een Entiteit en een Agent.
 
 ![prov-dm](./respec/media/prov-dm.png)
@@ -103,9 +102,9 @@ End time       : 2024-11-29 10:50:55.123923577 +0000 UTC
 Status code    : Ok                                                                                                                                                                      
 Status message : 
     Attributes:                                                                                                                                                                                     
-    -> dpl.objects.processing_association_id: Str(http://localhost:5000/processes/localoutlier)
-    -> dpl.objects.data_association_id: Slice([201,203,204,205,206])
-    -> dpl.objects.data_association_def: Str(http://localhost:5000/collections/knmi_meetstations/queryables?f=json)                                                          
+    -> dpl.objects.processing_activity_id: Str(http://localhost:5000/processes/localoutlier)
+    -> dpl.objects.data_object_id: Slice([201,203,204,205,206])
+    -> dpl.objects.data_object_def: Str(http://localhost:5000/collections/knmi_meetstations/queryables?f=json)                                                          
 ```
 
 Een voorbeeld in RDF zou er als volgt uit kunnen zien:

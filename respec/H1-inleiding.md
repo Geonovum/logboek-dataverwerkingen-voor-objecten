@@ -11,5 +11,5 @@ We willen deze standaard beproeven bij het loggen van transacties met (geo)objec
 ## Relaties met andere projecten
 
 - [DCAT-AP-NL 3.0](https://docs.geostandaarden.nl/dcat/dcat-ap-nl30)
-- [NL-SBB](https://geonovum.github.io/NL-SBB/) ([[NLSBB]])
+- [NL-SBB](https://geonovum.github.io/NL-SBB/) ([[NL_SBB]])
 - [DTaaS](https://www.geonovum.nl/over-geonovum/actueel/werken-aan-digital-twin-as-a-service) (de use case om een aanvullende standaard mee te beproeven wordt gezocht binnen het DTaaS project)

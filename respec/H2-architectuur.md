@@ -23,7 +23,7 @@ Met de uitbreiding van de scope van de te loggen verwerkingen wordt de semantisc
 Als er uit de log blijkt dat er een object 'Station' gebruikt is, gaat het dan om een 'Waarnemingsstation' in de context van een sensor waarneming, of over een 'Treinstation' in de context van vertraging op het spoor?
 </aside><!-- markdownlint-disable-line -->
 
-Daarom is het voor het loggen van (geo)objectgegevens extra interessant om een uitbreiding op de standaard te realiseren die specificeert op welke manier het objectgegeven geinterpreteerd moet worden. Voor deze uitbreiding denken we dat het meerwaarde heeft om de gegevens te kunnen definieren in termen van de [PROV-O](https://www.w3.org/TR/prov-o/) standaard. Vanuit deze mapping is een verbinding naar bijvoorbeeld de  [[NLSBB]] of de [[DCAT_AP_NL]] standaard interessant.
+Daarom is het voor het loggen van (geo)objectgegevens extra interessant om een uitbreiding op de standaard te realiseren die specificeert op welke manier het objectgegeven geinterpreteerd moet worden. Voor deze uitbreiding denken we dat het meerwaarde heeft om de gegevens te kunnen definieren in termen van de [PROV-O](https://www.w3.org/TR/prov-o/) standaard. Vanuit deze mapping is een verbinding naar bijvoorbeeld de  [[NL_SBB]] of de [[DCAT_AP_NL]] standaard interessant.
 
 ## Positionering
 
@@ -71,6 +71,21 @@ In de kern van de standaard wordt een [Register](https://logius-standaarden.gith
 Als een organisatie dataverwerkingen doet in het kader van een algoritme wat in het Algoritmeregister is geregistreerd, dan zouden deze dataverwerkingen gelogd moeten worden op basis van deze standaard.
 </aside>
 
+### Volwassenheidsniveaus
+
+Een ander aandachtspunt bij het beschrijven van de functionaliteit voor het loggen van objectgegevens betreft de volwassenheidsniveaus. Logging kan op verschillende Volwassenheidsniveaus: hoe hoger het volwassenheidsniveau, hoe meer data er wordt gelogd.
+
+Welk volwassenheidsniveau gebruikt wordt hangt van meerdere factoren af. De informatiebehoefte van de verantwoording, maar zeker ook wat er technisch gezien mogelijk is om te implementeren.
+
+De volgende niveaus worden gehanteerd:
+
+- Niveau 1: registerverwijzing
+- Niveau 2: kolomverwijzing
+- Niveau 3: concrete data
+
+Zie [Vowassenheidsniveaus](https://logius-standaarden.github.io/logboek-dataverwerkingen/#volwassenheidsniveaus) in de Logboek dataverwerkingen standaard voor de verdere toelichting hierop.
+
+
 ## Extensies
 
 In de standaard wordt de basisfunctionaliteit beschreven, en wordt een [extensie aanpak](https://logius-standaarden.github.io/logboek-dataverwerkingen/#extensies) beschreven om de standaard uit te breiden. 
@@ -79,20 +94,20 @@ In de standaard wordt de basisfunctionaliteit beschreven, en wordt een [extensie
 
 postionering extensies
 
-### Extensie (Geo)objecten
+### Extensie (geo)objecten
 
 `dpl.core.processing_activity_id` is gereserveerd voor het verwijzen naar een verwerkingsregister in het kader van de AVG en `dpl.core.data_subject_id` is gereserveerd voor het verwijzen naar een persoonsgegeven.
 
 __Voor het loggen van (geo)objectgegevens definieren we de volgende extensie:
 `dpl.objects`__
 
-Binnen deze namespace kennen we de volgende eigenschappen:
-
-- dpl.objects.processing_association_id : Verwijzing naar het register waar de verwerking van de betreffende (geo)objecten in staat beschreven.
-- dpl.objects.data_object_id : Verwijzing naar een lijst van betrokken (geo)objecten.
-- dpl.objects.data_object_def : Verwijzing naar een definitie van het betreffende (geo)object.
+De uitwerking van de te gebruiken attributes in deze namespace staat in [hoofdstuk 3](./H3-extensie-objecten.md)
 
 
 ### Extensie Metadata
 
-Voor het semantisch verbinden van de gelogde (geo)objectgegevens aan andere informatie maken we een conceptuele mapping naar [[PROV-O]], deze is uitgewerk in hoofdstuk 3. In de use case voorbeelden in hoofdtuk 4 onderzoeken we hoe deze mapping toegepast kan worden om de gelogde gegevens in context te plaatsen.
+Om de interoperabiliteit tussen de standaard Logboek dataverwerkingen en andere systemen te verbeteren kijken we naar de mapping van het gebruikte model (op basis van open telemetry) naar [[PROV-O]]. [[PROV-O]] wordt op diverse plaatsen, zowel nationaal als internationaal gebruikt om 'provenance' vast te leggen. 
+  
+Behalve naar [[PROV-O]] onderzoeken we ook de relatie naar de [[NL_SBB]] standaard, deze standaard voor het beschrijven van begrippen, wordt samen met [[DCAT_AP_NL]] bijvoorbeeld ingezet in het Federatief Datastelsel om metadata te beschrijven.
+
+De mapping is uitgewerk in [hoofdstuk 4](./H4-extensie-metadata.md). 
