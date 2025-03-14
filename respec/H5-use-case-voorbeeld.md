@@ -17,12 +17,29 @@ een defect aan een sensor kunnen de classificatie beinvloed hebben en dan wil je
 Dit kan als Niveau 2: 'kolomverwijzing' beschouwd worden. Met dien verstande dat er verwezen wordt naar het type remote sensing data (bv Sentinel-2, LIDAR) en niet de gebruikte beeldwaarden 
 van de remote sensing beelden. Er dient wel metadata van het gebruikte dataproduct vastgelegd te worden (timestamp, series) of een identifier die het specifieke dataproduct uniek identificeert.
 
+minimale implementatie:
 
 - dpl.object.processing_activity_id
-- dpl.objects.dataproduct [
-    - dataproduct_id
-    - dataproduct_def
+- dpl.objects.dataproduct_id
+
+uitgebreidere implementatie:
+
+- dpl.object.processing_activity_id
+- dpl.objects.dataproduct_id
+- dpl.objects.dataset[
+    - dataset_id
+    - dataset_def
+    - dataset_port (input)
+
+],
+- dpl.objects.dataset[
+    - dataset_id
+    - dataset_def
+    - dataset_port (output)
+
 ]
+
+
 ### Maaidata analyse, remote sensing beelden analyseren of percelen wel/niet gemaaid zijn​
 
 Dit is een voorbeeld van het verwerken van satellietbeelden om te signaleren of graslanden worden gemaaid tijdens het broedseizoen van beschermde vogelsoorten. 
@@ -37,9 +54,11 @@ Niveau 2:
 - dpl.core.processing_activity_id (verwijzing naar de subsidieverlening)
 - dpl.core.data_subject_id (indien bekend in de verwerking van percelen)
 - dpl.object.processing_activity_id (verwijzing naar het algoritmeregister)
-- dpl.objects.dataproduct [
-    - dataproduct_id
-    - dataproduct_def
+- dpl.objects.dataproduct_id 
+- dpl.objects.dataset[
+    - dataset_id
+    - dataset_def
+    - dataset_port 
 ]
 
 Niveau 3:
@@ -47,9 +66,11 @@ Niveau 3:
 - dpl.core.processing_activity_id (verwijzing naar de subsidieverlening)
 - dpl.core.data_subject_id (indien bekend in de verwerking van percelen)
 - dpl.object.processing_activity_id (verwijzing naar het algoritmeregister)
-- dpl.objects.dataproduct [
-    - dataproduct_id 
-    - dataproduct_def
+- dpl.objects.dataproduct_id
+- dpl.objects.dataset[
+    - dataset_id 
+    - dataset_def
+    - dataset_port
     - feature [
         - feature_id
         - feature_def
@@ -74,16 +95,20 @@ Niveau 3:
 - dpl.core.processing_activity_id (verwijzing naar de subsidieverlening)
 - dpl.core.data_subject_id (indien bekend in de verwerking van percelen)
 - dpl.object.processing_activity_id (verwijzing naar het algoritmeregister)
-- dpl.objects.dataproduct [
-    - dataproduct_id 
-    - dataproduct_def
+- dpl.objects.dataproduct_id
+- dpl.objects.dataset [
+    - dataset_id 
+    - dataset_def
+    - dataset_port
     - feature [
         - feature_id
         - feature_def
+        - feature_port
     ]
     - feature_attribute [
         - attribute_name
         - attribute_value
+        - attribute_def
     ]
 ]
 

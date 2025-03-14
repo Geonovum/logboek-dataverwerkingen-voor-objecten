@@ -30,39 +30,56 @@ De traces zijn vervolgens de individuele verwerkingen die door het betreffende s
 
 __resource__
 
-service.name = \<servicenaam\>
+service.name = Logical name of the service
+service.instance.id = The string ID of the service instance
+
+Overeenkomstig de Opentelemetry specificatie.
+
+Elk individueel Dataproduct/proces krijgt een eigen naam en id. Dus als er meerdere algoritmes/processen op een server zijn geimplementeerd moet de service.name op het niveau van
+het individuele product/proces geinstantieerd worden.
 
 __trace__
 
 ```
 dpl.object.processing_activity_id
-dpl.objects.dataproduct [
-    dataproduct_id 
-    dataproduct_def
+dpl.objects.dataproduct_id 
+dpl.objects.dataset [
+    dataset_id
+    dataset_def
+    dataset_port
     feature [
         feature_id
         feature_def
+        feature_port
     ]
     feature_attribute [
         attribute_name
         attribute_value
+        attribute_def
     ]
 ]
 ```
 
-| attribute | beschrijving |
-|---|---|
-|dpl.object.processing_activity_id | verwijzing naar het register van het betreffende algoritme. uri naar uniek identificeerbaar algoritme| 
-|dpl.objects.dataproduct  | lijst met dataproducten: |
-|   dataproduct_id | unieke id voor het dataproduct. uri naar de service/downloadurl van het product | 
-|   dataproduct_def | uri naar een catalogus met de dataproduct (dataset) metadata | 
-|   feature | lijst met features: | 
-|     feature_id | unieke id van het feature| 
-|     feature_def | uri naar een definitie van het feature|
-|   feature_attribute | lijst van attributen van het feature |
-|     attribute_name | unieke identifier van het attribuut |
-|     attribute_value | waarde van het attribuut in de specifieke verwerking / logregel | 
-|     attribute_def | verwijzing naar de metadata van het attribuut |
+| attribute | Niveau |beschrijving |
+|---|---|---|
+|dpl.object.processing_activity_id | 1 | verwijzing naar het register van het betreffende algoritme. uri naar uniek identificeerbaar algoritme| 
+|dpl.objects.dataproduct_id  | 1 | uri naar een catalogus met de dataproduct metadata |
+|dpl.objects.dataset | 2a | lijst met datasets (input en/of output van het dataproduct) | 
+|   dataset_id | 2a | unieke id van de dataset |
+|   dataset_def | 2a | uri naar de definitie/metadata van de dataset (catalog_record/dcat_ap_nl) |
+|   dataset_port | 2a | input/output dataset, dit wordt in de log vastgelegd omdat het niet noodzakelijk uit de metadata in de catalogus afgeleid kan worden |
+|   feature | 2b | lijst met features: | 
+|     feature_id | 2b | unieke id van het feature| 
+|     feature_def | 2b | uri naar een definitie van het feature|
+|     feature_port | 2b | input/output feature, dit wordt in de log vastgelegd omdat het niet noodzakelijk uit de metadata in de catalogus afgeleid kan worden|
+|   feature_attribute | 3 | lijst van attributen van het feature |
+|     attribute_name | 3 | unieke identifier van het attribuut |
+|     attribute_value | 3 | waarde van het attribuut in de specifieke verwerking / logregel | 
+|     attribute_def | 3 | verwijzing naar de metadata van het attribuut |
+
+Afhankelijk van het volwassenheidsniveau wordt er meer gelogd. Voor de hogere niveaus geldt dat de gegevens van het lagere niveau ook gelogd worden.
+
+Voor niveau 2 (kolomniveau) geldt dat er op gehele dataset gelogd kan worden (2a), of dat er specifiek aangegeven kan worden welke features in een dataset gebruikt zijn (2b).
 
 
 ---
