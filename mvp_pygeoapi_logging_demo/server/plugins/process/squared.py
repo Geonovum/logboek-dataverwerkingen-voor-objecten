@@ -95,21 +95,21 @@ PROCESS_METADATA = {
     }
 }
 
-# Service name is required for most backends
-resource = Resource(attributes={
-    SERVICE_NAME: "pygeoapi.process.squared.SquaredProcessor"
-})
+# # Service name is required for most backends
+# resource = Resource(attributes={
+#     SERVICE_NAME: "pygeoapi.process.squared.SquaredProcessor"
+# })
 
-provider = TracerProvider(resource=resource)
-# processor = BatchSpanProcessor(ConsoleSpanExporter())
-processor = BatchSpanProcessor(OTLPSpanExporter(endpoint="http://collector:4318/v1/traces"))
-provider.add_span_processor(processor)
+# provider = TracerProvider(resource=resource)
+# # processor = BatchSpanProcessor(ConsoleSpanExporter())
+# processor = BatchSpanProcessor(OTLPSpanExporter(endpoint="http://collector:4318/v1/traces"))
+# provider.add_span_processor(processor)
 
-# Sets the global default tracer provider
-trace.set_tracer_provider(provider)
+# # Sets the global default tracer provider
+# trace.set_tracer_provider(provider)
 
-# Creates a tracer from the global tracer provider
-tracer = trace.get_tracer("squared.tracer")
+# # Creates a tracer from the global tracer provider
+# tracer = trace.get_tracer("squared.tracer")
 
 class SquaredProcessor(BaseProcessor):
     """Squared Processor example"""
@@ -122,10 +122,30 @@ class SquaredProcessor(BaseProcessor):
 
         :returns: pygeoapi.process.squared.SquaredProcessor
         """
+        # Service name is required for most backends
+        self.resource = Resource(attributes={
+            SERVICE_NAME: "pygeoapi.process.squared.SquaredProcessor"
+        })
+
+        self.provider = TracerProvider(resource=self.resource)
+        # processor = BatchSpanProcessor(ConsoleSpanExporter())
+        self.processor = BatchSpanProcessor(OTLPSpanExporter(endpoint="http://collector:4318/v1/traces"))
+        self.provider.add_span_processor(self.processor)
+
+        # # Sets the global default tracer provider
+        # trace.set_tracer_provider(provider)
+
+        # # Creates a tracer from the global tracer provider
+        # tracer = trace.get_tracer("squared.tracer")
 
         super().__init__(processor_def, PROCESS_METADATA)
 
     def execute(self, data):
+        # Sets the global default tracer provider
+        trace.set_tracer_provider(self.provider)
+
+        # Creates a tracer from the global tracer provider
+        tracer = trace.get_tracer("squared.tracer")
 
         sc = None
         value = None
@@ -141,8 +161,8 @@ class SquaredProcessor(BaseProcessor):
         with tracer.start_as_current_span("calculate") as span:
             value = number_or_integer * number_or_integer
             span.set_attribute("squared.value", value)
-            span.set_attribute("dpl.objects.processing_association_id", "http://localhost:5000/processes/squared")
-            span.set_attribute("dpl.objects.data_object_id", 'not_set')
+            span.set_attribute("dpl.objects.processing_activity_id", "http://localhost:5000/processes/squared")
+            # span.set_attribute("dpl.objects.data_object_id", 'not_set')
             span.set_status(Status(StatusCode.OK))
 
             sc = span.get_span_context()

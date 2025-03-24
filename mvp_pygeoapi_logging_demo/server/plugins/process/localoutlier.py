@@ -90,21 +90,21 @@ PROCESS_METADATA = {
     'example': {}
 }
 
-# Service name is required for most backends
-resource = Resource(attributes={
-    SERVICE_NAME: "pygeoapi.process.localoutlier.LOFProcessor"
-})
+# # Service name is required for most backends
+# resource = Resource(attributes={
+#     SERVICE_NAME: "pygeoapi.process.localoutlier.LOFProcessor"
+# })
 
-provider = TracerProvider(resource=resource)
-# processor = BatchSpanProcessor(ConsoleSpanExporter())
-processor = BatchSpanProcessor(OTLPSpanExporter(endpoint="http://collector:4318/v1/traces"))
-provider.add_span_processor(processor)
+# provider = TracerProvider(resource=resource)
+# # processor = BatchSpanProcessor(ConsoleSpanExporter())
+# processor = BatchSpanProcessor(OTLPSpanExporter(endpoint="http://collector:4318/v1/traces"))
+# provider.add_span_processor(processor)
 
-# Sets the global default tracer provider
-trace.set_tracer_provider(provider)
+# # Sets the global default tracer provider
+# trace.set_tracer_provider(provider)
 
-# Creates a tracer from the global tracer provider
-tracer = trace.get_tracer("localoutlier.tracer")
+# # Creates a tracer from the global tracer provider
+# tracer = trace.get_tracer("localoutlier.tracer")
 
 # Parameters that are NOT passed directly to sklearn.neighbors.LocalOutlierFactor
 LOF_OMIT = ['training_dataset', 'dataset', 'output_column']
@@ -120,16 +120,58 @@ class LOFProcessor(BaseProcessor):
 
         :returns: pygeoapi.process.localoutlier.LOFProcessor
         """
+        # Service name is required for most backends
+        self.resource = Resource(attributes={
+            SERVICE_NAME: "pygeoapi.process.localoutlier.LOFProcessor"
+        })
+
+        self.provider = TracerProvider(resource=self.resource)
+        # processor = BatchSpanProcessor(ConsoleSpanExporter())
+        self.processor = BatchSpanProcessor(OTLPSpanExporter(endpoint="http://collector:4318/v1/traces"))
+        self.provider.add_span_processor(self.processor)
+
+        # # Sets the global default tracer provider
+        # trace.set_tracer_provider(provider)
+
+        # # Creates a tracer from the global tracer provider
+        # tracer = trace.get_tracer("localoutlier.tracer")
 
         super().__init__(processor_def, PROCESS_METADATA)
     
     def execute(self, data):
+        # Sets the global default tracer provider
+        trace.set_tracer_provider(self.provider)
+
+        # Creates a tracer from the global tracer provider
+        tracer = trace.get_tracer("localoutlier.tracer")
+
         with tracer.start_as_current_span("LocalOutlierFactor") as span: #parent
             # create a parent log record
-            span.set_attribute("dpl.objects.processing_association_id", "http://localhost:5000/processes/localoutlier")
-            span.set_attribute("dpl.objects.data_object_def", "http://localhost:5000/collections/knmi_meetstations/queryables?f=json")
-            span.set_attribute("dpl.objects.data_object_id", 'not_set')
-            span.set_status(Status(StatusCode.OK)) # does not work yet
+            span.set_attribute("dpl.objects.processing_activity_id", "https://algoritmes.overheid.nl/nl/algoritme/maaidata-provincie-noordholland/68294175")
+            # span.set_attribute("dpl.objects.dataproduct_id", "http://localhost:5000/collections/catalog/items/pygeoapi.process.localoutlier.LOFProcessor")
+            
+            dataset_info = [{
+                
+                    'dataset_id':'knmi_meetstations',
+                    'dataset_def':'http://localhost:5000/collections/catalog/items/7b03a8de-5d0c-11ee-8a7e-3ce9f7462b93',
+                    'dataset_port': 'input'
+                
+            },
+            { 
+                'dataset_id':'n_neighbors',
+                'dataset_def':'Number of neighbors to use by default for `kneighbors` queries.',
+                'dataset_port': 'input'
+            },
+            {
+                'dataset_id':'output_dataset',
+                'dataset_def': 'geojson with an extra column: abnormality',
+                'dataset_port': 'output'
+            }
+            ]
+            
+            
+            span.set_attribute("dpl.objects.dataset", str(dataset_info))
+            span.set_status(Status(StatusCode.OK)) 
 
             data['p'] = int(data.get('p', 2))
             data['leaf_size'] = int(data.get('leaf_size', 30))
@@ -158,10 +200,10 @@ class LOFProcessor(BaseProcessor):
             gdf[colName] = y_pred
             
             #loop through dataframe to create a logrecord for each object referring to the parent operation
-            for row in gdf.itertuples():
-                # Create a nested span to track nested work
-                with tracer.start_as_current_span("LocalOutlierFactor_items") as cs: #child
-                    cs.set_attribute("dpl.objects.data_object_id", row.STN)
+            # for row in gdf.itertuples():
+            #     # Create a nested span to track nested work
+            #     with tracer.start_as_current_span("LocalOutlierFactor_items") as cs: #child
+            #         cs.set_attribute("dpl.objects.data_object_id", row.STN)
 
             #timestamp does not serialize properly to json, so for now do a subset as workaround
             gdf_out = gdf[['STN','TYPE','geometry','abnormality']]

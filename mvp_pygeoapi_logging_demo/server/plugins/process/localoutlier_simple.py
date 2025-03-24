@@ -90,21 +90,21 @@ PROCESS_METADATA = {
     'example': {}
 }
 
-# Service name is required for most backends
-resource = Resource(attributes={
-    SERVICE_NAME: "http://localhost:5000/processes/localoutlier_simple"
-})
+# # Service name is required for most backends
+# resource = Resource(attributes={
+#     SERVICE_NAME: "http://localhost:5000/processes/localoutlier_simple"
+# })
 
-provider = TracerProvider(resource=resource)
-# processor = BatchSpanProcessor(ConsoleSpanExporter())
-processor = BatchSpanProcessor(OTLPSpanExporter(endpoint="http://collector:4318/v1/traces"))
-provider.add_span_processor(processor)
+# provider = TracerProvider(resource=resource)
+# # processor = BatchSpanProcessor(ConsoleSpanExporter())
+# processor = BatchSpanProcessor(OTLPSpanExporter(endpoint="http://collector:4318/v1/traces"))
+# provider.add_span_processor(processor)
 
-# Sets the global default tracer provider
-trace.set_tracer_provider(provider)
+# # Sets the global default tracer provider
+# trace.set_tracer_provider(provider)
 
-# Creates a tracer from the global tracer provider
-tracer = trace.get_tracer("localoutlier_simple.tracer")
+# # Creates a tracer from the global tracer provider
+# tracer = trace.get_tracer("localoutlier_simple.tracer")
 
 # Parameters that are NOT passed directly to sklearn.neighbors.LocalOutlierFactor
 LOF_OMIT = ['training_dataset', 'dataset', 'output_column']
@@ -120,14 +120,34 @@ class LOFProcessor(BaseProcessor):
 
         :returns: pygeoapi.process.localoutlier.LOFProcessor
         """
+        # Service name is required for most backends
+        self.resource = Resource(attributes={
+            SERVICE_NAME: "http://localhost:5000/processes/localoutlier_simple"
+        })
+
+        self.provider = TracerProvider(resource=self.resource)
+        # processor = BatchSpanProcessor(ConsoleSpanExporter())
+        self.processor = BatchSpanProcessor(OTLPSpanExporter(endpoint="http://collector:4318/v1/traces"))
+        self.provider.add_span_processor(self.processor)
+
+        # # Sets the global default tracer provider
+        # trace.set_tracer_provider(self.provider)
+
+        # # Creates a tracer from the global tracer provider
+        # tracer = trace.get_tracer("localoutlier_simple.tracer")
 
         super().__init__(processor_def, PROCESS_METADATA)
     
     def execute(self, data):
+        # Sets the global default tracer provider
+        trace.set_tracer_provider(self.provider)
+
+        # Creates a tracer from the global tracer provider
+        tracer = trace.get_tracer("localoutlier_simple.tracer")
         with tracer.start_as_current_span("LocalOutlierFactor") as span: #parent
             # create a parent log record
-            span.set_attribute("dpl.objects.processing_association_id", "http://localhost:5000/processes/localoutlier_simple")
-            # span.set_attribute("dpl.objects.data_association_id", 'not_set')
+            span.set_attribute("dpl.objects.processing_activity_id", "https://algoritmes.overheid.nl/nl/algoritme/maaidata-provincie-noordholland/68294175")
+            span.set_attribute("dpl.objects.dataproduct_id", 'http://localhost:5000/collections/catalog/items/pygeoapi.process.localoutlier.LOFProcessor')
             span.set_status(Status(StatusCode.OK)) # does not work yet
 
             data['p'] = int(data.get('p', 2))
@@ -156,10 +176,11 @@ class LOFProcessor(BaseProcessor):
                 raise Exception(f'{colName} exists in input and will not be overwritten')
             gdf[colName] = y_pred
             
-            #In the 'simple' implementation we do not create a separate span for each feature, but log 1 activity with the list of all processed feature plus extra metadata tbd.
+            #In the 'simplest' implementation we do not create a separate span for features, 
+            # but only log 1 activity and a pointer to the corresponding dataproduct
             
-            span.set_attribute("dpl.objects.data_object_id", gdf['STN'].tolist())
-            span.set_attribute("dpl.objects.data_object_def", "http://localhost:5000/collections/knmi_meetstations/queryables?f=json")
+            # span.set_attribute("dpl.objects.data_object_id", gdf['STN'].tolist())
+            # span.set_attribute("dpl.objects.dataset_id", "http://localhost:5000/collections/knmi_meetstations/queryables?f=json")
             #timestamp does not serialize properly to json, so for now do a subset as workaround
             gdf_out = gdf[['STN','TYPE','geometry','abnormality']]
             mimetype = 'application/geo+json'
