@@ -1,0 +1,93 @@
+{
+    "id": "7b03a8de-5d0c-11ee-8a7e-3ce9f7462b83",
+    "conformsTo": [
+        "http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core"
+    ],
+    "type": "Feature",
+    "time": [
+        "2024-09-30",
+        "9999-12-31"
+    ],
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -68.5,
+                    12.0
+                ],
+                [
+                    -68.5,
+                    55.7
+                ],
+                [
+                    7.4,
+                    55.7
+                ],
+                [
+                    7.4,
+                    12.0
+                ],
+                [
+                    -68.5,
+                    12.0
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "created": "2024-09-30",
+        "updated": "2024-12-06T09:49:52Z",
+        "type": "dataset",
+        "title": "Bomen",
+        "description": "Subset van bomen in de omgeving van Sloten (Amsterdam)",
+        "providers": [
+            {
+                "contactInfo": {
+                    "address": {
+                        "office": {}
+                    },
+                    "email": {
+                        "office": "opendata@amsterdam.nl"
+                    }
+                },
+                "name": null,
+                "roles": [
+                    {
+                        "name": "pointOfContact"
+                    }
+                ]
+            }
+        ],
+        "externalIds": [
+            {
+                "scheme": "default",
+                "value": "7b03a8de-5d0c-11ee-8a7e-3ce9f7462b83"
+            }
+        ],
+        "themes": [
+            {
+                "concepts": [
+                    {
+                        "id": "Bomen"
+                    },
+                    {
+                        "id": "Amsterdam"
+                    },
+                    {
+                        "id": "Sloten"
+                    }
+                ],
+                "scheme": null
+            }
+        ]
+    },
+    "links": [
+        {
+            "href": "http://localhost:5000/collections/bomen",
+            "rel": "item",
+            "title": "Bomen",
+            "type": "OGC API Features"
+        }
+    ]
+}

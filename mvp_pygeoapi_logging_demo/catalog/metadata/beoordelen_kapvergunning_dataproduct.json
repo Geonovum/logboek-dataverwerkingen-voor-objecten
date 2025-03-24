@@ -1,0 +1,75 @@
+{
+    "id": "pygeoapi.process.aanvraag.AanvraagProcessor",
+    "conformsTo": [
+        "https://ekgf.github.io/dprod/"
+    ],
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -68.5,
+                    12.0
+                ],
+                [
+                    -68.5,
+                    55.7
+                ],
+                [
+                    7.4,
+                    55.7
+                ],
+                [
+                    7.4,
+                    12.0
+                ],
+                [
+                    -68.5,
+                    12.0
+                ]
+            ]
+        ]
+    },
+    "properties": {
+        "type": "DataProduct",
+        "title": "Beoordelen kaptvergunning",
+        "description": "Deze beoordeling bepaalt of de boom of bomen in de aanvraag een specifieke beschermde status hebben waardoor er een beperking op rust.",
+        "dataProductOwner": "https://demo.geonovum.nl/DTaaS/testbedteam",
+        "lifecycleStatus" : "https://ekgf.github.io/dprod/data/lifecycle-status/Consume",
+        "inputPort": {
+          "type": "DataService",
+          "endpointURL": "http://localhost:5000/collections/bomen",
+          "isAccessServiceOf": {
+            "type": "Distribution",
+            "format": "https://www.iana.org/assignments/media-types/application/json",
+            "isDistributionOf": {
+                "type": "Dataset",
+                "id": "http://localhost:5000/collections/bomen",
+                "conformsTo": "http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/core"
+                }
+            }
+        },
+        "outputPort": {
+          "type": "Distribution",
+          "endpointURL": "http://localhost:5000/processes/bomen/execute",
+          "isAccessServiceOf": {
+            "type": "Distribution",
+            "format": "https://www.iana.org/assignments/media-types/application/json",
+            "isDistributionOf": {
+                "type": "Dataset",
+                "id": "http://localhost:5000/collections/bomen_beoordeeld",
+                "conformsTo": "http://www.opengis.net/spec/ogcapi-features-1/1.0/conf/geojson"
+                }
+            }
+        }
+    },
+    "links": [
+        {
+            "href": "http://localhost:5000/collections/bomen",
+            "rel": "html",
+            "title": "Bomen"
+        }
+    ]
+}
+
