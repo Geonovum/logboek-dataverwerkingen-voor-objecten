@@ -18,14 +18,14 @@
                     },
                     "spans": [
                         {
-                            "traceId": "2b609edb07b2ec8cf7eec04c8d2831f7",
-                            "spanId": "6af5adad618d83d8",
+                            "traceId": "0ac8d1c5251f6cd04c2fe5acd871f69c",
+                            "spanId": "f08448c4a0dfea16",
                             "parentSpanId": "",
                             "flags": 256,
                             "name": "Aanvraag_span",
                             "kind": 1,
-                            "startTimeUnixNano": "1742830452802680654",
-                            "endTimeUnixNano": "1742830453054874914",
+                            "startTimeUnixNano": "1745333267994934004",
+                            "endTimeUnixNano": "1745333268122326588",
                             "attributes": [
                                 {
                                     "key": "dpl.core.processing_activity_id",
@@ -48,13 +48,7 @@
                                 {
                                     "key": "dpl.objects.dataset",
                                     "value": {
-                                        "stringValue": "[{'dataset_id': 'bomen', 'dataset_def': 'http://localhost:5000/collections/catalog/items/7b03a8de-5d0c-11ee-8a7e-3ce9f7462b83', 'dataset_port': 'input'}]"
-                                    }
-                                },
-                                {
-                                    "key": "dpl.objects.feature",
-                                    "value": {
-                                        "stringValue": "[{'attribute_name': 'id', 'attribute_value': 2069296, 'attribute_def': 'http://localhost:5000/collections/bomen/items'}, {'attribute_name': 'subject_id', 'attribute_value': 'Meneer van Eik', 'attribute_def': 'input waarde van beoordelingsprocedure'}]"
+                                        "stringValue": "[{\"dataset_id\": \"bomen\", \"dataset_def\": \"http://localhost:5000/collections/catalog/items/7b03a8de-5d0c-11ee-8a7e-3ce9f7462b83\", \"dataset_port\": \"input\", \"feature\": [{\"feature_id\": \"boom\", \"feature_def\": \"http://brt.basisregistraties.overheid.nl/id/concept/Boom\", \"feature_port\": \"input\"}]}]"
                                     }
                                 }
                             ],

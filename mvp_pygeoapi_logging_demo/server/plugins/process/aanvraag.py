@@ -15,6 +15,7 @@ from opentelemetry.sdk.trace.export import (
     BatchSpanProcessor,
     ConsoleSpanExporter
 )
+import json
 
 import geopandas as gpd
 import numpy as np
@@ -155,47 +156,47 @@ class AanvraagProcessor(BaseProcessor):
             gdf['kap_aanvraag'] = np.where(gdf['id'].astype(int) == obj_id, subj_name, '0')
             #In the 'simple' implementation we do not create a separate span for each feature, but log 1 activity with the list of all processed feature plus extra metadata tbd.
             
-            span.set_attribute("dpl.objects.dataproduct_id", 'http://localhost:5000/collections/catalog/items/pygeoapi.process.aanvraag.AanvraagProcessor')
-            dataset_info = [{
-                    'dataset_id':'bomen',
-                    'dataset_def':'http://localhost:5000/collections/catalog/items/7b03a8de-5d0c-11ee-8a7e-3ce9f7462b83',
-                    'dataset_port': 'input'
-            }]
-            span.set_attribute("dpl.objects.dataset", str(dataset_info))
-
+            span.set_attribute("dpl.objects.dataproduct_id", "http://localhost:5000/collections/catalog/items/pygeoapi.process.aanvraag.AanvraagProcessor")
             feature_info = [
             {
-                'feature_id' : 'boom',
-                'feature_def' : 'http://brt.basisregistraties.overheid.nl/id/concept/Boom',
-                'feature_port' : 'input'
+                "feature_id" : "boom",
+                "feature_def" : "http://brt.basisregistraties.overheid.nl/id/concept/Boom",
+                "feature_port" : "input"
             },
-            {
-                'feature_id' : 'persoon',
-                'feature_def' : 'https://metadata.simulatie.datastelsel.nl/detailview?resourceId=http:%2F%2Fbrk.basisregistraties.overheid.nl%2Fid%2Fbegrip%2FNatuurlijk_persoon&resourceType=begrippen&resourceLabel=Human%20person',
-                'feature_port' : 'input'
-            },
-            {
-                'feature_id' : 'boom',
-                'feature_def' : 'https://metadata.simulatie.datastelsel.nl/detailview?resourceId=http:%2F%2Fbrk.basisregistraties.overheid.nl%2Fid%2Fbegrip%2FNatuurlijk_persoon&resourceType=begrippen&resourceLabel=Human%20person',
-                'feature_port' : 'output'
-            }
+            # {
+            #     "feature_id" : "boom",
+            #     "feature_def" : "https://metadata.simulatie.datastelsel.nl/detailview?resourceId=http:%2F%2Fbrk.basisregistraties.overheid.nl%2Fid%2Fbegrip%2FNatuurlijk_persoon&resourceType=begrippen&resourceLabel=Human%20person",
+            #     "feature_port" : "output"
+            # }
             ]
-            span.set_attribute("dpl.objects.feature", str(feature_info))
-
+            
             feature_attribute = [
                 {
-                    'attribute_name' : 'id',
-                    'attribute_value' : obj_id,
-                    'attribute_def' : 'http://localhost:5000/collections/bomen/items'
+                    "attribute_name" : "id",
+                    "attribute_value" : obj_id,
+                    "attribute_def" : "http://localhost:5000/collections/bomen/items"
                 },
-                {
-                    'attribute_name' : 'subject_id',
-                    'attribute_value' : subj_name,
-                    'attribute_def' : 'input waarde van beoordelingsprocedure'
-                }
+                # {
+                #     "attribute_name" : "subject_id",
+                #     "attribute_value" : subj_name,
+                #     "attribute_def" : "input waarde van beoordelingsprocedure"
+                # }
             ]
 
-            span.set_attribute("dpl.objects.feature", str(feature_attribute))
+            dataset_info = [{
+                    "dataset_id":"bomen",
+                    "dataset_def":"http://localhost:5000/collections/catalog/items/7b03a8de-5d0c-11ee-8a7e-3ce9f7462b83",
+                    "dataset_port": "input",
+                    "feature": feature_info,
+                    "feature_attribute" : feature_attribute
+            }]
+
+            span.set_attribute("dpl.objects.dataset", json.dumps(dataset_info, ensure_ascii=False))
+
+            
+
+
+            # span.set_attribute("dpl.objects.feature", str(feature_attribute))
             
             #timestamp does not serialize properly to json, so for now do a subset as workaround
             gdf_out = gdf[['id','leaf_type','geometry','species:nl','kap_aanvraag']]

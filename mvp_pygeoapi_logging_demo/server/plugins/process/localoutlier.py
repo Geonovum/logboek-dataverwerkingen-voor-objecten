@@ -148,24 +148,24 @@ class LOFProcessor(BaseProcessor):
         with tracer.start_as_current_span("LocalOutlierFactor") as span: #parent
             # create a parent log record
             span.set_attribute("dpl.objects.processing_activity_id", "https://algoritmes.overheid.nl/nl/algoritme/maaidata-provincie-noordholland/68294175")
-            # span.set_attribute("dpl.objects.dataproduct_id", "http://localhost:5000/collections/catalog/items/pygeoapi.process.localoutlier.LOFProcessor")
+            span.set_attribute("dpl.objects.dataproduct_id", "http://localhost:5000/collections/catalog/items/pygeoapi.process.localoutlier.LOFProcessor")
             
             dataset_info = [{
                 
-                    'dataset_id':'knmi_meetstations',
-                    'dataset_def':'http://localhost:5000/collections/catalog/items/7b03a8de-5d0c-11ee-8a7e-3ce9f7462b93',
-                    'dataset_port': 'input'
+                    "dataset_id":"knmi_meetstations",
+                    "dataset_def":"http://localhost:5000/collections/catalog/items/7b03a8de-5d0c-11ee-8a7e-3ce9f7462b93",
+                    "dataset_port": "input"
                 
             },
             { 
-                'dataset_id':'n_neighbors',
-                'dataset_def':'Number of neighbors to use by default for `kneighbors` queries.',
-                'dataset_port': 'input'
+                "dataset_id":"n_neighbors",
+                "dataset_def":"Number of neighbors to use by default for `kneighbors` queries.",
+                "dataset_port": "input"
             },
             {
-                'dataset_id':'output_dataset',
-                'dataset_def': 'geojson with an extra column: abnormality',
-                'dataset_port': 'output'
+                "dataset_id":"output_dataset",
+                "dataset_def": "geojson with an extra column: abnormality",
+                "dataset_port": "output"
             }
             ]
             
