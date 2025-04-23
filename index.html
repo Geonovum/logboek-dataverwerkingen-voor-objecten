@@ -8,7 +8,23 @@
  <script src="https://tools.geostandaarden.nl/respec/config/geonovum-config.js" class="remove"></script>
   <!-- <script src="./respec/organisatie-config.js" class="remove notoc"></script> -->
   <script src="./respec/document_config.js" class="remove notoc"></script>
-  <script class="remove"> respecConfig = {...organisationConfig, ...documentConfig}</script>
+  <!-- <script class="remove"> respecConfig = {...organisationConfig, ...documentConfig}</script> -->
+  <script class="remove">
+    const mergedLocalBiblio = {
+      ...organisationConfig.localBiblio,
+      ...documentConfig.localBiblio
+    };
+    respecConfig = {
+      ...organisationConfig,
+      ...documentConfig,
+      localBiblio: mergedLocalBiblio
+    };
+  </script>
+  <!-- <script>
+    console.log('De localBiblio van organisationConfig: ' + JSON.stringify(organisationConfig.localBiblio));
+    console.log('De localBiblio van documentConfig: ' + JSON.stringify(documentConfig.localBiblio));
+    console.log('De localBiblio van respecConfig: ' + JSON.stringify(respecConfig.localBiblio));
+  </script> -->
   <script>document.title = respecConfig.title</script>
   <link rel="shortcut icon" type="image/x-icon" href="https://tools.geostandaarden.nl/respec/style/logos/Geonovum.ico">
   <script src="https://gitdocumentatie.logius.nl/publicatie/respec/builds/respec-nlgov.js" class="remove" async></script>
