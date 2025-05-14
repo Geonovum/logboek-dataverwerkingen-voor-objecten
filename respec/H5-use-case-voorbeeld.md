@@ -1,9 +1,11 @@
-# Voorbeeld implementatie (MVP)
+#  Implementaties 
+
+## MVP met pygeoapi
 
 In de [github repository](https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten/tree/main/mvp_pygeoapi_logging_demo) staat een Minimal Viable Product (MVP) waarin 
 gedemonstreerd wordt hoe het opentelemetry protocol geimplementeerd kan worden in een OGC API Processes functie.
 
-## Use-cases volwassenheidsniveaus
+__Use-cases volwassenheidsniveaus__
 
 Om de eigenschappen voor de (geo)objecten extensie goed uit te werken helpt het om te kijken naar een aantal voorbeelden en wat er dan gewenst is om vast te leggen.
 
@@ -113,9 +115,27 @@ Niveau 3:
 ]
 
 
-## Use-cases implementatie in een Digitale Tweeling
+## Implementatie in Digitale Tweelingen Tooling
 
-Naast het MVP voorbeeld en de use-cases ter verdieping van de requirements voor de extensie doen we ook een beproeving in de implementatie in een Digitale Tweeling systeem. 
+Naast het MVP voorbeeld en de use-cases ter verdieping van de requirements voor de extensie doen we ook een beproeving in de implementatie in Digitale Tweeling systemen. 
 Deze beproeving dient vooral om de context zoals die in [2.4.1](./H2-architectuur.md#implementatie-keuzes) is beschreven beter te begrijpen.
 
-TODO: resultaat Testbed2 verwerken
+### Vraagstukken
+
+- Kunnen we de logging standaard implementeren in de tooling van de leveranciers
+- Kunnen we met de aanroep van API's tussen de systemen ook de tracecontext meegeven zodat logs aan elkaar te relateren zijn
+- Kunnen we de rekenmodellen die in de systemen gebruikt worden goed genoeg vastleggen in het algoritmeregister en kunnen we daar dan naar verwijzen
+
+### Bevindingen
+
+Tijdens het implementeren in de tooling van de leveranciers zijn de volgende onderwerpen naar boven gekomen.
+
+#### Verschil in invalshoek tussen loggen vanuit verantwoording en gebruik van Digitale Tweeling platformen
+
+#### Tracecontext - 1 overkoepelend ID of per systeem een eigen Trace ID
+
+#### Granulariteit van verantwoording - Register vs modules in de tooling
+
+#### Dynamiek in gebruik van Digitale Tweeling systemen
+
+#### Loggen in LDV log of verwijzen naar systeemlog
