@@ -1,0 +1,695 @@
+{
+    "resourceSpans": [
+        {
+            "resource": {
+                "attributes": [
+                    {
+                        "key": "tygron.name",
+                        "value": {
+                            "stringValue": "LTS Engine"
+                        }
+                    },
+                    {
+                        "key": "tygron.version",
+                        "value": {
+                            "stringValue": "2024.7.6.0"
+                        }
+                    },
+                    {
+                        "key": "tool.name",
+                        "value": {
+                            "stringValue": "Tygron WebApp"
+                        }
+                    },
+                    {
+                        "key": "tool.version",
+                        "value": {
+                            "stringValue": "20250514"
+                        }
+                    }
+                ]
+            },
+            "scopeSpans": [
+                {
+                    "scope": [],
+                    "spans": [
+                        {
+                            "context": {
+                                "traceId": "12345678abcdef12",
+                                "spanId": "aaaaaaaa00010000"
+                            },
+                            "parentSpanId": "",
+                            "spanKind": "SERVER",
+                            "flags": 0,
+                            "startTimeUnixNano": "1747230000000000",
+                            "endTimeUnixNano": "1747230243000000",
+                            "name": "digital_model_calculation",
+                            "attributes": [],
+                            "status": {
+                                "message": "",
+                                "statusCode": "STATUS_CODE_OK"
+                            }
+                        },
+                        {
+                            "context": {
+                                "traceId": "12345678abcdef12",
+                                "spanId": "bbbbbbbb00010000"
+                            },
+                            "parentSpanId": "aaaaaaaa00010000",
+                            "spanKind": "SERVER",
+                            "flags": 0,
+                            "startTimeUnixNano": "1747230001000000",
+                            "endTimeUnixNano": "1747230121000000",
+                            "name": "setup_project",
+                            "attributes": [
+                                {
+                                    "key": "dpl.objects.processing_activity_id",
+                                    "value": {
+                                        "stringValue": ""
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.data_product_id",
+                                    "value": {
+                                        "stringValue": ""
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.vendor_operation_ref",
+                                    "value": {
+                                        "stringValue": "https:\/\/support.tygron.com\/wiki\/Project_creation"
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.datasets",
+                                    "value": {
+                                        "arrayValue": {
+                                            "values": [
+                                                {
+                                                    "kvlistValue": {
+                                                        "values": [
+                                                            {
+                                                                "key": "dataset_id",
+                                                                "value": {
+                                                                    "stringValue": "configuration"
+                                                                }
+                                                            },
+                                                            {
+                                                                "key": "dataset_def",
+                                                                "value": {
+                                                                    "stringValue": ""
+                                                                }
+                                                            },
+                                                            {
+                                                                "key": "dataset_port",
+                                                                "value": {
+                                                                    "stringValue": "input"
+                                                                }
+                                                            },
+                                                            {
+                                                                "key": "features",
+                                                                "value": {
+                                                                    "arrayValue": {
+                                                                        "values": [
+                                                                            {
+                                                                                "kvlistValue": {
+                                                                                    "values": [
+                                                                                        {
+                                                                                            "key": "feature_id",
+                                                                                            "value": {
+                                                                                                "stringValue": "user_inputs"
+                                                                                            }
+                                                                                        },
+                                                                                        {
+                                                                                            "key": "feature_def",
+                                                                                            "value": {
+                                                                                                "stringValue": ""
+                                                                                            }
+                                                                                        },
+                                                                                        {
+                                                                                            "key": "feature_port",
+                                                                                            "value": {
+                                                                                                "stringValue": "input"
+                                                                                            }
+                                                                                        },
+                                                                                        {
+                                                                                            "key": "feature_attributes",
+                                                                                            "value": {
+                                                                                                "arrayValue": {
+                                                                                                    "values": [
+                                                                                                        {
+                                                                                                            "kvlistValue": {
+                                                                                                                "values": [
+                                                                                                                    {
+                                                                                                                        "key": "attribute_name",
+                                                                                                                        "value": {
+                                                                                                                            "stringValue": "project_name"
+                                                                                                                        }
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                        "key": "attribute_value",
+                                                                                                                        "value": {
+                                                                                                                            "stringValue": "klimaattoets_de_stad"
+                                                                                                                        }
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                        "key": "attribute_def",
+                                                                                                                        "value": {
+                                                                                                                            "stringValue": ""
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                ]
+                                                                                                            }
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "kvlistValue": {
+                                                                                                                "values": [
+                                                                                                                    {
+                                                                                                                        "key": "attribute_name",
+                                                                                                                        "value": {
+                                                                                                                            "stringValue": "template"
+                                                                                                                        }
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                        "key": "attribute_value",
+                                                                                                                        "value": {
+                                                                                                                            "stringValue": ""
+                                                                                                                        }
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                        "key": "attribute_def",
+                                                                                                                        "value": {
+                                                                                                                            "stringValue": ""
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                ]
+                                                                                                            }
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "kvlistValue": {
+                                                                                                                "values": [
+                                                                                                                    {
+                                                                                                                        "key": "attribute_name",
+                                                                                                                        "value": {
+                                                                                                                            "stringValue": "language"
+                                                                                                                        }
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                        "key": "attribute_value",
+                                                                                                                        "value": {
+                                                                                                                            "stringValue": "NL"
+                                                                                                                        }
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                        "key": "attribute_def",
+                                                                                                                        "value": {
+                                                                                                                            "stringValue": ""
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                ]
+                                                                                                            }
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "kvlistValue": {
+                                                                                                                "values": [
+                                                                                                                    {
+                                                                                                                        "key": "attribute_name",
+                                                                                                                        "value": {
+                                                                                                                            "stringValue": "currency"
+                                                                                                                        }
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                        "key": "attribute_value",
+                                                                                                                        "value": {
+                                                                                                                            "stringValue": "euro"
+                                                                                                                        }
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                        "key": "attribute_def",
+                                                                                                                        "value": {
+                                                                                                                            "stringValue": ""
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                ]
+                                                                                                            }
+                                                                                                        },
+                                                                                                        {
+                                                                                                            "kvlistValue": {
+                                                                                                                "values": [
+                                                                                                                    {
+                                                                                                                        "key": "attribute_name",
+                                                                                                                        "value": {
+                                                                                                                            "stringValue": "system"
+                                                                                                                        }
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                        "key": "attribute_value",
+                                                                                                                        "value": {
+                                                                                                                            "stringValue": "metric"
+                                                                                                                        }
+                                                                                                                    },
+                                                                                                                    {
+                                                                                                                        "key": "attribute_def",
+                                                                                                                        "value": {
+                                                                                                                            "stringValue": ""
+                                                                                                                        }
+                                                                                                                    }
+                                                                                                                ]
+                                                                                                            }
+                                                                                                        }
+                                                                                                    ]
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    ]
+                                                                                }
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            ],
+                            "status": {
+                                "message": "",
+                                "statusCode": "STATUS_CODE_OK"
+                            }
+                        },
+                        {
+                            "context": {
+                                "traceId": "12345678abcdef12",
+                                "spanId": "bbbbbbbb00010001"
+                            },
+                            "parentSpanId": "bbbbbbbb00010000",
+                            "spanKind": "SERVER",
+                            "flags": 0,
+                            "startTimeUnixNano": "1747230002000000",
+                            "endTimeUnixNano": "1747230060000000",
+                            "name": "project_generation",
+                            "attributes": [
+                                {
+                                    "key": "dpl.objects.processing_activity_id",
+                                    "value": {
+                                        "stringValue": ""
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.data_product_id",
+                                    "value": {
+                                        "stringValue": ""
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.vendor_operation_ref",
+                                    "value": {
+                                        "stringValue": "https:\/\/support.tygron.com\/wiki\/Project_creation"
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.datasets",
+                                    "value": {
+                                        "stringValue": "[{\"dataset_id\":\"configuration\",\"dataset_def\":\"\",\"dataset_port\":\"input\",\"features\":[{\"feature_id\":\"user_inputs\",\"feature_def\":\"\",\"feature_port\":\"input\",\"feature_attributes\":[{\"attribute_name\":\"coordinate\",\"attribute_value\":{\"type\":\"Point\",\"coordinates\":[153588.512,462036.335]},\"attribute_def\":\"https:\/\/geojson.org\/\"},{\"attribute_name\":\"crs\",\"attribute_value\":\"28992\",\"attribute_def\":\"\"},{\"attribute_name\":\"size\",\"attribute_value\":\"2500\",\"attribute_def\":\"\"}]}]},{\"dataset_id\":\"BAG\",\"dataset_def\":\"https:\/\/www.kadaster.nl\/zakelijk\/registraties\/basisregistraties\/bag\",\"dataset_port\":\"input\"},{\"dataset_id\":\"BGT\",\"dataset_def\":\"https:\/\/www.geobasisregistraties.nl\/basisregistraties\/grootschalige-topografie\",\"dataset_port\":\"input\"},{\"dataset_id\":\"TOP10NL\",\"dataset_def\":\"https:\/\/www.pdok.nl\/introductie\/-\/article\/basisregistratie-topografie-brt-topnl\",\"dataset_port\":\"input\"},{\"dataset_id\":\"AHN4\",\"dataset_def\":\"https:\/\/www.ahn.nl\/ahn-4\",\"dataset_port\":\"input\"}]"
+                                    }
+                                }
+                            ],
+                            "status": {
+                                "message": "",
+                                "statusCode": "STATUS_CODE_OK"
+                            }
+                        },
+                        {
+                            "context": {
+                                "traceId": "12345678abcdef12",
+                                "spanId": "bbbbbbbb00010002"
+                            },
+                            "parentSpanId": "bbbbbbbb00010000",
+                            "spanKind": "SERVER",
+                            "flags": 0,
+                            "startTimeUnixNano": "1747230061000000",
+                            "endTimeUnixNano": "1747230120000000",
+                            "name": "data_import",
+                            "attributes": [
+                                {
+                                    "key": "dpl.objects.processing_activity_id",
+                                    "value": {
+                                        "stringValue": ""
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.data_product_id",
+                                    "value": {
+                                        "stringValue": ""
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.vendor_operation_ref",
+                                    "value": {
+                                        "stringValue": "https:\/\/support.tygron.com\/wiki\/Import_Geo_data"
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.datasets",
+                                    "value": {
+                                        "stringValue": "[{\"dataset_id\":\"mapping\",\"dataset_def\":\"\",\"dataset_port\":\"input\",\"features\":[{\"feature_id\":\"user_input\",\"feature_def\":\"\",\"feature_port\":\"input\",\"feature_attributes\":[{\"attribute_name\":\"matching_attributes\",\"attribute_value\":{\"GROENTYPE\":\"BOOM\"},\"attribute_def\":\"\"},{\"attribute_name\":\"output_function\",\"attribute_value\":\"440(Loofbomen)\",\"attribute_def\":\"\"}]}]},{\"dataset_id\":\"123groen_wfs\",\"dataset_def\":\"https:\/\/www.123groen.nl\/wfs\",\"dataset_port\":\"input\"}]"
+                                    }
+                                }
+                            ],
+                            "status": {
+                                "message": "",
+                                "statusCode": "STATUS_CODE_OK"
+                            }
+                        },
+                        {
+                            "context": {
+                                "traceId": "12345678abcdef12",
+                                "spanId": "bbbbbbbb000020000"
+                            },
+                            "parentSpanId": "aaaaaaaa00010000",
+                            "spanKind": "SERVER",
+                            "flags": 0,
+                            "startTimeUnixNano": "1747230122000000",
+                            "endTimeUnixNano": "",
+                            "name": "setup_calculation_models",
+                            "attributes": [],
+                            "status": {
+                                "message": "",
+                                "statusCode": "STATUS_CODE_OK"
+                            }
+                        },
+                        {
+                            "context": {
+                                "traceId": "12345678abcdef12",
+                                "spanId": "bbbbbbbb000020001"
+                            },
+                            "parentSpanId": "bbbbbbbb000020000",
+                            "spanKind": "SERVER",
+                            "flags": 0,
+                            "startTimeUnixNano": "1747230123000000",
+                            "endTimeUnixNano": "1747230125000000",
+                            "name": "heat_overlay",
+                            "attributes": [
+                                {
+                                    "key": "dpl.objects.processing_activity_id",
+                                    "value": {
+                                        "stringValue": "https:\/\/algoritmes.overheid.nl\/nl\/algoritme\/modelleringssoftware-hittestress-stichting-geonovum\/21577420"
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.data_product_id",
+                                    "value": {
+                                        "stringValue": ""
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.vendor_operation_ref",
+                                    "value": {
+                                        "stringValue": "https:\/\/support.tygron.com\/wiki\/Heat_Stress_Overlay"
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.datasets",
+                                    "value": {
+                                        "stringValue": "[{\"dataset_id\":\"configuration\",\"dataset_def\":\"\",\"dataset_port\":\"input\",\"features\":[{\"feature_id\":\"user_inputs\",\"feature_def\":\"\",\"feature_port\":\"input\",\"feature_attributes\":[{\"attribute_name\":\"foliage_input_mode\",\"attribute_value\":\"buildings\",\"attribute_def\":\"\"},{\"attribute_name\":\"foliage_input_grid\",\"attribute_value\":\"\",\"attribute_def\":\"\"},{\"attribute_name\":\"result_types\",\"attribute_value\":[\"PET\",\"UHI\",\"SHADE\"],\"attribute_def\":\"\"}]}]},{\"dataset_id\":\"KNMIWeatherData\",\"dataset_def\":\"https:\/\/www.knmi.nl\/nederland-nu\/klimatologie\/uurgegevens\",\"dataset_port\":\"input\"\"features\":[{\"feature_id\":\"KNMIWeatherData260-20130802-12\",\"feature_def\":\"\",\"feature_port\":\"input\",\"feature_attributes\":[{\"attribute_name\":\"temperature\",\"attribute_value\":28,\"attribute_def\":\"\"},{\"attribute_name\":\"humidity\",\"attribute_value\":14,\"attribute_def\":\"\"},{\"attribute_name\":\"radiation\",\"attribute_value\":650,\"attribute_def\":\"\"}]},{\"feature_id\":\"KNMIWeatherData260-20130802-13\",\"feature_def\":\"\",\"feature_port\":\"input\",\"feature_attributes\":[{\"attribute_name\":\"temperature\",\"attribute_value\":30,\"attribute_def\":\"\"},{\"attribute_name\":\"humidity\",\"attribute_value\":16,\"attribute_def\":\"\"},{\"attribute_name\":\"radiation\",\"attribute_value\":634,\"attribute_def\":\"\"}]}]}]"
+                                    }
+                                }
+                            ],
+                            "status": {
+                                "message": "",
+                                "statusCode": "STATUS_CODE_OK"
+                            }
+                        },
+                        {
+                            "context": {
+                                "traceId": "12345678abcdef12",
+                                "spanId": "bbbbbbbb000020002"
+                            },
+                            "parentSpanId": "bbbbbbbb000020000",
+                            "spanKind": "SERVER",
+                            "flags": 0,
+                            "startTimeUnixNano": "1747230126000000",
+                            "endTimeUnixNano": "1747230128000000",
+                            "name": "rain_overlay",
+                            "attributes": [
+                                {
+                                    "key": "dpl.objects.processing_activity_id",
+                                    "value": {
+                                        "stringValue": ""
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.data_product_id",
+                                    "value": {
+                                        "stringValue": ""
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.vendor_operation_ref",
+                                    "value": {
+                                        "stringValue": "https:\/\/support.tygron.com\/wiki\/Water_Overlay"
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.datasets",
+                                    "value": {
+                                        "stringValue": "[{\"dataset_id\":\"configuration\",\"dataset_def\":\"\",\"dataset_port\":\"input\",\"features\":[{\"feature_id\":\"defaults\",\"feature_def\":\"\",\"feature_port\":\"input\",\"feature_attributes\":[{\"attribute_name\":\"groundwater_mode\",\"attribute_value\":\"infiltration_only\",\"attribute_def\":\"\"},{\"attribute_name\":\"rain\",\"attribute_value\":[3.6000,037.2000],\"attribute_def\":\"\"},{\"attribute_name\":\"timeframes\",\"attribute_value\":10,\"attribute_def\":\"\"},{\"attribute_name\":\"result_types\",\"attribute_value\":[\"SURFACE_LAST_VALUE\"],\"attribute_def\":\"\"}]}]}]"
+                                    }
+                                }
+                            ],
+                            "status": {
+                                "message": "",
+                                "statusCode": "STATUS_CODE_OK"
+                            }
+                        },
+                        {
+                            "context": {
+                                "traceId": "12345678abcdef12",
+                                "spanId": "bbbbbbbb000020003"
+                            },
+                            "parentSpanId": "bbbbbbbb000020000",
+                            "spanKind": "SERVER",
+                            "flags": 0,
+                            "startTimeUnixNano": "1747230129000000",
+                            "endTimeUnixNano": "1747230134000000",
+                            "name": "groene_baten_planner",
+                            "attributes": [
+                                {
+                                    "key": "dpl.objects.processing_activity_id",
+                                    "value": {
+                                        "stringValue": ""
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.data_product_id",
+                                    "value": {
+                                        "stringValue": ""
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.vendor_operation_ref",
+                                    "value": {
+                                        "stringValue": "https:\/\/www.atlasnatuurlijkkapitaal.nl\/groene-baten-planner"
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.datasets",
+                                    "value": {
+                                        "stringValue": ""
+                                    }
+                                }
+                            ],
+                            "status": {
+                                "message": "",
+                                "statusCode": "STATUS_CODE_OK"
+                            }
+                        },
+                        {
+                            "context": {
+                                "traceId": "12345678abcdef12",
+                                "spanId": "bbbbbbbb00002003a"
+                            },
+                            "parentSpanId": "bbbbbbbb000020003",
+                            "spanKind": "SERVER",
+                            "flags": 0,
+                            "startTimeUnixNano": "1747230130000000",
+                            "endTimeUnixNano": "1747230131000000",
+                            "name": "api_trigger",
+                            "attributes": [
+                                {
+                                    "key": "dpl.objects.processing_activity_id",
+                                    "value": {
+                                        "stringValue": ""
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.data_product_id",
+                                    "value": {
+                                        "stringValue": ""
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.vendor_operation_ref",
+                                    "value": {
+                                        "stringValue": "https:\/\/support.tygron.com\/wiki\/Trigger"
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.datasets",
+                                    "value": {
+                                        "stringValue": "[{\"dataset_id\":\"configuration\",\"dataset_def\":\"\",\"dataset_port\":\"input\",\"features\":[{\"feature_id\":\"user_input\",\"feature_def\":\"\",\"feature_port\":\"input\",\"feature_attributes\":[{\"attribute_name\":\"timeout\",\"attribute_value\":600,\"attribute_def\":\"\"},{\"attribute_name\":\"url\",\"attribute_value\":\"https:\/\/triggers.utils.tygron.com\/list\/?trigger=GroeneBatenPlanner\",\"attribute_def\":\"\"}]}]}]"
+                                    }
+                                }
+                            ],
+                            "status": {
+                                "message": "",
+                                "statusCode": "STATUS_CODE_OK"
+                            }
+                        },
+                        {
+                            "context": {
+                                "traceId": "12345678abcdef12",
+                                "spanId": "bbbbbbbb00002003b"
+                            },
+                            "parentSpanId": "bbbbbbbb000020003",
+                            "spanKind": "SERVER",
+                            "flags": 0,
+                            "startTimeUnixNano": "1747230132000000",
+                            "endTimeUnixNano": "1747230133000000",
+                            "name": "indicator",
+                            "attributes": [
+                                {
+                                    "key": "dpl.objects.processing_activity_id",
+                                    "value": {
+                                        "stringValue": ""
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.data_product_id",
+                                    "value": {
+                                        "stringValue": ""
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.vendor_operation_ref",
+                                    "value": {
+                                        "stringValue": "https:\/\/support.tygron.com\/wiki\/Indicator"
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.datasets",
+                                    "value": {
+                                        "stringValue": "[{\"dataset_id\":\"configuration\",\"dataset_def\":\"\",\"dataset_port\":\"input\",\"features\":[{\"feature_id\":\"user_input\",\"feature_def\":\"\",\"feature_port\":\"input\",\"feature_attributes\":[{\"attribute_name\":\"file\",\"attribute_value\":\"uploaded_file\",\"attribute_def\":\"https:\/\/triggers.utils.tygron.com\/assets\/?trigger=GroeneBatenPlanner&asset=groenebatenplanner-indicator-v3.xlsx\"}]}]}]"
+                                    }
+                                }
+                            ],
+                            "status": {
+                                "message": "",
+                                "statusCode": "STATUS_CODE_OK"
+                            }
+                        },
+                        {
+                            "context": {
+                                "traceId": "12345678abcdef12",
+                                "spanId": "bbbbbbbb000030000"
+                            },
+                            "parentSpanId": "aaaaaaaa00010000",
+                            "spanKind": "SERVER",
+                            "flags": 0,
+                            "startTimeUnixNano": "1747230135000000",
+                            "endTimeUnixNano": "1747230240000000",
+                            "name": "recalculate",
+                            "attributes": [],
+                            "status": {
+                                "message": "",
+                                "statusCode": "STATUS_CODE_OK"
+                            }
+                        },
+                        {
+                            "context": {
+                                "traceId": "12345678abcdef12",
+                                "spanId": "bbbbbbbb000030001"
+                            },
+                            "parentSpanId": "bbbbbbbb000030000",
+                            "spanKind": "SERVER",
+                            "flags": 0,
+                            "startTimeUnixNano": "1747230136000000",
+                            "endTimeUnixNano": "1747230190000000",
+                            "name": "call_api_trigger",
+                            "attributes": [
+                                {
+                                    "key": "dpl.core.foreign_operation_id",
+                                    "value": {
+                                        "stringValue": "ffffffff00000000"
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.processing_activity_id",
+                                    "value": {
+                                        "stringValue": ""
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.data_product_id",
+                                    "value": {
+                                        "stringValue": ""
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.vendor_operation_ref",
+                                    "value": {
+                                        "stringValue": "https:\/\/www.atlasnatuurlijkkapitaal.nl\/groene-baten-planner"
+                                    }
+                                }
+                            ],
+                            "status": {
+                                "message": "",
+                                "statusCode": "STATUS_CODE_OK"
+                            }
+                        },
+                        {
+                            "context": {
+                                "traceId": "12345678abcdef12",
+                                "spanId": "bbbbbbbb000040000"
+                            },
+                            "parentSpanId": "aaaaaaaa00010000",
+                            "spanKind": "SERVER",
+                            "flags": 0,
+                            "startTimeUnixNano": "1747230241000000",
+                            "endTimeUnixNano": "1747230242000000",
+                            "name": "get_outputs",
+                            "attributes": [
+                                {
+                                    "key": "dpl.objects.processing_activity_id",
+                                    "value": {
+                                        "stringValue": ""
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.data_product_id",
+                                    "value": {
+                                        "stringValue": ""
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.datasets",
+                                    "value": {
+                                        "stringValue": "[{\"dataset_id\":\"WMS\",\"dataset_def\":\"\",\"dataset_port\":\"output\",\"features\":[{\"feature_id\":\"wms\",\"feature_def\":\"\",\"feature_port\":\"output\",\"feature_attributes\":[{\"attribute_name\":\"url\",\"attribute_value\":\"https:\/\/engine.tygron.com\/web\/wms?REQUEST=GetCapabilities&token=7996a4a9Q3XpnxHfn367OBnfzz0XOSpB\",\"attribute_def\":\"\"}]}]},{\"dataset_id\":\"heat_overlay\",\"dataset_def\":\"\",\"dataset_port\":\"output\",\"features\":[{\"feature_id\":\"geotiff\",\"feature_def\":\"\",\"feature_port\":\"output\",\"feature_attributes\":[{\"attribute_name\":\"timeframes\",\"attribute_value\":2,\"attribute_def\":\"\"},{\"attribute_name\":\"url\",\"attribute_value\":\"https:\/\/engine.tygron.com\/api\/session\/overlay.geotiff?id=19&token=7996a4a9Q3XpnxHfn367OBnfzz0XOSpB\",\"attribute_def\":\"\"}]}]},{\"dataset_id\":\"heat_overlay_uhi\",\"dataset_def\":\"\",\"dataset_port\":\"output\",\"features\":[{\"feature_id\":\"geotiff\",\"feature_def\":\"\",\"feature_port\":\"output\",\"feature_attributes\":[{\"attribute_name\":\"timeframes\",\"attribute_value\":2,\"attribute_def\":\"\"},{\"attribute_name\":\"url\",\"attribute_value\":\"https:\/\/engine.tygron.com\/api\/session\/overlay.geotiff?id=20&token=7996a4a9Q3XpnxHfn367OBnfzz0XOSpB\",\"attribute_def\":\"\"}]}]},{\"dataset_id\":\"heat_overlay_shade\",\"dataset_def\":\"\",\"dataset_port\":\"output\",\"features\":[{\"feature_id\":\"geotiff\",\"feature_def\":\"\",\"feature_port\":\"output\",\"feature_attributes\":[{\"attribute_name\":\"timeframes\",\"attribute_value\":2,\"attribute_def\":\"\"},{\"attribute_name\":\"url\",\"attribute_value\":\"https:\/\/engine.tygron.com\/api\/session\/overlay.geotiff?id=21&token=7996a4a9Q3XpnxHfn367OBnfzz0XOSpB\",\"attribute_def\":\"\"}]}]},{\"dataset_id\":\"rain_overlay\",\"dataset_def\":\"\",\"dataset_port\":\"output\",\"features\":[{\"feature_id\":\"geotiff\",\"feature_def\":\"\",\"feature_port\":\"output\",\"feature_attributes\":[{\"attribute_name\":\"timeframes\",\"attribute_value\":10,\"attribute_def\":\"\"},{\"attribute_name\":\"url\",\"attribute_value\":\"https:\/\/engine.tygron.com\/api\/session\/overlay.geotiff?id=22&token=7996a4a9Q3XpnxHfn367OBnfzz0XOSpB\",\"attribute_def\":\"\"}]}]},{\"dataset_id\":\"groene_baten_planner\",\"dataset_def\":\"\",\"dataset_port\":\"output\",\"features\":[{\"feature_id\":\"table\",\"feature_def\":\"\",\"feature_port\":\"output\",\"feature_attributes\":[{\"attribute_name\":\"url\",\"attribute_value\":\"https:\/\/engine.tygron.com\/web\/indicator.html?id=5&token=7996a4a9Q3XpnxHfn367OBnfzz0XOSpB\",\"attribute_def\":\"\"}]}]}]"
+                                    }
+                                }
+                            ],
+                            "status": {
+                                "message": "",
+                                "statusCode": "STATUS_CODE_OK"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
