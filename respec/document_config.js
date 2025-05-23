@@ -103,7 +103,22 @@ var documentConfig =
             title: "PROV-DM: The PROV Data Model",
             href: "https://www.w3.org/TR/prov-dm/",
             publisher: "W3C"
-        }
+        },
+        DPV: {
+            title: "Data Privacy Vocabulary",
+            href: "https://w3c.github.io/dpv/2.1/dpv/",
+            publisher: "W3C Community Group"
+        },
+        GDPR: {
+            title: "General Data Protection Regulation",
+            href: "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+            publisher: "EU"
+        },
+        DPROD: {
+            title: "Data Product Ontology (DPROD)",
+            href: "https://ekgf.github.io/dprod/",
+            publisher: "Enterprise Knowledge Graph Forum, Object Management Group® (OMG®)"
+        },
   },
   preProcess: [loadTurtle],
 }

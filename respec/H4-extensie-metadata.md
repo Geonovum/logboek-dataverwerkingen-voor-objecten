@@ -84,6 +84,7 @@ Net zoals de core standaard attributen definieert in de `dpl.core` namespace, de
 Deze mapping is niet op dezelfde wijze te doen omdat we in de logging niet een individueel aanwijsbaar object vastleggen maar een lijst met objecten.
 
 - optie: onderzoeken of het waardevol is een mapping naar [MLDCAT-AP](https://semiceu.github.io/MLDCAT-AP/releases/2.0.0/) te doen.
+- optie: onderzoeken of het waardevol is een mapping naar [[DPROD]], Data Product Ontology te doen.
 
 
 ## voorbeeld uitwerking

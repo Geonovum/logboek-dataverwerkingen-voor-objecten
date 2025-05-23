@@ -76,11 +76,12 @@ Niveau 3:
     - feature [
         - feature_id
         - feature_def
-    ]
-    - feature_attribute [
-        - attribute_name
-        - attribute_value
-        - attribute_def
+
+        - feature_attribute [
+            - attribute_name
+            - attribute_value
+            - attribute_def
+        ]
     ]
 ]
 ​
@@ -106,11 +107,12 @@ Niveau 3:
         - feature_id
         - feature_def
         - feature_port
-    ]
-    - feature_attribute [
-        - attribute_name
-        - attribute_value
-        - attribute_def
+
+        - feature_attribute [
+            - attribute_name
+            - attribute_value
+            - attribute_def
+        ]
     ]
 ]
 
@@ -138,10 +140,15 @@ Deze architectuur kent een basispatroon zoals getoond in de volgende afbeelding:
 #### Imagem
 
 De planspace software van Imagem wordt hier gebruikt als visualisatie component, waarbij rekenmodules van Nelen & Schuurmans, en Tygron worden aangeroepen.
+In de user interface van Imagem wordt een knop getoond waarmee een 'besluit' vastgelegd kan worden. De stappen om dit besluit vast te leggen bestaan uit het laden van de relevante data lagen, het aanroepen van een rekenmodel, het tonen van het resultaat van het rekenmodel en het vastleggen van de conclusie die uit de resultaten getrokken worden. 
 
-In de user interface van Imagem wordt een knop getoond waarmee een 'besluit' vastgelegd kan worden. De stappen om dit besluit vast te leggen bestaan uit het laden van de relevante data lagen, het aanroepen van een rekenmodel, het tonen van het resultaat van het rekenmodel en het vastleggen van de conclusie die uit de resultaten getrokken worden.
+<img src="./respec/media/diagram-logging.png" alt="logging flow in planspace" width="900">
+
+
 
 Er wordt dus een logfile aangelegd waarbij de verschillende stappen als 'spans' vastgelegd worden. De aanroep van het rekenmodel initieert het aanleggen van een logfile op het platform van het rekenmodel, waarbij de tracecontext meegegeven wordt om de losse logfiles in een later stadium aan elkaar te kunnen relateren.
+
+Een voorbeeld van de log zoals deze door Imagem is vastgelegd is [hier](https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten/blob/main/codesprint-resultaten/trace-imagem.json) te vinden.
 
 Er zijn hierbij 2 verschillende implementaties gedaan:
 - De aanroep van het hittestress model van Tygron wordt synchroon gedaan (het visualisatie platform 'wacht op antwoord' en doet niets in de tussentijd).
@@ -166,6 +173,8 @@ Behalve de implementatie van de logging heeft Nelen & Schuurmans ook een Proof-o
 #### Tygron
 
 Het platform van Tygron is ingezet als rekenmodel, waarbij de aanroep vanuit het Imagem Planspace platform gebeurt. Hier wordt een logfile aangelegd waarbij het trace_id vanuit de aanroepende applicatie vastgelegd wordt om de logfiles op een later moment aan elkaar te kunnen relateren. In deze implementatie is vooral gekeken naar de compleetheid van de attributen zoals die gedefinieerd zijn in deze specificatie. 
+
+Een voorbeeld van de log zoals deze door Tygron is vastgelegd is [hier](https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten/blob/main/codesprint-resultaten/trace-tygron.json) te vinden.
 
 Daarnaast is er een scenario uitgewerkt waarbij het Tygron platform gebruikt wordt als zowel visualisatie component en als rekenmodel. Dit scenario onderstreept het verschil in benadering van het gebruik van een digitale tweeling toepassing en het vastleggen van een besluit vanuit het oogpunt van de verantwoording.
 
@@ -204,3 +213,7 @@ De rekenmodellen leggen standaard in hun implementaties al een uitgebreide log a
 De Algoritmes zoals deze nu in het Algoritmeregister zijn vastgelegd kunnen op basis van [verschillende wettelijke grondslagen ingezet worden](https://algoritmes.overheid.nl/nl/algoritme/modelleringssoftware-hittestress-stichting-geonovum/21577420#verantwoordGebruik). Hittestress kan bijvoorbeeld zowel een onderwerp zijn in het kader van planvorming en vergunningverlening in het kader van de omgevingswet, maar het kan ook onderdeel zijn van het monitoren van gevaarlijke situaties op basis van de algemene wet bestuursrecht.
 
 De vraag dient zich dus aan of, en op welke wijze we dat onderscheid kunnen maken in de logging in de applicaties. Mogelijk is hierdoor alsnog onvoldoende duidelijk op welke gronden besluiten genomen zijn en daarmee neemt de waarde van de logging significant af.
+
+#### Voorstel aanvullende eigenschap om op te nemen in de log
+
+Behalve de verwijzing naar een formele catalogus, of het algoritmeregister hebben platform leveranciers vaak ook een plek waar documentatie of aanvullende informatie van een rekenmodel of algoritme te vinden is. Hiervoor nemen we een aanvullende eigenschap op: ```dpl.objects.vendor_operation_ref```

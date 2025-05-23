@@ -51,12 +51,13 @@ dpl.objects.dataset [
         feature_id
         feature_def
         feature_port
-    ]
-    feature_attribute [
-        attribute_name
-        attribute_value
-        attribute_def
-    ]
+    
+        feature_attribute [
+            attribute_name
+            attribute_value
+            attribute_def
+        ]
+    ]   
 ]
 ```
 
