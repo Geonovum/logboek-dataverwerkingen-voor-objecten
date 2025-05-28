@@ -139,10 +139,10 @@ Deze architectuur kent een basispatroon zoals getoond in de volgende afbeelding:
 
 #### Imagem
 
-De planspace software van Imagem wordt hier gebruikt als visualisatie component, waarbij rekenmodules van Nelen & Schuurmans, en Tygron worden aangeroepen.
+De Planspace Simulator software van Imagem wordt hier gebruikt als visualisatie component, waarbij rekenmodules van Nelen & Schuurmans, en Tygron worden aangeroepen.
 In de user interface van Imagem wordt een knop getoond waarmee een 'besluit' vastgelegd kan worden. De stappen om dit besluit vast te leggen bestaan uit het laden van de relevante data lagen, het aanroepen van een rekenmodel, het tonen van het resultaat van het rekenmodel en het vastleggen van de conclusie die uit de resultaten getrokken worden. 
 
-<img src="./respec/media/diagram-logging.png" alt="logging flow in planspace" width="900">
+<img src="./respec/media/diagram-logging.png" alt="logging flow in Planspace Simulator" width="900">
 
 
 
@@ -156,23 +156,27 @@ Er zijn hierbij 2 verschillende implementaties gedaan:
 
 #### Nelen & Schuurmans
 
-In de uitgewerkte scenarios acteert het 3di platform van Nelen & Schuurmans als rekemodel voor overstromingsberekeningen. (Nelen & Schuurmans heeft ook een eigen visualisatie component, maar dat is in dit scenario niet ingezet).
+In de uitgewerkte scenarios acteert het 3Di platform van Nelen & Schuurmans als rekemodel voor overstromingsberekeningen. (Nelen & Schuurmans heeft ook een eigen visualisatie component, maar dat is in dit scenario niet ingezet).
 
-De aanroep van het Imagem Planspace platform resulteert in het aanleggen van een logfile van de berekening, waarbij het trace_id van de aanroepende applicatie vastgelegd wordt om de logfiles op een later moment aan elkaar te kunnen relateren.
+De aanroep van het Imagem Planspace Simulator platform resulteert in het aanleggen van een logfile van de berekening, waarbij het trace_id van de aanroepende applicatie vastgelegd wordt om de logfiles op een later moment aan elkaar te kunnen relateren.
 
 Er is hierbij gekeken naar het implementeren van de verschillende [volwassenheidsniveaus](#volwassenheidsniveaus) van logging en de wijze waarop een hoger volwassenheidsniveau (2/3) gelogd zou kunnen worden.
 
 - de eerste implementatie is de mogelijkheid om in de log de uitgevoerde stappen te loggen op basis van de specificatie in dit document.
-- de tweede implementatie is de mogelijkheid om in de log te verwijzen naar de interne log van het 3di systeem, waar toch al alle details vastgelegd worden.
+- de tweede implementatie is de mogelijkheid om in de log te verwijzen naar de interne log van het 3Di systeem, waar toch al alle details vastgelegd worden.
 
 Het voordeel van de eerste implementatie is de vastlegging in de log ten behoeve van de verantwoording, maar dit vraagt extra implementatie inspanning en veroorzaakt dubbele logging.
 Het voordeel van de tweede implementatie is dat deze logging toch al gedaan wordt en alles bevat om een complete 'replay' van het model uit te voeren. Dit is alleen wel een platform specifieke implementatie en daarmee minder direct toegangkelijk voor verantwoording.
 
+Een voorbeeld van de log zoals deze door Nelen & Schuurmans is vastgelegd is [hier](https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten/blob/main/codesprint-resultaten/trace-nelen_schuurmans.json) te vinden.
+
 Behalve de implementatie van de logging heeft Nelen & Schuurmans ook een Proof-of-Concept opgeleverd van een 'logviewer', een applicatie om de verschillende logfiles aan elkaar te relateren en een integraal beeld te geven van de gevolgde stappen.
+
+<img src="./respec/media/otel-trace-viewer.png" alt="Demo viewer that aggregates different trace files" width="900">
 
 #### Tygron
 
-Het platform van Tygron is ingezet als rekenmodel, waarbij de aanroep vanuit het Imagem Planspace platform gebeurt. Hier wordt een logfile aangelegd waarbij het trace_id vanuit de aanroepende applicatie vastgelegd wordt om de logfiles op een later moment aan elkaar te kunnen relateren. In deze implementatie is vooral gekeken naar de compleetheid van de attributen zoals die gedefinieerd zijn in deze specificatie. 
+Het platform van Tygron is ingezet als rekenmodel, waarbij de aanroep vanuit het Imagem Planspace Simulator platform gebeurt. Hier wordt een logfile aangelegd waarbij het trace_id vanuit de aanroepende applicatie vastgelegd wordt om de logfiles op een later moment aan elkaar te kunnen relateren. In deze implementatie is vooral gekeken naar de compleetheid van de attributen zoals die gedefinieerd zijn in deze specificatie. 
 
 Een voorbeeld van de log zoals deze door Tygron is vastgelegd is [hier](https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten/blob/main/codesprint-resultaten/trace-tygron.json) te vinden.
 
@@ -190,9 +194,13 @@ Dit is geadresseerd door in het platform van Imagem een specifieke knop te maken
 
 Ter illustratie is in het platform van Tygron een log aangelegd die de standaard gang van zaken van het gebruik van het platform logt. (initieren omgeving, laden data, laden modellen, uitvoeren scenarios, visualiseren resultaten). 
 
+#### Verantwoording, transparantie en herleidbaarheid
+
+De Logboek dataverwerkingen standaard redeneert sterk vanuit de juridische beleidscontext en de verantwoording van dataverwerkingen op basis hiervan. In de praktijk blijkt het niet triviaal om de dynamiek van het werken met Digitale Tweelingen eenduidig aan specifieke dataverwerkingen te relateren (zie ook 5.2.3.1). De transparantie en herleidbaarheid van dataverwerkingen in de verschillende platformen wordt echter wel als heel belangrijk beschouwd. De platformen hebben in de praktijk dus veelal logging ingebouwd om dataverwerkingen te kunnen herleiden en inzicht te geven in de gevolgde stappen. 
+
 #### Tracecontext - 1 overkoepelend ID of per systeem een eigen Trace ID
 
-Bij het implementeren van de tracecontext over systemen heen kwam een onduidelijkheid in de specificatie naar boven. Het standaard gedrag van een OpenTelemetry SDK implementatie is het overnemen van hetzelfde trace_id in de verschillende applicaties. In de [LDV Specificatie](https://logius-standaarden.github.io/logboek-dataverwerkingen/#interface) staat dat de applicatie van een andere organisatie het trace_id van de aanroepende applicatie moet vastleggen in een 'foreign_operation.trace_id'. Dit kan geimplementeerd worden maar vergt een specifieke implementatie, afwijkend van het standaard gedrag.
+Bij het implementeren van de tracecontext over systemen heen kwam een onduidelijkheid in de specificatie naar boven. Het standaard gedrag van een OpenTelemetry SDK implementatie is het overnemen van hetzelfde trace_id in de verschillende applicaties. In de [LDV Specificatie](https://logius-standaarden.github.io/logboek-dataverwerkingen/#interface) staat dat de applicatie van een andere organisatie het trace_id van de aanroepende applicatie moet vastleggen in een 'foreign_operation.trace_id'. Dit kan geïmplementeerd worden maar vergt een specifieke implementatie, afwijkend van het standaard gedrag.
 
 #### Granulariteit van verantwoording - Register vs modules in de tooling
 

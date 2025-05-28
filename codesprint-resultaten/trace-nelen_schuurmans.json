@@ -1,0 +1,842 @@
+[
+    {
+        "resourceSpans": [
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "https://ogc-api-processes.3di.live"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "3Di.tracer"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "e3bd0a763c8406fc7d64066c1c8ea9d9",
+                                "spanId": "f51b6eeed39adf8d",
+                                "parentSpanId": "",
+                                "flags": 256,
+                                "name": "3Di simulation",
+                                "kind": 1,
+                                "startTimeUnixNano": "1747312112991260169",
+                                "endTimeUnixNano": "1747312112991569847",
+                                "attributes": [
+                                    {
+                                        "key": "dpl.objects.processing_activity_id",
+                                        "value": {
+                                            "stringValue": "https://algoritmes.overheid.nl/nl/algoritme/integraal-watermodel-stichting-geonovum/16353897"
+                                        }
+                                    },
+                                    {
+                                        "key": "dpl.objects.dataproduct_id",
+                                        "value": {
+                                            "stringValue": "https://ogc-api-processes.3di.live/docs#/3Di/execute_processes_3di_execution_post"
+                                        }
+                                    },
+                                    {
+                                        "key": "foreign_operation.trace_id",
+                                        "value": {
+                                            "stringValue": "0af7651916cd43dd8448eb211c80319g"
+                                        }
+                                    },
+                                    {
+                                        "key": "foreign_operation.span_id",
+                                        "value": {
+                                            "stringValue": "b7ad6b7169203331"
+                                        }
+                                    },
+                                    {
+                                        "key": "dpl.objects.dataset",
+                                        "value": {
+                                            "stringValue": "[{\"dataset_id\": \"schematisations\", \"dataset_def\": \"https://docs.3di.live/h_schematisations_models_simulations.html#schematisation\", \"dataset_port\": \"input\", \"feature\": [{\"feature_id\": \"schematisation\", \"feature_def\": \"https://api.3di.live/v3/swagger\", \"feature_port\": \"input\"}], \"feature_attribute\": [{\"attribute_name\": \"value\", \"attribute_value\": \"Almere\", \"attribute_def\": \"https://ogc-api-processes.3di.live/docs#/3Di/execute_processes_3di_execution_post\"}, {\"attribute_name\": \"3di_schematisation_id\", \"attribute_value\": 223, \"attribute_def\": \"https://api.3di.live/v3/schematisations/223/\"}]}, {\"dataset_id\": \"simulations\", \"dataset_def\": \"https://docs.3di.live/h_schematisations_models_simulations.html#simulations-and-simulation-templates\", \"dataset_port\": \"output\", \"feature\": [{\"feature_id\": \"simulation\", \"feature_def\": \"https://api.3di.live/v3/swagger\", \"feature_port\": \"output\"}], \"feature_attribute\": [{\"attribute_name\": \"3di_simulation_id\", \"attribute_value\": 15, \"attribute_def\": \"https://api.3di.live/v3/simulations/15/\"}]}, {\"dataset_id\": \"waterdepth 3D tiles\", \"dataset_def\": \"https://www.ogc.org/standards/3dtiles/\", \"dataset_port\": \"output\", \"feature\": [{\"feature_id\": \"3D tiles\", \"feature_def\": \"https://www.ogc.org/standards/3dtiles/\", \"feature_port\": \"output\"}], \"feature_attribute\": [{\"attribute_name\": \"scenario\", \"attribute_value\": \"90ee6870-18da-47ec-aa04-fbc6e5f7e038\", \"attribute_def\": \"https://demo.lizard.net/api/v4/scenarios/90ee6870-18da-47ec-aa04-fbc6e5f7e038/results/498725/\"}, {\"attribute_name\": \"output_timestep\", \"attribute_value\": 300, \"attribute_def\": \"\"}]}]"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "resourceSpans": [
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "https://ogc-api-processes.3di.live"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "3Di.tracer"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "ab6c924b3780225e45f04fbc0063b596",
+                                "spanId": "4fdc86be31492ef1",
+                                "parentSpanId": "",
+                                "flags": 256,
+                                "name": "3Di simulation",
+                                "kind": 1,
+                                "startTimeUnixNano": "1747315020455174385",
+                                "endTimeUnixNano": "1747315020455715850",
+                                "attributes": [
+                                    {
+                                        "key": "dpl.objects.processing_activity_id",
+                                        "value": {
+                                            "stringValue": "https://algoritmes.overheid.nl/nl/algoritme/integraal-watermodel-stichting-geonovum/16353897"
+                                        }
+                                    },
+                                    {
+                                        "key": "dpl.objects.dataproduct_id",
+                                        "value": {
+                                            "stringValue": "https://ogc-api-processes.3di.live/docs#/3Di/execute_processes_3di_execution_post"
+                                        }
+                                    },
+                                    {
+                                        "key": "foreign_operation.trace_id",
+                                        "value": {
+                                            "stringValue": "3f5b6359b316550144562790b187388d"
+                                        }
+                                    },
+                                    {
+                                        "key": "foreign_operation.span_id",
+                                        "value": {
+                                            "stringValue": "0000000000000000"
+                                        }
+                                    },
+                                    {
+                                        "key": "dpl.objects.dataset",
+                                        "value": {
+                                            "stringValue": "[{\"dataset_id\": \"schematisations\", \"dataset_def\": \"https://docs.3di.live/h_schematisations_models_simulations.html#schematisation\", \"dataset_port\": \"input\", \"feature\": [{\"feature_id\": \"schematisation\", \"feature_def\": \"https://api.3di.live/v3/swagger\", \"feature_port\": \"input\"}], \"feature_attribute\": [{\"attribute_name\": \"value\", \"attribute_value\": \"Almere\", \"attribute_def\": \"https://ogc-api-processes.3di.live/docs#/3Di/execute_processes_3di_execution_post\"}, {\"attribute_name\": \"3di_schematisation_id\", \"attribute_value\": 223, \"attribute_def\": \"https://api.3di.live/v3/schematisations/223/\"}]}, {\"dataset_id\": \"simulations\", \"dataset_def\": \"https://docs.3di.live/h_schematisations_models_simulations.html#simulations-and-simulation-templates\", \"dataset_port\": \"output\", \"feature\": [{\"feature_id\": \"simulation\", \"feature_def\": \"https://api.3di.live/v3/swagger\", \"feature_port\": \"output\"}], \"feature_attribute\": [{\"attribute_name\": \"3di_simulation_id\", \"attribute_value\": 15, \"attribute_def\": \"https://api.3di.live/v3/simulations/15/\"}]}, {\"dataset_id\": \"waterdepth 3D tiles\", \"dataset_def\": \"https://www.ogc.org/standards/3dtiles/\", \"dataset_port\": \"output\", \"feature\": [{\"feature_id\": \"3D tiles\", \"feature_def\": \"https://www.ogc.org/standards/3dtiles/\", \"feature_port\": \"output\"}], \"feature_attribute\": [{\"attribute_name\": \"scenario\", \"attribute_value\": \"90ee6870-18da-47ec-aa04-fbc6e5f7e038\", \"attribute_def\": \"https://demo.lizard.net/api/v4/scenarios/90ee6870-18da-47ec-aa04-fbc6e5f7e038/results/498725/\"}, {\"attribute_name\": \"output_timestep\", \"attribute_value\": 300, \"attribute_def\": \"\"}]}]"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "resourceSpans": [
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "https://ogc-api-processes.3di.live"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "3Di.tracer"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "aa0795d94439511c65d8dfb0a9991d05",
+                                "spanId": "d8929aa4947f27c0",
+                                "parentSpanId": "",
+                                "flags": 256,
+                                "name": "3Di simulation",
+                                "kind": 1,
+                                "startTimeUnixNano": "1747815564379190865",
+                                "endTimeUnixNano": "1747815564379934547",
+                                "attributes": [
+                                    {
+                                        "key": "dpl.objects.processing_activity_id",
+                                        "value": {
+                                            "stringValue": "https://algoritmes.overheid.nl/nl/algoritme/integraal-watermodel-stichting-geonovum/16353897"
+                                        }
+                                    },
+                                    {
+                                        "key": "dpl.objects.dataproduct_id",
+                                        "value": {
+                                            "stringValue": "https://ogc-api-processes.3di.live/docs#/3Di/execute_processes_3di_execution_post"
+                                        }
+                                    },
+                                    {
+                                        "key": "foreign_operation.trace_id",
+                                        "value": {
+                                            "stringValue": "d97e5d6ab946a20ff436af287821766a"
+                                        }
+                                    },
+                                    {
+                                        "key": "foreign_operation.span_id",
+                                        "value": {
+                                            "stringValue": "0000000000000000"
+                                        }
+                                    },
+                                    {
+                                        "key": "dpl.objects.dataset",
+                                        "value": {
+                                            "stringValue": "[{\"dataset_id\": \"schematisations\", \"dataset_def\": \"https://docs.3di.live/h_schematisations_models_simulations.html#schematisation\", \"dataset_port\": \"input\", \"feature\": [{\"feature_id\": \"schematisation\", \"feature_def\": \"https://api.3di.live/v3/swagger\", \"feature_port\": \"input\"}], \"feature_attribute\": [{\"attribute_name\": \"value\", \"attribute_value\": \"Almere\", \"attribute_def\": \"https://ogc-api-processes.3di.live/docs#/3Di/execute_processes_3di_execution_post\"}, {\"attribute_name\": \"3di_schematisation_id\", \"attribute_value\": 223, \"attribute_def\": \"https://api.3di.live/v3/schematisations/223/\"}]}, {\"dataset_id\": \"simulations\", \"dataset_def\": \"https://docs.3di.live/h_schematisations_models_simulations.html#simulations-and-simulation-templates\", \"dataset_port\": \"output\", \"feature\": [{\"feature_id\": \"simulation\", \"feature_def\": \"https://api.3di.live/v3/swagger\", \"feature_port\": \"output\"}], \"feature_attribute\": [{\"attribute_name\": \"3di_simulation_id\", \"attribute_value\": 15, \"attribute_def\": \"https://api.3di.live/v3/simulations/15/\"}]}, {\"dataset_id\": \"waterdepth 3D tiles\", \"dataset_def\": \"https://www.ogc.org/standards/3dtiles/\", \"dataset_port\": \"output\", \"feature\": [{\"feature_id\": \"3D tiles\", \"feature_def\": \"https://www.ogc.org/standards/3dtiles/\", \"feature_port\": \"output\"}], \"feature_attribute\": [{\"attribute_name\": \"scenario\", \"attribute_value\": \"90ee6870-18da-47ec-aa04-fbc6e5f7e038\", \"attribute_def\": \"https://demo.lizard.net/api/v4/scenarios/90ee6870-18da-47ec-aa04-fbc6e5f7e038/results/498725/\"}, {\"attribute_name\": \"output_timestep\", \"attribute_value\": 300, \"attribute_def\": \"\"}]}]"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "resourceSpans": [
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "https://ogc-api-processes.3di.live"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "3Di.tracer"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "2263bb1eaf6a70ca1257e5e58c1d9177",
+                                "spanId": "e46a508d06935f2d",
+                                "parentSpanId": "",
+                                "flags": 256,
+                                "name": "3Di simulation",
+                                "kind": 1,
+                                "startTimeUnixNano": "1747815643171324248",
+                                "endTimeUnixNano": "1747815643171509064",
+                                "attributes": [
+                                    {
+                                        "key": "dpl.objects.processing_activity_id",
+                                        "value": {
+                                            "stringValue": "https://algoritmes.overheid.nl/nl/algoritme/integraal-watermodel-stichting-geonovum/16353897"
+                                        }
+                                    },
+                                    {
+                                        "key": "dpl.objects.dataproduct_id",
+                                        "value": {
+                                            "stringValue": "https://ogc-api-processes.3di.live/docs#/3Di/execute_processes_3di_execution_post"
+                                        }
+                                    },
+                                    {
+                                        "key": "foreign_operation.trace_id",
+                                        "value": {
+                                            "stringValue": "7d53e8fc6b01e8733936a05e56e3d209"
+                                        }
+                                    },
+                                    {
+                                        "key": "foreign_operation.span_id",
+                                        "value": {
+                                            "stringValue": "0000000000000000"
+                                        }
+                                    },
+                                    {
+                                        "key": "dpl.objects.dataset",
+                                        "value": {
+                                            "stringValue": "[{\"dataset_id\": \"schematisations\", \"dataset_def\": \"https://docs.3di.live/h_schematisations_models_simulations.html#schematisation\", \"dataset_port\": \"input\", \"feature\": [{\"feature_id\": \"schematisation\", \"feature_def\": \"https://api.3di.live/v3/swagger\", \"feature_port\": \"input\"}], \"feature_attribute\": [{\"attribute_name\": \"value\", \"attribute_value\": \"Almere\", \"attribute_def\": \"https://ogc-api-processes.3di.live/docs#/3Di/execute_processes_3di_execution_post\"}, {\"attribute_name\": \"3di_schematisation_id\", \"attribute_value\": 223, \"attribute_def\": \"https://api.3di.live/v3/schematisations/223/\"}]}, {\"dataset_id\": \"simulations\", \"dataset_def\": \"https://docs.3di.live/h_schematisations_models_simulations.html#simulations-and-simulation-templates\", \"dataset_port\": \"output\", \"feature\": [{\"feature_id\": \"simulation\", \"feature_def\": \"https://api.3di.live/v3/swagger\", \"feature_port\": \"output\"}], \"feature_attribute\": [{\"attribute_name\": \"3di_simulation_id\", \"attribute_value\": 15, \"attribute_def\": \"https://api.3di.live/v3/simulations/15/\"}]}, {\"dataset_id\": \"waterdepth 3D tiles\", \"dataset_def\": \"https://www.ogc.org/standards/3dtiles/\", \"dataset_port\": \"output\", \"feature\": [{\"feature_id\": \"3D tiles\", \"feature_def\": \"https://www.ogc.org/standards/3dtiles/\", \"feature_port\": \"output\"}], \"feature_attribute\": [{\"attribute_name\": \"scenario\", \"attribute_value\": \"90ee6870-18da-47ec-aa04-fbc6e5f7e038\", \"attribute_def\": \"https://demo.lizard.net/api/v4/scenarios/90ee6870-18da-47ec-aa04-fbc6e5f7e038/results/498725/\"}, {\"attribute_name\": \"output_timestep\", \"attribute_value\": 300, \"attribute_def\": \"\"}]}]"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "resourceSpans": [
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "https://ogc-api-processes.3di.live"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "3Di.tracer"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "1ef3cf6e3e1f2ec4c48a75affc767cd1",
+                                "spanId": "484f1171ad955242",
+                                "parentSpanId": "",
+                                "flags": 256,
+                                "name": "3Di simulation",
+                                "kind": 1,
+                                "startTimeUnixNano": "1747816404097779417",
+                                "endTimeUnixNano": "1747816404098111347",
+                                "attributes": [
+                                    {
+                                        "key": "dpl.objects.processing_activity_id",
+                                        "value": {
+                                            "stringValue": "https://algoritmes.overheid.nl/nl/algoritme/integraal-watermodel-stichting-geonovum/16353897"
+                                        }
+                                    },
+                                    {
+                                        "key": "dpl.objects.dataproduct_id",
+                                        "value": {
+                                            "stringValue": "https://ogc-api-processes.3di.live/docs#/3Di/execute_processes_3di_execution_post"
+                                        }
+                                    },
+                                    {
+                                        "key": "foreign_operation.trace_id",
+                                        "value": {
+                                            "stringValue": "67a73bb4ea1e1b2b7f70e9e525d4cb61"
+                                        }
+                                    },
+                                    {
+                                        "key": "foreign_operation.span_id",
+                                        "value": {
+                                            "stringValue": "0000000000000000"
+                                        }
+                                    },
+                                    {
+                                        "key": "dpl.objects.dataset",
+                                        "value": {
+                                            "stringValue": "[{\"dataset_id\": \"schematisations\", \"dataset_def\": \"https://docs.3di.live/h_schematisations_models_simulations.html#schematisation\", \"dataset_port\": \"input\", \"feature\": [{\"feature_id\": \"schematisation\", \"feature_def\": \"https://api.3di.live/v3/swagger\", \"feature_port\": \"input\"}], \"feature_attribute\": [{\"attribute_name\": \"value\", \"attribute_value\": \"Almere\", \"attribute_def\": \"https://ogc-api-processes.3di.live/docs#/3Di/execute_processes_3di_execution_post\"}, {\"attribute_name\": \"3di_schematisation_id\", \"attribute_value\": 223, \"attribute_def\": \"https://api.3di.live/v3/schematisations/223/\"}]}, {\"dataset_id\": \"simulations\", \"dataset_def\": \"https://docs.3di.live/h_schematisations_models_simulations.html#simulations-and-simulation-templates\", \"dataset_port\": \"output\", \"feature\": [{\"feature_id\": \"simulation\", \"feature_def\": \"https://api.3di.live/v3/swagger\", \"feature_port\": \"output\"}], \"feature_attribute\": [{\"attribute_name\": \"3di_simulation_id\", \"attribute_value\": 15, \"attribute_def\": \"https://api.3di.live/v3/simulations/15/\"}]}, {\"dataset_id\": \"waterdepth 3D tiles\", \"dataset_def\": \"https://www.ogc.org/standards/3dtiles/\", \"dataset_port\": \"output\", \"feature\": [{\"feature_id\": \"3D tiles\", \"feature_def\": \"https://www.ogc.org/standards/3dtiles/\", \"feature_port\": \"output\"}], \"feature_attribute\": [{\"attribute_name\": \"scenario\", \"attribute_value\": \"90ee6870-18da-47ec-aa04-fbc6e5f7e038\", \"attribute_def\": \"https://demo.lizard.net/api/v4/scenarios/90ee6870-18da-47ec-aa04-fbc6e5f7e038/results/498725/\"}, {\"attribute_name\": \"output_timestep\", \"attribute_value\": 300, \"attribute_def\": \"\"}]}]"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "resourceSpans": [
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "https://ogc-api-processes.3di.live"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "3Di.tracer"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "3a4317977486aa9f3cdfed5ab85f0940",
+                                "spanId": "f93488e22b4a4a77",
+                                "parentSpanId": "",
+                                "flags": 256,
+                                "name": "3Di simulation",
+                                "kind": 1,
+                                "startTimeUnixNano": "1747817324013469399",
+                                "endTimeUnixNano": "1747817324013827441",
+                                "attributes": [
+                                    {
+                                        "key": "dpl.objects.processing_activity_id",
+                                        "value": {
+                                            "stringValue": "https://algoritmes.overheid.nl/nl/algoritme/integraal-watermodel-stichting-geonovum/16353897"
+                                        }
+                                    },
+                                    {
+                                        "key": "dpl.objects.dataproduct_id",
+                                        "value": {
+                                            "stringValue": "https://ogc-api-processes.3di.live/docs#/3Di/execute_processes_3di_execution_post"
+                                        }
+                                    },
+                                    {
+                                        "key": "foreign_operation.trace_id",
+                                        "value": {
+                                            "stringValue": "c545f23375b785bdabdf3a3667a71f73"
+                                        }
+                                    },
+                                    {
+                                        "key": "foreign_operation.span_id",
+                                        "value": {
+                                            "stringValue": "0000000000000000"
+                                        }
+                                    },
+                                    {
+                                        "key": "dpl.objects.dataset",
+                                        "value": {
+                                            "stringValue": "[{\"dataset_id\": \"schematisations\", \"dataset_def\": \"https://docs.3di.live/h_schematisations_models_simulations.html#schematisation\", \"dataset_port\": \"input\", \"feature\": [{\"feature_id\": \"schematisation\", \"feature_def\": \"https://api.3di.live/v3/swagger\", \"feature_port\": \"input\"}], \"feature_attribute\": [{\"attribute_name\": \"value\", \"attribute_value\": \"Almere\", \"attribute_def\": \"https://ogc-api-processes.3di.live/docs#/3Di/execute_processes_3di_execution_post\"}, {\"attribute_name\": \"3di_schematisation_id\", \"attribute_value\": 223, \"attribute_def\": \"https://api.3di.live/v3/schematisations/223/\"}]}, {\"dataset_id\": \"simulations\", \"dataset_def\": \"https://docs.3di.live/h_schematisations_models_simulations.html#simulations-and-simulation-templates\", \"dataset_port\": \"output\", \"feature\": [{\"feature_id\": \"simulation\", \"feature_def\": \"https://api.3di.live/v3/swagger\", \"feature_port\": \"output\"}], \"feature_attribute\": [{\"attribute_name\": \"3di_simulation_id\", \"attribute_value\": 15, \"attribute_def\": \"https://api.3di.live/v3/simulations/15/\"}]}, {\"dataset_id\": \"waterdepth 3D tiles\", \"dataset_def\": \"https://www.ogc.org/standards/3dtiles/\", \"dataset_port\": \"output\", \"feature\": [{\"feature_id\": \"3D tiles\", \"feature_def\": \"https://www.ogc.org/standards/3dtiles/\", \"feature_port\": \"output\"}], \"feature_attribute\": [{\"attribute_name\": \"scenario\", \"attribute_value\": \"90ee6870-18da-47ec-aa04-fbc6e5f7e038\", \"attribute_def\": \"https://demo.lizard.net/api/v4/scenarios/90ee6870-18da-47ec-aa04-fbc6e5f7e038/results/498725/\"}, {\"attribute_name\": \"output_timestep\", \"attribute_value\": 300, \"attribute_def\": \"\"}]}]"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "resourceSpans": [
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "https://ogc-api-processes.3di.live"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "3Di.tracer"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "b82cf8c4cdc74b4761f7ba65d45d915a",
+                                "spanId": "e1d080d378a4d421",
+                                "parentSpanId": "",
+                                "flags": 256,
+                                "name": "3Di simulation",
+                                "kind": 1,
+                                "startTimeUnixNano": "1747817443322370545",
+                                "endTimeUnixNano": "1747817443322589452",
+                                "attributes": [
+                                    {
+                                        "key": "dpl.objects.processing_activity_id",
+                                        "value": {
+                                            "stringValue": "https://algoritmes.overheid.nl/nl/algoritme/integraal-watermodel-stichting-geonovum/16353897"
+                                        }
+                                    },
+                                    {
+                                        "key": "dpl.objects.dataproduct_id",
+                                        "value": {
+                                            "stringValue": "https://ogc-api-processes.3di.live/docs#/3Di/execute_processes_3di_execution_post"
+                                        }
+                                    },
+                                    {
+                                        "key": "foreign_operation.trace_id",
+                                        "value": {
+                                            "stringValue": "6e6c248abee97900b2b8acc44bad5a8f"
+                                        }
+                                    },
+                                    {
+                                        "key": "foreign_operation.span_id",
+                                        "value": {
+                                            "stringValue": "0000000000000000"
+                                        }
+                                    },
+                                    {
+                                        "key": "dpl.objects.dataset",
+                                        "value": {
+                                            "stringValue": "[{\"dataset_id\": \"schematisations\", \"dataset_def\": \"https://docs.3di.live/h_schematisations_models_simulations.html#schematisation\", \"dataset_port\": \"input\", \"feature\": [{\"feature_id\": \"schematisation\", \"feature_def\": \"https://api.3di.live/v3/swagger\", \"feature_port\": \"input\"}], \"feature_attribute\": [{\"attribute_name\": \"value\", \"attribute_value\": \"Almere\", \"attribute_def\": \"https://ogc-api-processes.3di.live/docs#/3Di/execute_processes_3di_execution_post\"}, {\"attribute_name\": \"3di_schematisation_id\", \"attribute_value\": 223, \"attribute_def\": \"https://api.3di.live/v3/schematisations/223/\"}]}, {\"dataset_id\": \"simulations\", \"dataset_def\": \"https://docs.3di.live/h_schematisations_models_simulations.html#simulations-and-simulation-templates\", \"dataset_port\": \"output\", \"feature\": [{\"feature_id\": \"simulation\", \"feature_def\": \"https://api.3di.live/v3/swagger\", \"feature_port\": \"output\"}], \"feature_attribute\": [{\"attribute_name\": \"3di_simulation_id\", \"attribute_value\": 15, \"attribute_def\": \"https://api.3di.live/v3/simulations/15/\"}]}, {\"dataset_id\": \"waterdepth 3D tiles\", \"dataset_def\": \"https://www.ogc.org/standards/3dtiles/\", \"dataset_port\": \"output\", \"feature\": [{\"feature_id\": \"3D tiles\", \"feature_def\": \"https://www.ogc.org/standards/3dtiles/\", \"feature_port\": \"output\"}], \"feature_attribute\": [{\"attribute_name\": \"scenario\", \"attribute_value\": \"90ee6870-18da-47ec-aa04-fbc6e5f7e038\", \"attribute_def\": \"https://demo.lizard.net/api/v4/scenarios/90ee6870-18da-47ec-aa04-fbc6e5f7e038/results/498725/\"}, {\"attribute_name\": \"output_timestep\", \"attribute_value\": 300, \"attribute_def\": \"\"}]}]"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "resourceSpans": [
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "https://ogc-api-processes.3di.live"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "3Di.tracer"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "af875e84e9e5e3c83ef4f8e1838d4a4d",
+                                "spanId": "bbb2fa34161dea9d",
+                                "parentSpanId": "",
+                                "flags": 256,
+                                "name": "3Di simulation",
+                                "kind": 1,
+                                "startTimeUnixNano": "1747817556787993600",
+                                "endTimeUnixNano": "1747817556788166596",
+                                "attributes": [
+                                    {
+                                        "key": "dpl.objects.processing_activity_id",
+                                        "value": {
+                                            "stringValue": "https://algoritmes.overheid.nl/nl/algoritme/integraal-watermodel-stichting-geonovum/16353897"
+                                        }
+                                    },
+                                    {
+                                        "key": "dpl.objects.dataproduct_id",
+                                        "value": {
+                                            "stringValue": "https://ogc-api-processes.3di.live/docs#/3Di/execute_processes_3di_execution_post"
+                                        }
+                                    },
+                                    {
+                                        "key": "foreign_operation.trace_id",
+                                        "value": {
+                                            "stringValue": "c356d3fe8764a8179320fbae8282e32d"
+                                        }
+                                    },
+                                    {
+                                        "key": "foreign_operation.span_id",
+                                        "value": {
+                                            "stringValue": "0000000000000000"
+                                        }
+                                    },
+                                    {
+                                        "key": "dpl.objects.dataset",
+                                        "value": {
+                                            "stringValue": "[{\"dataset_id\": \"schematisations\", \"dataset_def\": \"https://docs.3di.live/h_schematisations_models_simulations.html#schematisation\", \"dataset_port\": \"input\", \"feature\": [{\"feature_id\": \"schematisation\", \"feature_def\": \"https://api.3di.live/v3/swagger\", \"feature_port\": \"input\"}], \"feature_attribute\": [{\"attribute_name\": \"value\", \"attribute_value\": \"Almere\", \"attribute_def\": \"https://ogc-api-processes.3di.live/docs#/3Di/execute_processes_3di_execution_post\"}, {\"attribute_name\": \"3di_schematisation_id\", \"attribute_value\": 223, \"attribute_def\": \"https://api.3di.live/v3/schematisations/223/\"}]}, {\"dataset_id\": \"simulations\", \"dataset_def\": \"https://docs.3di.live/h_schematisations_models_simulations.html#simulations-and-simulation-templates\", \"dataset_port\": \"output\", \"feature\": [{\"feature_id\": \"simulation\", \"feature_def\": \"https://api.3di.live/v3/swagger\", \"feature_port\": \"output\"}], \"feature_attribute\": [{\"attribute_name\": \"3di_simulation_id\", \"attribute_value\": 15, \"attribute_def\": \"https://api.3di.live/v3/simulations/15/\"}]}, {\"dataset_id\": \"waterdepth 3D tiles\", \"dataset_def\": \"https://www.ogc.org/standards/3dtiles/\", \"dataset_port\": \"output\", \"feature\": [{\"feature_id\": \"3D tiles\", \"feature_def\": \"https://www.ogc.org/standards/3dtiles/\", \"feature_port\": \"output\"}], \"feature_attribute\": [{\"attribute_name\": \"scenario\", \"attribute_value\": \"90ee6870-18da-47ec-aa04-fbc6e5f7e038\", \"attribute_def\": \"https://demo.lizard.net/api/v4/scenarios/90ee6870-18da-47ec-aa04-fbc6e5f7e038/results/498725/\"}, {\"attribute_name\": \"output_timestep\", \"attribute_value\": 300, \"attribute_def\": \"\"}]}]"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "resourceSpans": [
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "https://ogc-api-processes.3di.live"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "3Di.tracer"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "c08b533889a36c454cd3cf8d9e53e03d",
+                                "spanId": "9af413bb4dfb9b97",
+                                "parentSpanId": "",
+                                "flags": 256,
+                                "name": "3Di simulation",
+                                "kind": 1,
+                                "startTimeUnixNano": "1748264587531148342",
+                                "endTimeUnixNano": "1748264587531791441",
+                                "attributes": [
+                                    {
+                                        "key": "dpl.objects.processing_activity_id",
+                                        "value": {
+                                            "stringValue": "https://algoritmes.overheid.nl/nl/algoritme/integraal-watermodel-stichting-geonovum/16353897"
+                                        }
+                                    },
+                                    {
+                                        "key": "dpl.objects.dataproduct_id",
+                                        "value": {
+                                            "stringValue": "https://ogc-api-processes.3di.live/docs#/3Di/execute_processes_3di_execution_post"
+                                        }
+                                    },
+                                    {
+                                        "key": "foreign_operation.trace_id",
+                                        "value": {
+                                            "stringValue": "e369386e29d745275668eb391994f4cc"
+                                        }
+                                    },
+                                    {
+                                        "key": "foreign_operation.span_id",
+                                        "value": {
+                                            "stringValue": "0000000000000000"
+                                        }
+                                    },
+                                    {
+                                        "key": "dpl.objects.dataset",
+                                        "value": {
+                                            "stringValue": "[{\"dataset_id\": \"schematisations\", \"dataset_def\": \"https://docs.3di.live/h_schematisations_models_simulations.html#schematisation\", \"dataset_port\": \"input\", \"feature\": [{\"feature_id\": \"schematisation\", \"feature_def\": \"https://api.3di.live/v3/swagger\", \"feature_port\": \"input\"}], \"feature_attribute\": [{\"attribute_name\": \"value\", \"attribute_value\": \"Almere\", \"attribute_def\": \"https://ogc-api-processes.3di.live/docs#/3Di/execute_processes_3di_execution_post\"}, {\"attribute_name\": \"3di_schematisation_id\", \"attribute_value\": 223, \"attribute_def\": \"https://api.3di.live/v3/schematisations/223/\"}]}, {\"dataset_id\": \"simulations\", \"dataset_def\": \"https://docs.3di.live/h_schematisations_models_simulations.html#simulations-and-simulation-templates\", \"dataset_port\": \"output\", \"feature\": [{\"feature_id\": \"simulation\", \"feature_def\": \"https://api.3di.live/v3/swagger\", \"feature_port\": \"output\"}], \"feature_attribute\": [{\"attribute_name\": \"3di_simulation_id\", \"attribute_value\": 15, \"attribute_def\": \"https://api.3di.live/v3/simulations/15/\"}]}, {\"dataset_id\": \"waterdepth 3D tiles\", \"dataset_def\": \"https://www.ogc.org/standards/3dtiles/\", \"dataset_port\": \"output\", \"feature\": [{\"feature_id\": \"3D tiles\", \"feature_def\": \"https://www.ogc.org/standards/3dtiles/\", \"feature_port\": \"output\"}], \"feature_attribute\": [{\"attribute_name\": \"scenario\", \"attribute_value\": \"90ee6870-18da-47ec-aa04-fbc6e5f7e038\", \"attribute_def\": \"https://demo.lizard.net/api/v4/scenarios/90ee6870-18da-47ec-aa04-fbc6e5f7e038/results/498725/\"}, {\"attribute_name\": \"output_timestep\", \"attribute_value\": 300, \"attribute_def\": \"\"}]}]"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "resourceSpans": [
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "https://ogc-api-processes.3di.live"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "3Di.tracer"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "d45e1156a564f3ec57b7fdf9a5ce68f5",
+                                "spanId": "df3137d4e49a75ad",
+                                "parentSpanId": "",
+                                "flags": 256,
+                                "name": "3Di simulation",
+                                "kind": 1,
+                                "startTimeUnixNano": "1748331670945869009",
+                                "endTimeUnixNano": "1748331670946467628",
+                                "attributes": [
+                                    {
+                                        "key": "dpl.objects.processing_activity_id",
+                                        "value": {
+                                            "stringValue": "https://algoritmes.overheid.nl/nl/algoritme/integraal-watermodel-stichting-geonovum/16353897"
+                                        }
+                                    },
+                                    {
+                                        "key": "dpl.objects.dataproduct_id",
+                                        "value": {
+                                            "stringValue": "https://ogc-api-processes.3di.live/docs#/3Di/execute_processes_3di_execution_post"
+                                        }
+                                    },
+                                    {
+                                        "key": "foreign_operation.trace_id",
+                                        "value": {
+                                            "stringValue": "7ae6ba841a258be2f5556f2bc921704c"
+                                        }
+                                    },
+                                    {
+                                        "key": "foreign_operation.span_id",
+                                        "value": {
+                                            "stringValue": "0000000000000000"
+                                        }
+                                    },
+                                    {
+                                        "key": "dpl.objects.dataset",
+                                        "value": {
+                                            "stringValue": "[{\"dataset_id\": \"schematisations\", \"dataset_def\": \"https://docs.3di.live/h_schematisations_models_simulations.html#schematisation\", \"dataset_port\": \"input\", \"feature\": [{\"feature_id\": \"schematisation\", \"feature_def\": \"https://api.3di.live/v3/swagger\", \"feature_port\": \"input\"}], \"feature_attribute\": [{\"attribute_name\": \"value\", \"attribute_value\": \"Almere\", \"attribute_def\": \"https://ogc-api-processes.3di.live/docs#/3Di/execute_processes_3di_execution_post\"}, {\"attribute_name\": \"3di_schematisation_id\", \"attribute_value\": 223, \"attribute_def\": \"https://api.3di.live/v3/schematisations/223/\"}]}, {\"dataset_id\": \"simulations\", \"dataset_def\": \"https://docs.3di.live/h_schematisations_models_simulations.html#simulations-and-simulation-templates\", \"dataset_port\": \"output\", \"feature\": [{\"feature_id\": \"simulation\", \"feature_def\": \"https://api.3di.live/v3/swagger\", \"feature_port\": \"output\"}], \"feature_attribute\": [{\"attribute_name\": \"3di_simulation_id\", \"attribute_value\": 15, \"attribute_def\": \"https://api.3di.live/v3/simulations/15/\"}]}, {\"dataset_id\": \"waterdepth 3D tiles\", \"dataset_def\": \"https://www.ogc.org/standards/3dtiles/\", \"dataset_port\": \"output\", \"feature\": [{\"feature_id\": \"3D tiles\", \"feature_def\": \"https://www.ogc.org/standards/3dtiles/\", \"feature_port\": \"output\"}], \"feature_attribute\": [{\"attribute_name\": \"scenario\", \"attribute_value\": \"90ee6870-18da-47ec-aa04-fbc6e5f7e038\", \"attribute_def\": \"https://demo.lizard.net/api/v4/scenarios/90ee6870-18da-47ec-aa04-fbc6e5f7e038/results/498725/\"}, {\"attribute_name\": \"output_timestep\", \"attribute_value\": 300, \"attribute_def\": \"\"}]}]"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "resourceSpans": [
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "https://ogc-api-processes.3di.live"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "3Di.tracer"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "2d0608902f5896754cb0df4c5d396a25",
+                                "spanId": "369dbe4ef628fafb",
+                                "parentSpanId": "",
+                                "flags": 256,
+                                "name": "3Di simulation",
+                                "kind": 1,
+                                "startTimeUnixNano": "1748332181553349780",
+                                "endTimeUnixNano": "1748332181553660359",
+                                "attributes": [
+                                    {
+                                        "key": "dpl.objects.processing_activity_id",
+                                        "value": {
+                                            "stringValue": "https://algoritmes.overheid.nl/nl/algoritme/integraal-watermodel-stichting-geonovum/16353897"
+                                        }
+                                    },
+                                    {
+                                        "key": "dpl.objects.dataproduct_id",
+                                        "value": {
+                                            "stringValue": "https://ogc-api-processes.3di.live/docs#/3Di/execute_processes_3di_execution_post"
+                                        }
+                                    },
+                                    {
+                                        "key": "foreign_operation.trace_id",
+                                        "value": {
+                                            "stringValue": "24e8d9b7bb16cd5e8cab28268f481d71"
+                                        }
+                                    },
+                                    {
+                                        "key": "foreign_operation.span_id",
+                                        "value": {
+                                            "stringValue": "0000000000000000"
+                                        }
+                                    },
+                                    {
+                                        "key": "dpl.objects.dataset",
+                                        "value": {
+                                            "stringValue": "[{\"dataset_id\": \"schematisations\", \"dataset_def\": \"https://docs.3di.live/h_schematisations_models_simulations.html#schematisation\", \"dataset_port\": \"input\", \"feature\": [{\"feature_id\": \"schematisation\", \"feature_def\": \"https://api.3di.live/v3/swagger\", \"feature_port\": \"input\"}], \"feature_attribute\": [{\"attribute_name\": \"value\", \"attribute_value\": \"Almere\", \"attribute_def\": \"https://ogc-api-processes.3di.live/docs#/3Di/execute_processes_3di_execution_post\"}, {\"attribute_name\": \"3di_schematisation_id\", \"attribute_value\": 223, \"attribute_def\": \"https://api.3di.live/v3/schematisations/223/\"}]}, {\"dataset_id\": \"simulations\", \"dataset_def\": \"https://docs.3di.live/h_schematisations_models_simulations.html#simulations-and-simulation-templates\", \"dataset_port\": \"output\", \"feature\": [{\"feature_id\": \"simulation\", \"feature_def\": \"https://api.3di.live/v3/swagger\", \"feature_port\": \"output\"}], \"feature_attribute\": [{\"attribute_name\": \"3di_simulation_id\", \"attribute_value\": 15, \"attribute_def\": \"https://api.3di.live/v3/simulations/15/\"}]}, {\"dataset_id\": \"waterdepth 3D tiles\", \"dataset_def\": \"https://www.ogc.org/standards/3dtiles/\", \"dataset_port\": \"output\", \"feature\": [{\"feature_id\": \"3D tiles\", \"feature_def\": \"https://www.ogc.org/standards/3dtiles/\", \"feature_port\": \"output\"}], \"feature_attribute\": [{\"attribute_name\": \"scenario\", \"attribute_value\": \"90ee6870-18da-47ec-aa04-fbc6e5f7e038\", \"attribute_def\": \"https://demo.lizard.net/api/v4/scenarios/90ee6870-18da-47ec-aa04-fbc6e5f7e038/results/498725/\"}, {\"attribute_name\": \"output_timestep\", \"attribute_value\": 300, \"attribute_def\": \"\"}]}]"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "resourceSpans": [
+            {
+                "resource": {
+                    "attributes": [
+                        {
+                            "key": "service.name",
+                            "value": {
+                                "stringValue": "https://ogc-api-processes.3di.live"
+                            }
+                        }
+                    ]
+                },
+                "scopeSpans": [
+                    {
+                        "scope": {
+                            "name": "3Di.tracer"
+                        },
+                        "spans": [
+                            {
+                                "traceId": "9a2ae37c903a22c499dce85f6e5c3b21",
+                                "spanId": "b11722e7a7924aec",
+                                "parentSpanId": "",
+                                "flags": 256,
+                                "name": "3Di simulation",
+                                "kind": 1,
+                                "startTimeUnixNano": "1748333334296122105",
+                                "endTimeUnixNano": "1748333334296741193",
+                                "attributes": [
+                                    {
+                                        "key": "dpl.objects.processing_activity_id",
+                                        "value": {
+                                            "stringValue": "https://algoritmes.overheid.nl/nl/algoritme/integraal-watermodel-stichting-geonovum/16353897"
+                                        }
+                                    },
+                                    {
+                                        "key": "dpl.objects.dataproduct_id",
+                                        "value": {
+                                            "stringValue": "https://ogc-api-processes.3di.live/docs#/3Di/execute_processes_3di_execution_post"
+                                        }
+                                    },
+                                    {
+                                        "key": "foreign_operation.trace_id",
+                                        "value": {
+                                            "stringValue": "289b78dbdd2c0ea5d8e52e5a85727101"
+                                        }
+                                    },
+                                    {
+                                        "key": "foreign_operation.span_id",
+                                        "value": {
+                                            "stringValue": "0000000000000000"
+                                        }
+                                    },
+                                    {
+                                        "key": "dpl.objects.dataset",
+                                        "value": {
+                                            "stringValue": "[{\"dataset_id\": \"schematisations\", \"dataset_def\": \"https://docs.3di.live/h_schematisations_models_simulations.html#schematisation\", \"dataset_port\": \"input\", \"feature\": [{\"feature_id\": \"schematisation\", \"feature_def\": \"https://api.3di.live/v3/swagger\", \"feature_port\": \"input\"}], \"feature_attribute\": [{\"attribute_name\": \"value\", \"attribute_value\": \"Almere\", \"attribute_def\": \"https://ogc-api-processes.3di.live/docs#/3Di/execute_processes_3di_execution_post\"}, {\"attribute_name\": \"3di_schematisation_id\", \"attribute_value\": 223, \"attribute_def\": \"https://api.3di.live/v3/schematisations/223/\"}]}, {\"dataset_id\": \"simulations\", \"dataset_def\": \"https://docs.3di.live/h_schematisations_models_simulations.html#simulations-and-simulation-templates\", \"dataset_port\": \"output\", \"feature\": [{\"feature_id\": \"simulation\", \"feature_def\": \"https://api.3di.live/v3/swagger\", \"feature_port\": \"output\"}], \"feature_attribute\": [{\"attribute_name\": \"3di_simulation_id\", \"attribute_value\": 15, \"attribute_def\": \"https://api.3di.live/v3/simulations/15/\"}]}, {\"dataset_id\": \"waterdepth 3D tiles\", \"dataset_def\": \"https://www.ogc.org/standards/3dtiles/\", \"dataset_port\": \"output\", \"feature\": [{\"feature_id\": \"3D tiles\", \"feature_def\": \"https://www.ogc.org/standards/3dtiles/\", \"feature_port\": \"output\"}], \"feature_attribute\": [{\"attribute_name\": \"scenario\", \"attribute_value\": \"90ee6870-18da-47ec-aa04-fbc6e5f7e038\", \"attribute_def\": \"https://demo.lizard.net/api/v4/scenarios/90ee6870-18da-47ec-aa04-fbc6e5f7e038/results/498725/\"}, {\"attribute_name\": \"output_timestep\", \"attribute_value\": 300, \"attribute_def\": \"\"}]}]"
+                                        }
+                                    }
+                                ],
+                                "status": {
+                                    "code": 1
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
