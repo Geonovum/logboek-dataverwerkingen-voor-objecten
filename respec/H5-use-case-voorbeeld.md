@@ -196,7 +196,10 @@ Ter illustratie is in het platform van Tygron een log aangelegd die de standaard
 
 #### Verantwoording, transparantie en herleidbaarheid
 
-De Logboek dataverwerkingen standaard redeneert sterk vanuit de juridische beleidscontext en de verantwoording van dataverwerkingen op basis hiervan. In de praktijk blijkt het niet triviaal om de dynamiek van het werken met Digitale Tweelingen eenduidig aan specifieke dataverwerkingen te relateren (zie ook 5.2.3.1). De transparantie en herleidbaarheid van dataverwerkingen in de verschillende platformen wordt echter wel als heel belangrijk beschouwd. De platformen hebben in de praktijk dus veelal logging ingebouwd om dataverwerkingen te kunnen herleiden en inzicht te geven in de gevolgde stappen. 
+De Logboek dataverwerkingen standaard redeneert sterk vanuit de juridische beleidscontext en de verantwoording van dataverwerkingen op basis hiervan. 
+Voor de scope van de originele standaard past dit goed bij het registreren van verwerkingen op basis van het register van verwerkingsactiviteiten gerelateerd aan persoonsgegevens.
+
+In de praktijk blijkt het niet triviaal om de dynamiek van het werken met Digitale Tweelingen eenduidig aan specifieke dataverwerkingen te relateren (zie ook 5.2.3.1), de term verantwoording lijkt dan niet altijd passend. De transparantie en herleidbaarheid van dataverwerkingen in de verschillende platformen wordt echter wel als heel belangrijk beschouwd. De platformen hebben in de praktijk dus veelal logging ingebouwd om dataverwerkingen te kunnen herleiden en inzicht te geven in de gevolgde stappen. 
 
 #### Tracecontext - 1 overkoepelend ID of per systeem een eigen Trace ID
 
@@ -220,7 +223,9 @@ De rekenmodellen leggen standaard in hun implementaties al een uitgebreide log a
 
 De Algoritmes zoals deze nu in het Algoritmeregister zijn vastgelegd kunnen op basis van [verschillende wettelijke grondslagen ingezet worden](https://algoritmes.overheid.nl/nl/algoritme/modelleringssoftware-hittestress-stichting-geonovum/21577420#verantwoordGebruik). Hittestress kan bijvoorbeeld zowel een onderwerp zijn in het kader van planvorming en vergunningverlening in het kader van de omgevingswet, maar het kan ook onderdeel zijn van het monitoren van gevaarlijke situaties op basis van de algemene wet bestuursrecht.
 
-De vraag dient zich dus aan of, en op welke wijze we dat onderscheid kunnen maken in de logging in de applicaties. Mogelijk is hierdoor alsnog onvoldoende duidelijk op welke gronden besluiten genomen zijn en daarmee neemt de waarde van de logging significant af.
+De vraag dient zich dus aan of, en op welke wijze we dat onderscheid kunnen maken in de logging in de applicaties. Mogelijk is hierdoor alsnog onvoldoende duidelijk op welke gronden besluiten genomen zijn en daarmee neemt de waarde van de logging significant af. 
+
+Een mogelijke oplossing zou kunnen zijn om een extra eigenschap op te nemen in de logging om expliciet te maken in het kader van welke wet een bepaalde dataverwerking is gedaan. Hoe dit exact zou moeten en welke consequentie dit voor de werkprocessen zou hebben is nog niet uitgewerkt tijdens dit onderzoek.
 
 #### Voorstel aanvullende eigenschap om op te nemen in de log
 
