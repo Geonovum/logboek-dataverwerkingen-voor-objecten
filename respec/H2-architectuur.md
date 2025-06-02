@@ -83,7 +83,7 @@ De volgende niveaus worden gehanteerd:
 - Niveau 2: kolomverwijzing
 - Niveau 3: concrete data
 
-Zie [Vowassenheidsniveaus](https://logius-standaarden.github.io/logboek-dataverwerkingen/#volwassenheidsniveaus) in de Logboek dataverwerkingen standaard voor de verdere toelichting hierop.
+Zie [Volwassenheidsniveaus](https://logius-standaarden.github.io/logboek-dataverwerkingen/#volwassenheidsniveaus) in de Logboek dataverwerkingen standaard voor de verdere toelichting hierop.
 
 
 ## Extensies
