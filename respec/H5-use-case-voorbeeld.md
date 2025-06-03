@@ -201,6 +201,10 @@ Voor de scope van de originele standaard past dit goed bij het registreren van v
 
 In de praktijk blijkt het niet triviaal om de dynamiek van het werken met Digitale Tweelingen eenduidig aan specifieke dataverwerkingen te relateren (zie ook 5.2.3.1), de term verantwoording lijkt dan niet altijd passend. De transparantie en herleidbaarheid van dataverwerkingen in de verschillende platformen wordt echter wel als heel belangrijk beschouwd. De platformen hebben in de praktijk dus veelal logging ingebouwd om dataverwerkingen te kunnen herleiden en inzicht te geven in de gevolgde stappen. 
 
+#### Doelgroep voor Logging
+
+Het inzicht dat de Logboek dataverwerkingen standaard geeft in de context van de AVG is in principe rechtstreeks relevant voor betrokken personen. In de scenarios die uitgewerkt zijn in de fysieke leefomgeving zijn de expert modellen die gebruikt worden een stuk lastiger te interpreteren. Het ontsluiten van deze logs zou daarom misschien niet rechtstreeks naar burgers moeten zijn, maar naar 'experts' die de context van het model kunnen interpreteren.
+
 #### Tracecontext - 1 overkoepelend ID of per systeem een eigen Trace ID
 
 Bij het implementeren van de tracecontext over systemen heen kwam een onduidelijkheid in de specificatie naar boven. Het standaard gedrag van een OpenTelemetry SDK implementatie is het overnemen van hetzelfde trace_id in de verschillende applicaties. In de [LDV Specificatie](https://logius-standaarden.github.io/logboek-dataverwerkingen/#interface) staat dat de applicatie van een andere organisatie het trace_id van de aanroepende applicatie moet vastleggen in een 'foreign_operation.trace_id'. Dit kan geïmplementeerd worden maar vergt een specifieke implementatie, afwijkend van het standaard gedrag.
