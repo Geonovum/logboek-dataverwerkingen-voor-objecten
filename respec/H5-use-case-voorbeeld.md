@@ -21,12 +21,12 @@ van de remote sensing beelden. Er dient wel metadata van het gebruikte dataprodu
 
 minimale implementatie:
 
-- dpl.object.processing_activity_id
+- dpl.objects.algorithm_id
 - dpl.objects.dataproduct_id
 
 uitgebreidere implementatie:
 
-- dpl.object.processing_activity_id
+- dpl.objects.algorithm_id
 - dpl.objects.dataproduct_id
 - dpl.objects.dataset[
     - dataset_id
@@ -55,7 +55,7 @@ Niveau 2:
 
 - dpl.core.processing_activity_id (verwijzing naar de subsidieverlening)
 - dpl.core.data_subject_id (indien bekend in de verwerking van percelen)
-- dpl.object.processing_activity_id (verwijzing naar het algoritmeregister)
+- dpl.objects.algorithm_id (verwijzing naar het algoritmeregister)
 - dpl.objects.dataproduct_id 
 - dpl.objects.dataset[
     - dataset_id
@@ -67,7 +67,7 @@ Niveau 3:
 
 - dpl.core.processing_activity_id (verwijzing naar de subsidieverlening)
 - dpl.core.data_subject_id (indien bekend in de verwerking van percelen)
-- dpl.object.processing_activity_id (verwijzing naar het algoritmeregister)
+- dpl.objects.algorithm_id (verwijzing naar het algoritmeregister)
 - dpl.objects.dataproduct_id
 - dpl.objects.dataset[
     - dataset_id 
@@ -97,7 +97,7 @@ Niveau 3:
 
 - dpl.core.processing_activity_id (verwijzing naar de subsidieverlening)
 - dpl.core.data_subject_id (indien bekend in de verwerking van percelen)
-- dpl.object.processing_activity_id (verwijzing naar het algoritmeregister)
+- dpl.objects.algorithm_id (verwijzing naar het algoritmeregister)
 - dpl.objects.dataproduct_id
 - dpl.objects.dataset [
     - dataset_id 
@@ -234,3 +234,7 @@ Een mogelijke oplossing zou kunnen zijn om een extra eigenschap op te nemen in d
 #### Voorstel aanvullende eigenschap om op te nemen in de log
 
 Behalve de verwijzing naar een formele catalogus, of het algoritmeregister hebben platform leveranciers vaak ook een plek waar documentatie of aanvullende informatie van een rekenmodel of algoritme te vinden is. Hiervoor nemen we een aanvullende eigenschap op: ```dpl.objects.vendor_operation_ref```
+
+#### processing_activity_id gelijk houden over namespaces heen of specifiek houden
+
+Het kan verwarrend zijn om dezelfde eigenschap (processing_activity_id) in verschillende namespaces te hebben. We kiezen ervoor om de verwijzing naar een register zo expliciet mogelijk te maken. En daarom kiezen we ervoor om dpl.objects.processing_activity_id te hernoemen naar dpl.objects.algorithm_id.

@@ -41,7 +41,7 @@ het individuele product/proces geinstantieerd worden.
 __trace__
 
 ```
-dpl.object.processing_activity_id
+dpl.objects.algorithm_id
 dpl.objects.dataproduct_id 
 dpl.objects.dataset [
     dataset_id
@@ -63,7 +63,7 @@ dpl.objects.dataset [
 
 | attribute | Niveau |beschrijving |
 |---|---|---|
-|dpl.object.processing_activity_id | 1 | verwijzing naar het register van het betreffende algoritme. uri naar uniek identificeerbaar algoritme| 
+|dpl.objects.algorithm_id | 1 | verwijzing naar het register van het betreffende algoritme. uri naar uniek identificeerbaar algoritme| 
 |dpl.objects.dataproduct_id  | 1 | uri naar een catalogus met de dataproduct metadata |
 |dpl.objects.dataset | 2a | lijst met datasets (input en/of output van het dataproduct) | 
 |   dataset_id | 2a | unieke id van de dataset |

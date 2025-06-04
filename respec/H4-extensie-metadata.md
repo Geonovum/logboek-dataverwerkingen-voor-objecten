@@ -103,7 +103,7 @@ End time       : 2024-11-29 10:50:55.123923577 +0000 UTC
 Status code    : Ok                                                                                                                                                                      
 Status message : 
     Attributes:                                                                                                                                                                                     
-    -> dpl.objects.processing_activity_id: Str(http://localhost:5000/processes/localoutlier)
+    -> dpl.objects.algorithm_id: Str(http://localhost:5000/processes/localoutlier)
     -> dpl.objects.data_object_id: Slice([201,203,204,205,206])
     -> dpl.objects.data_object_def: Str(http://localhost:5000/collections/knmi_meetstations/queryables?f=json)                                                          
 ```
