@@ -40,6 +40,18 @@ het individuele product/proces geinstantieerd worden.
 
 __trace__
 
+Voor het loggen van gegevens binnen een trace maken we gebruik van het idee van 'Dataproducten' zoals die in de [[DPROD]] ontologie gepositioneerd worden.
+
+Definitie van een [Dataproduct](https://ekgf.github.io/dprod/#dataproductshape) volgens [[DPROD]]: 
+*A rational, managed, and governed collection of data, with purpose, value and ownership, meeting consumer needs over a planned life-cycle. A data product may have input and output ports, code and metadata.* 
+
+Open Data Mesh beschrijft een [dataproduct](https://dpds.opendatamesh.org/concepts/data-product/) als:
+*It's the smallest unit that can be independently deployed and managed in a data architecture (i.e. architectural quantum). It is composed of all the structural components that it requires to do its function: the metadata, the data, the code, the policies that govern the data and its dependencies on infrastructure.* 
+
+Dit sluit goed aan op het abstractieniveau van wat we willen loggen met Logboek Dataverwerkingen. De beschreven structuur hieronder legt deze structurele componenten vast.
+
+Afhankelijk van het gekozen niveau wordt er alleen gelogd op het niveau van het Dataproduct (niveau 1), Op het niveau van de datasets (of tabellen) en eventueel de features (rijen in de tabellen) (niveau 2), of zelfs de attributen en de waarden binnen de features (niveau 3).
+
 ```
 dpl.objects.algorithm_id
 dpl.objects.dataproduct_id 

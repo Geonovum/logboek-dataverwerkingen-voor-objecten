@@ -11,8 +11,8 @@ Om de eigenschappen voor de (geo)objecten extensie goed uit te werken helpt het 
 
 ### Remote Sensing gebiedsclassificatie op basis van AI beeldherkenning ​
 
-Dit is een voorbeeld waarbij een organisatie remote sensing beelden met AI Beeldherkenning verwerkt om gebieden te classificeren. Bijvoorbeeld om natuurgebieden te identificeren. 
-In dit geval is er niet direct een betrokkene aan te wijzen (uiteindelijk heeft het gebied natuurlijk wel een eigenaar, maar die is niet betrokken bij de identificatie van het gebied). 
+Dit is een voorbeeld waarbij een organisatie remote sensing beelden met AI Beeldherkenning verwerkt om gebieden te classificeren. Bijvoorbeeld om natuurgebieden te bepalen. 
+In dit geval is er niet direct een betrokkene aan te wijzen (uiteindelijk heeft het gebied natuurlijk wel een eigenaar, maar de gegevens over de eigenaar worden niet direct gebruikt bij de classificatie van het gebied). 
 Het is wel van belang om vast te leggen met welke batch remote sensing beelden deze analyse is uitgevoerd en welk algoritme gebruikt is. Beeldkwaliteit door bijvoorbeeld bewolking of 
 een defect aan een sensor kunnen de classificatie beinvloed hebben en dan wil je weten voor welke gebieden dit gevolgen heeft gehad.
 
@@ -23,6 +23,12 @@ minimale implementatie:
 
 - dpl.objects.algorithm_id
 - dpl.objects.dataproduct_id
+
+<aside class="example">
+dpl.objects.algorithm_id: Str(http://localhost/processes/Satelite_clasifier)
+
+dpl.objects.dataproduct_id: Str(http://localhost/collections/imagery/dune_images)
+</aside>
 
 uitgebreidere implementatie:
 
@@ -40,6 +46,31 @@ uitgebreidere implementatie:
     - dataset_port (output)
 
 ]
+
+<aside class="example">
+
+```
+    dpl.objects.algorithm_id: Str(http://localhost/processes/Satelite_clasifier)
+    dpl.objects.dataproduct_id: Str(http://localhost/collections/imagery/dune_images)
+    dpl.objects.dataset[
+    {
+        dataset_id: "image_1",
+        dataset_def: Str(http://localhost/collections/imagery/dune_images/image_1),
+        dataset_port: "input"
+    },
+    {
+        dataset_id: "image_2",
+        dataset_def: Str(http://localhost/collections/imagery/dune_images/image_2),
+        dataset_port: "input"
+    },
+    {
+        dataset_id: "image_out",
+        dataset_def: Str(http://localhost/collections/imagery/output/image_out),
+        dataset_port: "output"
+    }
+    ]
+```
+</aside>
 
 
 ### Maaidata analyse, remote sensing beelden analyseren of percelen wel/niet gemaaid zijn​
@@ -63,6 +94,35 @@ Niveau 2:
     - dataset_port 
 ]
 
+
+<aside class="example">
+
+```
+    dpl.core.processing_activity_id: Str(https://organisatie/rvva/subsidie_maaibeleid)
+    dpl.core.data_subject_id: ""
+    dpl.objects.algorithm_id: Str(http://localhost/processes/Maaidata_clasifier)
+    dpl.objects.dataproduct_id: Str(http://localhost/collections/imagery/satimage)
+    dpl.objects.dataset[
+    {
+        dataset_id: "image_1",
+        dataset_def: Str(http://localhost/collections/imagery/satimage/image_1),
+        dataset_port: "input"
+    },
+    {
+        dataset_id: "percelen_1",
+        dataset_def: Str(http://localhost/collections/percelen),
+        dataset_port: "input"
+    },
+    {
+        dataset_id: "subsidie",
+        dataset_def: Str(http://localhost/collections/subsidie),
+        dataset_port: "output"
+    }
+    ]
+```
+</aside>
+
+
 Niveau 3:
 
 - dpl.core.processing_activity_id (verwijzing naar de subsidieverlening)
@@ -85,6 +145,47 @@ Niveau 3:
     ]
 ]
 ​
+<aside class="example">
+
+```
+    dpl.core.processing_activity_id: Str(https://organisatie/rvva/subsidie_maaibeleid)
+    dpl.core.data_subject_id: "13j2ec27-0cc4-3541-9av6-219a178fcgh6"
+    dpl.objects.algorithm_id: Str(http://localhost/processes/Maaidata_clasifier)
+    dpl.objects.dataproduct_id: Str(http://localhost/collections/imagery/satimage)
+    dpl.objects.dataset[
+    {
+        dataset_id: "image_1",
+        dataset_def: Str(http://localhost/collections/imagery/satimage/image_1),
+        dataset_port: "input"
+    },
+    {
+        dataset_id: "percelen_1",
+        dataset_def: Str(http://localhost/collections/percelen),
+        dataset_port: "input"
+        feature[
+            {
+                feature_id: "perceelnr",
+                feature_def: Str(http://localhost/collections/percelen/perceelnr),
+                feature_attribute[
+                    {
+                        attribute_name: "perceelnr",
+                        attribute_value: "28",
+                        attribute_name: "maairegime",
+                        attribute_value: "niet klepelen"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        dataset_id: "subsidie",
+        dataset_def: Str(http://localhost/collections/subsidie),
+        dataset_port: "output"
+    }
+    ]
+```
+</aside>
+
 
 ### Aanvraag kapvergunning​
 
@@ -115,6 +216,33 @@ Niveau 3:
         ]
     ]
 ]
+
+<aside class="example">
+
+```
+    dpl.core.processing_activity_id: Str(https://organisatie/rvva/kapvergunning)
+    dpl.core.data_subject_id: "13j2ec27-0cc4-3541-9av6-219a178fcgh6"
+    dpl.objects.algorithm_id: Str(http://localhost/processes/beoordelen_aanvraag)
+    dpl.objects.dataproduct_id: Str(http://localhost/collections/basisdata/bomen)
+    dpl.objects.dataset[
+    {
+        dataset_id: "bomen",
+        dataset_def: Str(http://localhost/metadata/basisdata/bomen),
+        dataset_port: "input"
+        feature[
+            {
+                feature_id: "boom",
+                feature_attribute[
+                    {
+                        attribute_name: "identificatie",
+                        attribute_value: "2069296"
+                    }
+                ]
+            }
+        ]
+    ]
+```
+</aside>
 
 
 ## Implementatie in Digitale Tweelingen Tooling

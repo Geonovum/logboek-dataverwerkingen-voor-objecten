@@ -2,7 +2,11 @@
 
 ## Extensie (geo)objecten
 
-- Technisch gezien is de standaard goed te implementeren in de software die gebruikt wordt voor Digitale tweelingen. Het helpt als de interface specificatie van Logboek dataverwerkingen goed overeenkomt met de SDK/API voor opentelemetry. In de loop van het onderzoek zijn er een aantal wijzigingen in de standaard doorgevoerd om de aansluiting tussen de standaard en opentelemetry te verbeteren.
+- Technisch gezien is de standaard goed te implementeren in de software die gebruikt wordt voor Digitale tweelingen. Het helpt als de interface specificatie van Logboek dataverwerkingen goed overeenkomt met de SDK/API voor opentelemetry. In de loop van het onderzoek zijn er een aantal wijzigingen in de Logboek dataverwerkingen standaard doorgevoerd om de aansluiting tussen de standaard en opentelemetry te verbeteren.
+
+    - Aanpassing naamgeving operation_id naar span_id om in overeenstemming te zijn met de Opentelemetry specificatie
+    - expliciet gemaakt dat de betrokkene ook een niet-natuurlijk persoon kan zijn
+    - het implementeren van trace context en foreign_operation kan in de praktijk net anders uitpakken dan in de standaard beschreven (dit heeft nog niet tot aan aanpassing in de standaard geleid)
 
 - In de praktijk blijken de beleidsprocessen in de fysieke leefomgeving minder strak afgebakend dan de processen in het kader van de AVG waar de Logboek dataverwerkingen standaard in eerste instantie voor ontwikkeld is. Het uitvoeren van een analyse voor bijvoorbeeld hittestress kan zowel gedaan worden in het kader van een vergunning verleningstraject, waar de Omgevingswet het juridische kader is, als voor een risicoanalyse voor een beleidsmaatregel die valt onder het juridisch kader van de Algemene Wet Bestuursrecht.
 
