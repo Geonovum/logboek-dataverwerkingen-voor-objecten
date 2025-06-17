@@ -20,14 +20,18 @@ let respecConfig = {
         }
   ],
   editors: [
-        {
-            name: "Niels Hoffmann (Geonovum)"
-        },
-        {
-            name: "Frank Terpstra (Geonovum)"
-        },
+      {
+        name: "Nil Barua",
+        company: "Logius",
+        companyURL: "https://logius.nl",
+      },
+      {
+        name: "Tim van der Lippe",
+        company: "Logius",
+        companyURL: "https://logius.nl",
+      },
     ],
-  github: "https://github.com/Logius-standaarden/logboek-extensie-template",
+  github: "https://github.com/Logius-standaarden/tbd",
 
 
   // Create PDF and link to file in header (optional):
