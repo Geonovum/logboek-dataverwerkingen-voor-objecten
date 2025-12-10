@@ -48,10 +48,6 @@ Als we een laag dieper kijken naar de [interface](https://logius-standaarden.git
 
 In de attributes zien we dus de constructie om te verwijzen naar het register via `dpl.core.processing_activity_id`. En we zien met `dpl.core.data_subject_id` een constructie om te verwijzen naar het subject van de verwerking, en met `dpl.core.data_subject_id_type` een nadere duiding van het soort subject.
 
-~~Prov:Entity kent een subclass [prov:Plan](https://www.w3.org/TR/2013/REC-prov-o-20130430/#Plan): 'A plan is an entity that represents a set of actions or steps intended by one or more agents to achieve some goals.'~~
-
-~~Via een 'prov:qualifiedAssociation' kan een Activiteit (dus een regel in het Logboek) geassocieerd worden met een Plan. (in dit geval een verwerkingsactiviteit in het Register).~~
-
 Via een `prov:qualifiedUsage` relatie kan een Activiteit (dus een regel in het Logboek) gerelateerd worden aan een verwerkingsactiviteit in het Register.
 
 ```turtle
@@ -92,21 +88,105 @@ Deze mapping is niet op dezelfde wijze te doen omdat we in de logging niet een i
 Onderstaand een voorbeeld van een log vanuit opentelemetry:
 
 ```bash
-Span #77                                                                                                                                                                                        
-Trace ID       : 63bbb396834c646c0598f7cd9118504d                                                                                                                                           
-Parent ID      :                                                                                                                                                                            
-ID             : 27d458ec67e6fb68                                                                                                                                                           
-Name           : LocalOutlierFactor
-Kind           : Internal
-Start time     : 2024-11-29 10:50:54.162958793 +0000 UTC
-End time       : 2024-11-29 10:50:55.123923577 +0000 UTC
-Status code    : Ok                                                                                                                                                                      
-Status message : 
-    Attributes:                                                                                                                                                                                     
-    -> dpl.objects.algorithm_id: Str(http://localhost:5000/processes/localoutlier)
-    -> dpl.objects.data_object_id: Slice([201,203,204,205,206])
-    -> dpl.objects.data_object_def: Str(http://localhost:5000/collections/knmi_meetstations/queryables?f=json)                                                          
+"spans": [
+                        {
+                            "traceId": "98bdcae79e7fa7d4ccbc981e0653e8fd",
+                            "spanId": "dff0fb279813ee0d",
+                            "parentSpanId": "",
+                            "flags": 256,
+                            "name": "Aanvraag_span",
+                            "kind": 1,
+                            "startTimeUnixNano": "1739370701786437325",
+                            "endTimeUnixNano": "1739370702000265566",
+                            "attributes": [
+                                {
+                                    "key": "dpl.objects.processing_association_id",
+                                    "value": {
+                                        "stringValue": "http://aanvraag"
+                                    }
+                                },
+                                {
+                                    "key": "dpl.core.processing_activity_id",
+                                    "value": {
+                                        "stringValue": "RVA: Aanvraag Kapvergunning"
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.data_object_id",
+                                    "value": {
+                                        "intValue": "2069296"
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.data_object_def",
+                                    "value": {
+                                        "stringValue": "http://brt.basisregistraties.overheid.nl/id/concept/Boom"
+                                    }
+                                },
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "stringValue": "Meneer van Eik"
+                                    }
+                                }
+                            ],
+                            "status": {
+                                "code": 1
+                            }
+                        }
+                    ]                                                         
 ```
 
-Een voorbeeld in RDF zou er als volgt uit kunnen zien:
+Met RML kan deze JSON data geconverteerd worden naar RDF/Turtle.
+> zie [https://rml.io/docs/rml/introduction/](https://rml.io/docs/rml/introduction/) voor meer informatie over RML.
 
+In de [Git repository](https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten/tree/main/prov-o_mapping) zijn de voorbeeld RML transformatie file, de input json en de output ttl te vinden om bovenstaande log om te zetten naar RDF conform de PROV-O ontologie.
+
+Deze trace zou er in RDF als volgt uit kunnen zien:
+
+```turtle
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://schema.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://trace.example.com/span/dff0fb279813ee0d> a prov:Activity ;
+    ns1:name "Aanvraag_span" ;
+    prov:endedAtTime "1739370702000265566" ;
+    prov:qualifiedAssociation <http://trace.example.com/association/RVA%3A%20Aanvraag%20Kapvergunning> ;
+    prov:qualifiedUsage <http://trace.example.com/usage/2069296> ;
+    prov:startedAtTime "1739370701786437325" ;
+    prov:wasGeneratedBy <http://trace.example.com/trace/98bdcae79e7fa7d4ccbc981e0653e8fd> .
+
+<http://trace.example.com/agent/RVA%3A%20Aanvraag%20Kapvergunning> a prov:Agent ;
+    rdfs:label "RVA: Aanvraag Kapvergunning" ;
+    rdfs:comment "de verwerkingsactiviteit" .
+
+<http://trace.example.com/association/Meneer%20van%20Eik> a prov:Association ;
+    rdfs:comment "de qualified association relatie naar het subject" ;
+    prov:agent <http://trace.example.com/subject/Meneer%20van%20Eik> .
+
+<http://trace.example.com/association/RVA%3A%20Aanvraag%20Kapvergunning> a prov:Association ;
+    rdfs:comment "de qualified association relatie naar het register" ;
+    prov:agent <http://trace.example.com/agent/RVA%3A%20Aanvraag%20Kapvergunning> .
+
+<http://trace.example.com/entity/http%3A%2F%2Fbrt.basisregistraties.overheid.nl%2Fid%2Fconcept%2FBoom> a prov:Entity ;
+    rdfs:label "definitie van het object" ;
+    dcterms:source "http://brt.basisregistraties.overheid.nl/id/concept/Boom" .
+
+<http://trace.example.com/subject/Meneer%20van%20Eik> a prov:Agent ;
+    rdfs:label "Meneer van Eik" ;
+    rdfs:comment "het subject" .
+
+<http://trace.example.com/trace/98bdcae79e7fa7d4ccbc981e0653e8fd> a prov:Activity ;
+    rdfs:label "98bdcae79e7fa7d4ccbc981e0653e8fd" ;
+    rdfs:comment "Trace" .
+
+<http://trace.example.com/usage/2069296> a prov:Usage ;
+    rdfs:label "2069296" ;
+    rdfs:comment "de qualified usage relatie naar het object" ;
+    prov:entity <http://trace.example.com/entity/http%3A%2F%2Fbrt.basisregistraties.overheid.nl%2Fid%2Fconcept%2FBoom> ;
+    prov:qualifiedAssociation <http://trace.example.com/association/Meneer%20van%20Eik> .
+```
+
+![RML naar PROV-O voorbeeld](./respec/media/RML-prov-o-result.png)

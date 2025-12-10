@@ -1,0 +1,43 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://schema.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://trace.example.com/span/dff0fb279813ee0d> a prov:Activity ;
+    ns1:name "Aanvraag_span" ;
+    prov:endedAtTime "1739370702000265566" ;
+    prov:qualifiedAssociation <http://trace.example.com/association/RVA%3A%20Aanvraag%20Kapvergunning> ;
+    prov:qualifiedUsage <http://trace.example.com/usage/2069296> ;
+    prov:startedAtTime "1739370701786437325" ;
+    prov:wasGeneratedBy <http://trace.example.com/trace/98bdcae79e7fa7d4ccbc981e0653e8fd> .
+
+<http://trace.example.com/agent/RVA%3A%20Aanvraag%20Kapvergunning> a prov:Agent ;
+    rdfs:label "RVA: Aanvraag Kapvergunning" ;
+    rdfs:comment "de verwerkingsactiviteit" .
+
+<http://trace.example.com/association/Meneer%20van%20Eik> a prov:Association ;
+    rdfs:comment "de qualified association relatie naar het subject" ;
+    prov:agent <http://trace.example.com/subject/Meneer%20van%20Eik> .
+
+<http://trace.example.com/association/RVA%3A%20Aanvraag%20Kapvergunning> a prov:Association ;
+    rdfs:comment "de qualified association relatie naar het register" ;
+    prov:agent <http://trace.example.com/agent/RVA%3A%20Aanvraag%20Kapvergunning> .
+
+<http://trace.example.com/entity/http%3A%2F%2Fbrt.basisregistraties.overheid.nl%2Fid%2Fconcept%2FBoom> a prov:Entity ;
+    rdfs:label "definitie van het object" ;
+    dcterms:source "http://brt.basisregistraties.overheid.nl/id/concept/Boom" .
+
+<http://trace.example.com/subject/Meneer%20van%20Eik> a prov:Agent ;
+    rdfs:label "Meneer van Eik" ;
+    rdfs:comment "het subject" .
+
+<http://trace.example.com/trace/98bdcae79e7fa7d4ccbc981e0653e8fd> a prov:Activity ;
+    rdfs:label "98bdcae79e7fa7d4ccbc981e0653e8fd" ;
+    rdfs:comment "Trace" .
+
+<http://trace.example.com/usage/2069296> a prov:Usage ;
+    rdfs:label "2069296" ;
+    rdfs:comment "de qualified usage relatie naar het object" ;
+    prov:entity <http://trace.example.com/entity/http%3A%2F%2Fbrt.basisregistraties.overheid.nl%2Fid%2Fconcept%2FBoom> ;
+    prov:qualifiedAssociation <http://trace.example.com/association/Meneer%20van%20Eik> .
+
