@@ -1,0 +1,70 @@
+{
+    "resourceSpans": [
+        {
+            "resource": {
+                "attributes": [
+                    {
+                        "key": "service.name",
+                        "value": {
+                            "stringValue": "http://aanvraag"
+                        }
+                    }
+                ]
+            },
+            "scopeSpans": [
+                {
+                    "scope": {
+                        "name": "aanvraag.tracer"
+                    },
+                    "spans": [
+                        {
+                            "traceId": "98bdcae79e7fa7d4ccbc981e0653e8fd",
+                            "spanId": "dff0fb279813ee0d",
+                            "parentSpanId": "",
+                            "flags": 256,
+                            "name": "Aanvraag_span",
+                            "kind": 1,
+                            "startTimeUnixNano": "1739370701786437325",
+                            "endTimeUnixNano": "1739370702000265566",
+                            "attributes": [
+                                {
+                                    "key": "dpl.objects.processing_association_id",
+                                    "value": {
+                                        "stringValue": "http://aanvraag"
+                                    }
+                                },
+                                {
+                                    "key": "dpl.core.processing_activity_id",
+                                    "value": {
+                                        "stringValue": "RVA: Aanvraag Kapvergunning"
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.data_object_id",
+                                    "value": {
+                                        "intValue": "2069296"
+                                    }
+                                },
+                                {
+                                    "key": "dpl.objects.data_object_def",
+                                    "value": {
+                                        "stringValue": "http://brt.basisregistraties.overheid.nl/id/concept/Boom"
+                                    }
+                                },
+                                {
+                                    "key": "dpl.core.data_subject_id",
+                                    "value": {
+                                        "stringValue": "Meneer van Eik"
+                                    }
+                                }
+                            ],
+                            "status": {
+                                "code": 1
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
