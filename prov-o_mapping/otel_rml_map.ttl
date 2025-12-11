@@ -67,7 +67,8 @@
   ];
 
   rr:predicateObjectMap [
-    rr:predicate schema:name;
+    # rr:predicate schema:name;
+    rr:predicate rdfs:label;
     rr:objectMap [
       rml:reference "name";
       rml:datatype xsd:string

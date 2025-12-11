@@ -10,8 +10,8 @@
 <http://trace.example.com/entity/http%3A%2F%2Fbrt.basisregistraties.overheid.nl%2Fid%2Fconcept%2FBoom> <http://purl.org/dc/terms/source> "http://brt.basisregistraties.overheid.nl/id/concept/Boom" .
 <http://trace.example.com/entity/http%3A%2F%2Fbrt.basisregistraties.overheid.nl%2Fid%2Fconcept%2FBoom> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Entity> .
 <http://trace.example.com/entity/http%3A%2F%2Fbrt.basisregistraties.overheid.nl%2Fid%2Fconcept%2FBoom> <http://www.w3.org/2000/01/rdf-schema#label> "definitie van het object" .
-<http://trace.example.com/span/dff0fb279813ee0d> <http://schema.org/name> "Aanvraag_span" .
 <http://trace.example.com/span/dff0fb279813ee0d> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Activity> .
+<http://trace.example.com/span/dff0fb279813ee0d> <http://www.w3.org/2000/01/rdf-schema#label> "Aanvraag_span" .
 <http://trace.example.com/span/dff0fb279813ee0d> <http://www.w3.org/ns/prov#endedAtTime> "1739370702000265566" .
 <http://trace.example.com/span/dff0fb279813ee0d> <http://www.w3.org/ns/prov#qualifiedAssociation> <http://trace.example.com/association/RVA%3A%20Aanvraag%20Kapvergunning> .
 <http://trace.example.com/span/dff0fb279813ee0d> <http://www.w3.org/ns/prov#qualifiedUsage> <http://trace.example.com/usage/2069296> .

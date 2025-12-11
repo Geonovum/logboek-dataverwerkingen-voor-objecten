@@ -1,10 +1,9 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix ns1: <http://schema.org/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <http://trace.example.com/span/dff0fb279813ee0d> a prov:Activity ;
-    ns1:name "Aanvraag_span" ;
+    rdfs:label "Aanvraag_span" ;
     prov:endedAtTime "1739370702000265566" ;
     prov:qualifiedAssociation <http://trace.example.com/association/RVA%3A%20Aanvraag%20Kapvergunning> ;
     prov:qualifiedUsage <http://trace.example.com/usage/2069296> ;
