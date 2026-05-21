@@ -25,7 +25,7 @@ var documentConfig =
   title: "Onderzoek logboek dataverwerkingen voor (geo) objecten",
   shortName: "logboek-dataverwerkingen-voor-objecten",
   pubDomain: "logboek-dataverwerkingen-voor-objecten",
-  specStatus: "wv",
+  specStatus: "def",
   specType: "hr",
   license: "cc-by",
 //  latestVersion: [
