@@ -1,19 +1,19 @@
 # Mapping PROV-O Conceptueel model 
 
 
-De kern van het [[PROV_O]] model bestaat uit een Activiteit, een Entiteit en een Agent.
+De kern van het [[PROV-O]]-model bestaat uit een Activiteit, een Entiteit en een Agent.
 
 ![prov-dm](media/prov-dm.png)
 
-[Illustratie van het prov kernmodel](https://www.w3.org/TR/prov-dm/#prov-core-structures)
+[Illustratie van het PROV-kernmodel](https://www.w3.org/TR/prov-dm/#prov-core-structures)
 
-Om een goede mapping te kunnen maken tussen de standaard Logboek dataverwerkingen  en PROV-O volstaat het kernmodel niet. We kijken daarom naar de complete ontologie om alle constructies goed te kunnen mappen.
+Om een goede mapping te kunnen maken tussen de standaard Logboek dataverwerkingen en PROV-O volstaat het kernmodel niet. We kijken daarom naar de complete ontologie om alle constructies goed te kunnen mappen.
 
 De basis van de standaard kent het Logboek (met de [interface](https://logius-standaarden.github.io/logboek-dataverwerkingen/#interface) beschrijving), de Applicatie die naar het Logboek schrijft en het Register waarnaar verwezen wordt ter verantwoording van de verwerkingsactiviteit.
 
 ![ldv](media/architecture-grenzen.svg)
 
-[Illustratie uit de Logboek dataverwerkingen standaard, componenten in context](https://logius-standaarden.github.io/logboek-dataverwerkingen/#fig-componenten-in-context)
+[Illustratie uit de standaard Logboek dataverwerkingen, componenten in context](https://logius-standaarden.github.io/logboek-dataverwerkingen/#fig-componenten-in-context)
 
 Het Logboek is in essentie een lijst van (PROV-O) Activiteiten. Het resultaat van die activiteit (oftewel de PROV-O Entity) is de gewijzigde data in de applicatie. Een PROV-O Agent is hier zowel de betrokkene, of het object waar de datawijziging over gaat, en de actor die de wijziging doorvoert.
 Zowel Agent als Entity komen daarmee niet rechtstreeks in het kernmodel van het logboek voor.
@@ -51,43 +51,43 @@ In de attributes zien we dus de constructie om te verwijzen naar het register vi
 Via een `prov:qualifiedUsage` relatie kan een Activiteit (dus een regel in het Logboek) gerelateerd worden aan een verwerkingsactiviteit in het Register.
 
 ```turtle
-    :logregel_X a prov:Activity;
-prov:used  :data_subject_Y;
-prov:qualifiedUsage [
-    a prov:Usage;
-      prov:entity :data_subject_Y;
-      :verwerkingsactiviteit :pai_Z;
-    ];
-.
+@prefix : <http://example.org/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 
-:data_subject_Y a prov:Entity;
-    :data_subject_Y_type "BSN" 
-.
+:logregel_X a prov:Activity ;
+    prov:used :data_subject_Y ;
+    prov:qualifiedUsage [
+        a prov:Usage ;
+        prov:entity :data_subject_Y ;
+        :verwerkingsactiviteit :pai_Z
+    ] .
+
+:data_subject_Y a prov:Entity ;
+    :data_subject_Y_type "BSN" .
 
 :pai_Z a prov:Agent ;
-    :verwerkingsactiviteit_naam "uitgeven paspoort" 
-.
+    :verwerkingsactiviteit_naam "uitgeven paspoort" .
 ```
-![qualified usage voorbeeld](media/qualified_usage_voorbeeld.png)
+![Voorbeeld van qualified usage](media/qualified_usage_voorbeeld.png)
 
-qualified usage voorbeeld
+Voorbeeld van qualified usage
 
-De mapping van het technisch (opentemetry) model van de standaard Logboek dataverwerkingen naar PROV-O maakt het vervolgens makkelijker om de loggegevens interoperabel te maken met andere systemn.
+De mapping van het technisch (OpenTelemetry-)model van de standaard Logboek dataverwerkingen naar PROV-O maakt het vervolgens makkelijker om de loggegevens interoperabel te maken met andere systemen.
 
 ## Logboek Interface (objecten)
 
-Net zoals de core standaard attributen definieert in de `dpl.core` namespace, definieren we attributen voor (geo)objecten in de `dpl.objects` namespace. 
+Net zoals de core standaard attributen definieert in de `dpl.core` namespace, definiëren we attributen voor (geo)objecten in de `dpl.objects` namespace. 
 Deze mapping is niet op dezelfde wijze te doen omdat we in de logging niet een individueel aanwijsbaar object vastleggen maar een lijst met objecten.
 
 - optie: onderzoeken of het waardevol is een mapping naar [MLDCAT-AP](https://semiceu.github.io/MLDCAT-AP/releases/2.0.0/) te doen.
 - optie: onderzoeken of het waardevol is een mapping naar [[DPROD]], Data Product Ontology te doen.
 
 
-## voorbeeld uitwerking
+## Voorbeelduitwerking
 
-Onderstaand een voorbeeld van een log vanuit opentelemetry:
+Onderstaand een voorbeeld van een log vanuit OpenTelemetry:
 
-```bash
+```json
 "spans": [
                         {
                             "traceId": "98bdcae79e7fa7d4ccbc981e0653e8fd",
@@ -137,10 +137,10 @@ Onderstaand een voorbeeld van een log vanuit opentelemetry:
                     ]                                                         
 ```
 
-Met RML kan deze JSON data geconverteerd worden naar RDF/Turtle.
-> zie [https://rml.io/docs/rml/introduction/](https://rml.io/docs/rml/introduction/) voor meer informatie over RML.
+Met RML kan deze JSON-data geconverteerd worden naar RDF/Turtle.
+> Zie de [introductie van RML](https://rml.io/docs/rml/introduction/) voor meer informatie over RML.
 
-In de [Git repository](https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten/tree/main/prov-o_mapping) zijn de voorbeeld RML transformatie file, de input json en de output ttl te vinden om bovenstaande log om te zetten naar RDF conform de PROV-O ontologie.
+In de [Git repository](https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten/tree/main/prov-o_mapping) zijn het voorbeeld van de RML-transformatie, de input (JSON) en de output (Turtle) te vinden om bovenstaande log om te zetten naar RDF conform de PROV-O ontologie.
 
 Deze trace zou er in RDF als volgt uit kunnen zien:
 

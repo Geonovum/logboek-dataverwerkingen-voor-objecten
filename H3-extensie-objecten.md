@@ -10,21 +10,21 @@ We nemen een paar uitgangspunten op om de scope te verduidelijken.
 Deze uitgangspunten moeten nog getoetst worden in de praktijk.
 
 De kans is groot dat theorie en praktijk uit elkaar blijven lopen. Bijvoorbeeld voor wat betreft het abstractieniveau waarop een algoritme in een algoritmeregister is 
-beschreven en de daadwerkelijke implementatie in een systeem en de (technische) mogelijkheiden om logging te implementeren.
+beschreven en de daadwerkelijke implementatie in een systeem en de (technische) mogelijkheden om logging te implementeren.
 
 </aside>
 
-1. Input/output poorten conform het idee van 'Dataproducten' als uitgangspunt voor de afbakening van het proces wat wordt gelogd.
-2. API specificatie van een proces (als het goed is gelijk aan 1.)
+1. Input- en outputpoorten conform het idee van 'dataproducten' als uitgangspunt voor de afbakening van het proces wat wordt gelogd.
+2. API-specificatie van een proces (als het goed is gelijk aan 1.)
 
 
-In de Logboek dataverwerkingen standaard wordt de OTLP standaard aanbevolen om de [interface](https://logius-standaarden.github.io/logboek-dataverwerkingen/#interface) 
+In de standaard Logboek dataverwerkingen wordt het OpenTelemetry-protocol (OTLP) aanbevolen om de [interface](https://logius-standaarden.github.io/logboek-dataverwerkingen/#interface) 
 naar het logboek mee te implementeren.
 
-De OTLP standaard kent een aantal categorieën om telemetrie vast te leggen. Voor de Logboek dataverwerkingen standaard wordt de [traces](https://opentelemetry.io/docs/concepts/signals/traces/) categorie gebruikt.
-Op het 'hoogste' niveau kent de standaard ook nog het concept [resource](https://opentelemetry.io/docs/concepts/resources/).
+OpenTelemetry kent een aantal categorieën (signals) om telemetrie vast te leggen. Voor de standaard Logboek dataverwerkingen wordt de [traces](https://opentelemetry.io/docs/concepts/signals/traces/) categorie gebruikt.
+Op het 'hoogste' niveau kent OpenTelemetry ook nog het concept [resource](https://opentelemetry.io/docs/concepts/resources/).
 
-Bij het opzetten van een logboek dataverwerkingen interface kan er dus informatie op het niveau van resource vastgelegd worden. Dit is typisch informatie over het systeem waar de betreffende logging vandaan komt.
+Bij het opzetten van een interface voor Logboek dataverwerkingen kan er dus informatie op het niveau van resource vastgelegd worden. Dit is typisch informatie over het systeem waar de betreffende logging vandaan komt.
 
 De traces zijn vervolgens de individuele verwerkingen die door het betreffende systeem gedaan worden.
 
@@ -33,26 +33,26 @@ __resource__
 service.name = Logical name of the service
 service.instance.id = The string ID of the service instance
 
-Overeenkomstig de Opentelemetry specificatie.
+Overeenkomstig de OpenTelemetry-specificatie.
 
-Elk individueel Dataproduct/proces krijgt een eigen naam en id. Dus als er meerdere algoritmes/processen op een server zijn geimplementeerd moet de service.name op het niveau van
-het individuele product/proces geinstantieerd worden.
+Elk individueel dataproduct/proces krijgt een eigen naam en id. Dus als er meerdere algoritmes/processen op een server zijn geïmplementeerd moet de service.name op het niveau van
+het individuele product/proces geïnstantieerd worden.
 
 __trace__
 
-Voor het loggen van gegevens binnen een trace maken we gebruik van het idee van 'Dataproducten' zoals die in de [[DPROD]] ontologie gepositioneerd worden.
+Voor het loggen van gegevens binnen een trace maken we gebruik van het idee van 'dataproducten' zoals die in de [[DPROD]] ontologie gepositioneerd worden.
 
-Definitie van een [Dataproduct](https://ekgf.github.io/dprod/#dataproductshape) volgens [[DPROD]]: 
+Definitie van een [dataproduct](https://ekgf.github.io/dprod/#dataproductshape) volgens [[DPROD]]: 
 *A rational, managed, and governed collection of data, with purpose, value and ownership, meeting consumer needs over a planned life-cycle. A data product may have input and output ports, code and metadata.* 
 
 Open Data Mesh beschrijft een [dataproduct](https://dpds.opendatamesh.org/concepts/data-product/) als:
 *It's the smallest unit that can be independently deployed and managed in a data architecture (i.e. architectural quantum). It is composed of all the structural components that it requires to do its function: the metadata, the data, the code, the policies that govern the data and its dependencies on infrastructure.* 
 
-Dit sluit goed aan op het abstractieniveau van wat we willen loggen met Logboek Dataverwerkingen. De beschreven structuur hieronder legt deze structurele componenten vast.
+Dit sluit goed aan op het abstractieniveau van wat we willen loggen met Logboek dataverwerkingen. De beschreven structuur hieronder legt deze structurele componenten vast.
 
-Afhankelijk van het gekozen niveau wordt er alleen gelogd op het niveau van het Dataproduct (niveau 1), Op het niveau van de datasets (of tabellen) en eventueel de features (rijen in de tabellen) (niveau 2), of zelfs de attributen en de waarden binnen de features (niveau 3).
+Afhankelijk van het gekozen niveau wordt er alleen gelogd op het niveau van het dataproduct (niveau 1), op het niveau van de datasets (of tabellen) en eventueel de features (rijen in de tabellen) (niveau 2), of zelfs de attributen en de waarden binnen de features (niveau 3).
 
-```
+```text
 dpl.objects.algorithm_id
 dpl.objects.dataproduct_id 
 dpl.objects.dataset [
@@ -73,7 +73,7 @@ dpl.objects.dataset [
 ]
 ```
 
-| attribute | Niveau |beschrijving |
+| attribuut | niveau | beschrijving |
 |---|---|---|
 |dpl.objects.algorithm_id | 1 | verwijzing naar het register van het betreffende algoritme. uri naar uniek identificeerbaar algoritme| 
 |dpl.objects.dataproduct_id  | 1 | uri naar een catalogus met de dataproduct metadata |
