@@ -1,23 +1,26 @@
-async function loadTurtle() {
-  //this is the function you call in 'preProcess', to load the highlighter
-  const worker = await new Promise(resolve => {
-    require(["core/worker"], ({ worker }) => resolve(worker));
-  });
-  const action = "highlight-load-lang";
-  const langURL =
-    "https://cdn.jsdelivr.net/gh/redmer/highlightjs-turtle/src/languages/turtle.js";
-  const propName = "hljsDefineTurtle"; // This funtion is defined in the highlighter being loaded
-  const lang = "turtle"; // this is the class you use to identify the language
-  worker.postMessage({ action, langURL, propName, lang });
-  return new Promise(resolve => {
-    worker.addEventListener("message", function listener({ data }) {
-      const { action: responseAction, lang: responseLang } = data;
-      if (responseAction === action && responseLang === lang) {
-        worker.removeEventListener("message", listener);
-        resolve();
-      }
-    });
-  });
+// ReSpec kent geen Turtle-highlighting en respec-nlgov biedt geen toegang tot
+// de highlight-worker. Daarom highlighten we ```turtle-blokken zelf met
+// highlight.js na de ReSpec-verwerking; de hljs-stijlen van ReSpec gelden ook
+// voor deze blokken.
+async function highlightTurtle(_config, document) {
+  const blocks = document.querySelectorAll("pre code.turtle");
+  if (blocks.length === 0) {
+    return;
+  }
+
+  const { default: hljs } = await import(
+    "https://cdn.jsdelivr.net/npm/@highlightjs/cdn-assets@11.11.1/es/core.min.js"
+  );
+  const grammar = await fetch(
+    "https://cdn.jsdelivr.net/gh/redmer/highlightjs-turtle@v2.1.0/src/languages/turtle.js"
+  ).then(response => response.text());
+  const defineTurtle = new Function(`${grammar}\nreturn hljsDefineTurtle;`)();
+  hljs.registerLanguage("turtle", defineTurtle);
+
+  for (const block of blocks) {
+    block.innerHTML = hljs.highlight(block.textContent, { language: "turtle" }).value;
+    block.classList.add("hljs");
+  }
 }
 
 let respecConfig = {
@@ -67,11 +70,10 @@ let respecConfig = {
   github: "https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten",
   maxTocLevel: 3,
 
-  preProcess: [loadTurtle],
-
   postProcess: [
     ...(organisationConfig.postProcess ?? []),
-    localizeGitHubHeaderLinks
+    localizeGitHubHeaderLinks,
+    highlightTurtle
   ],
 
   localBiblio: {
