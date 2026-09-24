@@ -12,5 +12,5 @@ We willen deze standaard beproeven bij het loggen van transacties met (geo)objec
 
 - DCAT-AP-NL 3.0 [[DCAT_AP_NL]]
 - NL-SBB [[NL_SBB]]
-- [DTaaS](https://www.geonovum.nl/over-geonovum/actueel/werken-aan-digital-twin-as-a-service) (de use case om een aanvullende standaard mee te beproeven wordt gezocht binnen het DTaaS-project)
+- [DTaaS](https://www.geonovum.nl/over-geonovum/actueel/werken-aan-digital-twin-as-a-service) (de use cases om de extensie mee te beproeven zijn gezocht binnen het DTaaS-project, zie [](#H5))
 - MIM [[MIM12]]

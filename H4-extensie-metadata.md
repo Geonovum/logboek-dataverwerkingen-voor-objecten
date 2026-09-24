@@ -1,4 +1,4 @@
-# Mapping PROV-O Conceptueel model 
+# Mapping naar PROV-O 
 
 
 De kern van het [[PROV-O]]-model bestaat uit een Activiteit, een Entiteit en een Agent.
@@ -15,8 +15,8 @@ De basis van de standaard kent het Logboek (met de [interface](https://logius-st
 
 [Illustratie uit de standaard Logboek dataverwerkingen, componenten in context](https://logius-standaarden.github.io/logboek-dataverwerkingen/#fig-componenten-in-context)
 
-Het Logboek is in essentie een lijst van (PROV-O) Activiteiten. Het resultaat van die activiteit (oftewel de PROV-O Entity) is de gewijzigde data in de applicatie. Een PROV-O Agent is hier zowel de betrokkene, of het object waar de datawijziging over gaat, en de actor die de wijziging doorvoert.
-Zowel Agent als Entity komen daarmee niet rechtstreeks in het kernmodel van het logboek voor.
+Het Logboek is in essentie een lijst van PROV-O Activities. De data die bij zo'n activiteit gebruikt of gewijzigd wordt, waaronder het object waar de verwerking over gaat, is een PROV-O Entity. Een PROV-O Agent is de actor die de verwerking uitvoert; in de voorbeelden hieronder wordt ook de betrokkene als Agent gemodelleerd.
+Zowel Agent als Entity komen niet rechtstreeks in het kernmodel van het logboek voor.
 
 Als we een laag dieper kijken naar de [interface](https://logius-standaarden.github.io/logboek-dataverwerkingen/#interface) beschrijving vinden we daar echter wel aanknopingspunten voor een verdere mapping.
 
@@ -79,7 +79,7 @@ De mapping van het technisch (OpenTelemetry-)model van de standaard Logboek data
 Net zoals de core standaard attributen definieert in de `dpl.core` namespace, definiëren we attributen voor (geo)objecten in de `dpl.objects` namespace. 
 Deze mapping is niet op dezelfde wijze te doen omdat we in de logging niet een individueel aanwijsbaar object vastleggen maar een lijst met objecten.
 
-- optie: onderzoeken of het waardevol is een mapping naar [MLDCAT-AP](https://semiceu.github.io/MLDCAT-AP/releases/2.0.0/) te doen.
+- optie: onderzoeken of het waardevol is een mapping naar MLDCAT-AP [[MLDCAT_AP]] te doen.
 - optie: onderzoeken of het waardevol is een mapping naar [[DPROD]], Data Product Ontology te doen.
 
 
@@ -137,6 +137,11 @@ Onderstaand een voorbeeld van een log vanuit OpenTelemetry:
                     ]                                                         
 ```
 
+<aside class="note">
+
+Dit voorbeeld komt uit een eerdere iteratie van de extensie. Het gebruikt nog attribuutnamen (`dpl.objects.processing_association_id`, `dpl.objects.data_object_id` en `dpl.objects.data_object_def`) die later zijn vervangen door de structuur uit [](#H3). Voor de leesbaarheid bevat `dpl.core.data_subject_id` hier een naam en `dpl.core.processing_activity_id` een omschrijving; volgens de standaard zijn dat respectievelijk een versleutelde identificatie en een URI.
+</aside>
+
 Met RML kan deze JSON-data geconverteerd worden naar RDF/Turtle.
 > Zie de [introductie van RML](https://rml.io/docs/rml/introduction/) voor meer informatie over RML.
 
@@ -189,3 +194,12 @@ Deze trace zou er in RDF als volgt uit kunnen zien:
 ```
 
 ![RML naar PROV-O voorbeeld](media/RML-prov-o-result.png)
+
+<aside class="note">
+
+Deze mapping is een eerste, illustratieve uitwerking. Bij verdere uitwerking verdienen de volgende punten aandacht:
+
+- begin- en eindtijden als `xsd:dateTime` vastleggen in plaats van als tijdstempel in nanoseconden;
+- de relatie tussen span en trace uitdrukken met bijvoorbeeld `prov:wasInformedBy` of `dcterms:isPartOf`; `prov:wasGeneratedBy` is bedoeld voor een Entity die door een Activity is gegenereerd;
+- `prov:qualifiedAssociation` hoort bij een Activity en niet bij een `prov:Usage`.
+</aside>
