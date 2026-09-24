@@ -20,57 +20,59 @@ async function loadTurtle() {
   });
 }
 
-var documentConfig =
-{
+let respecConfig = {
+  useLogo: true,
+  useLabel: true,
+
   title: "Onderzoek logboek dataverwerkingen voor (geo) objecten",
-  shortName: "logboek-dataverwerkingen-voor-objecten",
-  pubDomain: "logboek-dataverwerkingen-voor-objecten",
-  specStatus: "def",
+  specStatus: "basis",
   specType: "hr",
+  pubDomain: "ldv",
+  shortName: "logboek-dataverwerkingen-voor-objecten",
   license: "cc-by",
-//  latestVersion: [
-//    "https://docs.geostandaarden.nl/NL-SBB"
-//  ],
-//  publishDate: "2024-04-16",
-//  previousPublishDate: "2024-03-01",
-//  previousMaturity: "vv",
+
+  //-- publishDate is verplicht en bepaalt de map op docs.geostandaarden.nl.
+  //-- Werk deze bij vlak voor het aanmaken van een release.
+  publishDate: "2026-09-24",
+  publishVersion: [],
+
   edDraftURI: "https://geonovum.github.io/logboek-dataverwerkingen-voor-objecten/",
-  authors: [
-        {
-            name: "Niels Hoffmann (Geonovum)"
-        },
-        {
-            name: "Frank Terpstra (Geonovum)"
-        }
-  ],
+
   editors: [
-        {
-            name: "Niels Hoffmann (Geonovum)"
-        },
-        {
-            name: "Frank Terpstra (Geonovum)"
-        }
-  ],
-  
-    github: "geonovum/logboek-dataverwerkingen-voor-objecten",
-    issueBase: "https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten/issues",
-    maxTocLevel: 3,
-    
-    labelColor: {
-        def: "#045D9F",
-        wv: "#FF0000",
-        cv: "#045D9F",
-        vv: "#045D9F",
-        basis: "#80CC28",
+    {
+      name: "Niels Hoffmann",
+      company: "Geonovum",
+      companyURL: "https://www.geonovum.nl",
     },
- 
-    nl_organisationName: "Geonovum",
-    nl_organisationPublishURL: "https://docs.geostandaarden.nl",
+    {
+      name: "Frank Terpstra",
+      company: "Geonovum",
+      companyURL: "https://www.geonovum.nl",
+    }
+  ],
 
-	latestVersion: ["nl_organisationPublishURL", "pubDomain", "/", "shortName", "/"],
-    thisVersion: ["nl_organisationPublishURL", "pubDomain", "/", "specStatus", "-", "specType", "-", "shortName", "-", "publishDate"],
-    prevVersion: ["nl_organisationPublishURL", "pubDomain", "/", "previousMaturity", "-", "specType", "-", "shortName", "-", "previousPublishDate"],
+  authors: [
+    {
+      name: "Niels Hoffmann",
+      company: "Geonovum",
+      companyURL: "https://www.geonovum.nl",
+    },
+    {
+      name: "Frank Terpstra",
+      company: "Geonovum",
+      companyURL: "https://www.geonovum.nl",
+    }
+  ],
 
+  github: "https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten",
+  maxTocLevel: 3,
+
+  preProcess: [loadTurtle],
+
+  postProcess: [
+    ...(organisationConfig.postProcess ?? []),
+    localizeGitHubHeaderLinks
+  ],
 
   localBiblio: {
         
@@ -120,5 +122,17 @@ var documentConfig =
             publisher: "Enterprise Knowledge Graph Forum, Object Management Group® (OMG®)"
         },
   },
-  preProcess: [loadTurtle],
+};
+
+function localizeGitHubHeaderLinks(_config, document) {
+  if (document.documentElement.lang !== "nl") {
+    return;
+  }
+
+  const issueLink = document.querySelector(
+    '.head dl a[href$="/issues/"], .head dl a[href$="/issues"]'
+  );
+  if (issueLink) {
+    issueLink.textContent = "Alle issues";
+  }
 }
