@@ -1,16 +1,16 @@
 # Extensie (geo)objecten
 
 Het loggen van (geo)objecten is een bijzonder ruim en daarmee flexibel onderwerp. Er zijn zeer veel mogelijke scenario's, afhankelijk van de gebruikte data, 
-het type analyse of algoritme en het gewenste volwassenheidsniveau.
+het type analyse of algoritme en het gewenste detailniveau.
 
 We nemen een paar uitgangspunten op om de scope te verduidelijken.
 
 <aside class="note">
 
-Deze uitgangspunten moeten nog getoetst worden in de praktijk.
+Deze uitgangspunten zijn beproefd in de implementaties in [](#H5).
 
-De kans is groot dat theorie en praktijk uit elkaar blijven lopen. Bijvoorbeeld voor wat betreft het abstractieniveau waarop een algoritme in een algoritmeregister is 
-beschreven en de daadwerkelijke implementatie in een systeem en de (technische) mogelijkheden om logging te implementeren.
+Daarbij bleek dat theorie en praktijk uit elkaar kunnen lopen. Bijvoorbeeld voor wat betreft het abstractieniveau waarop een algoritme in een algoritmeregister is 
+beschreven en de daadwerkelijke implementatie in een systeem en de (technische) mogelijkheden om logging te implementeren (zie [](#granulariteit-van-verantwoording-register-versus-modules-in-de-tooling)).
 
 </aside>
 
@@ -54,6 +54,7 @@ Afhankelijk van het gekozen niveau wordt er alleen gelogd op het niveau van het 
 
 ```text
 dpl.objects.algorithm_id
+dpl.objects.vendor_operation_ref
 dpl.objects.dataproduct_id 
 dpl.objects.dataset [
     dataset_id
@@ -76,6 +77,7 @@ dpl.objects.dataset [
 | attribuut | niveau | beschrijving |
 |---|---|---|
 |dpl.objects.algorithm_id | 1 | verwijzing naar het register van het betreffende algoritme. uri naar uniek identificeerbaar algoritme| 
+|dpl.objects.vendor_operation_ref | 1 | verwijzing naar documentatie of aanvullende informatie over het rekenmodel of algoritme bij de leverancier (zie [](#voorstel-aanvullende-eigenschap-om-op-te-nemen-in-de-log)) |
 |dpl.objects.dataproduct_id  | 1 | uri naar een catalogus met de dataproduct metadata |
 |dpl.objects.dataset | 2a | lijst met datasets (input en/of output van het dataproduct) | 
 |   dataset_id | 2a | unieke id van de dataset |
@@ -90,9 +92,9 @@ dpl.objects.dataset [
 |     attribute_value | 3 | waarde van het attribuut in de specifieke verwerking / logregel | 
 |     attribute_def | 3 | verwijzing naar de metadata van het attribuut |
 
-Afhankelijk van het volwassenheidsniveau wordt er meer gelogd. Voor de hogere niveaus geldt dat de gegevens van het lagere niveau ook gelogd worden.
+Afhankelijk van het detailniveau wordt er meer gelogd. Voor de hogere niveaus geldt dat de gegevens van het lagere niveau ook gelogd worden.
 
-Voor niveau 2 (kolomniveau) geldt dat er op gehele dataset gelogd kan worden (2a), of dat er specifiek aangegeven kan worden welke features in een dataset gebruikt zijn (2b).
+Voor niveau 2 ('kolomverwijzing') geldt dat er op gehele dataset gelogd kan worden (2a), of dat er specifiek aangegeven kan worden welke features in een dataset gebruikt zijn (2b). Voor (geo)objecten wordt niveau 2 dus breder uitgelegd dan in Logboek dataverwerkingen: het gaat om verwijzingen naar de gebruikte datasets en features, maar nog niet om de waarden van hun attributen. Die worden pas op niveau 3 ('concrete data') gelogd.
 
 
 ---

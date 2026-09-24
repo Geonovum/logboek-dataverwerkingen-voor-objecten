@@ -73,7 +73,8 @@ let respecConfig = {
   postProcess: [
     ...(organisationConfig.postProcess ?? []),
     localizeGitHubHeaderLinks,
-    highlightTurtle
+    highlightTurtle,
+    voegStatustoelichtingToe
   ],
 
   localBiblio: {
@@ -81,12 +82,20 @@ let respecConfig = {
         LDV: {
             title: "Logboek dataverwerkingen",
             href: "https://logius-standaarden.github.io/logboek-dataverwerkingen/",
-            publisher: "Logius"
+            publisher: "Logius",
+            status: "Werkversie"
+        },
+        LDV_OBJECTEN: {
+            title: "Logboek dataverwerkingen - Extensie (geo)objecten",
+            href: "https://logius-standaarden.github.io/logboek-extensie-object/",
+            publisher: "Logius",
+            status: "Werkversie"
         },
         JB_LDV: {
             title: "Logboek dataverwerkingen - Juridisch beleidskader",
             href: "https://logius-standaarden.github.io/logboek-dataverwerkingen-juridisch-beleidskader/",
-            publisher: "Logius"
+            publisher: "Logius",
+            status: "Werkversie"
         },
         NL_SBB: {
             title: "NL-SBB - Standaard voor het beschrijven van begrippen",
@@ -110,6 +119,11 @@ let respecConfig = {
             href: "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
             publisher: "EU"
         },
+        MLDCAT_AP: {
+            title: "MLDCAT-AP - Machine Learning DCAT Application Profile, versie 2.0.0",
+            href: "https://semiceu.github.io/MLDCAT-AP/releases/2.0.0/",
+            publisher: "SEMIC (Europese Commissie)"
+        },
         DPROD: {
             title: "Data Product Ontology (DPROD)",
             href: "https://ekgf.org/dprod/",
@@ -129,4 +143,18 @@ function localizeGitHubHeaderLinks(_config, document) {
   if (issueLink) {
     issueLink.textContent = "Alle issues";
   }
+}
+
+// respec-nlgov vult de sectie 'Status van dit document' met een vaste tekst
+// per specStatus en negeert eigen inhoud. Daarom voegen we de toelichting uit
+// status.md na afloop toe aan die sectie.
+function voegStatustoelichtingToe(_config, document) {
+  const toelichting = document.getElementById("status-toelichting");
+  const sotd = document.getElementById("sotd");
+  if (!toelichting || !sotd) {
+    return;
+  }
+
+  sotd.append(...toelichting.childNodes);
+  toelichting.remove();
 }

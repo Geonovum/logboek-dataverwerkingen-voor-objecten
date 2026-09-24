@@ -4,12 +4,18 @@ De standaard Logboek dataverwerkingen gaat over het verantwoorden van het gebrui
 
 ## Huidige situatie
 
-De standaard Logboek dataverwerkingen [[LDV]] beschrijft als werkingsgebied:
+Bij de start van dit onderzoek beschreef de standaard Logboek dataverwerkingen [[LDV]] als werkingsgebied:
 
 *Functioneel toepassingsgebied: De standaard Logboek dataverwerkingen moet worden toegepast als persoonsgegevens worden verwerkt ten behoeve van het ontsluiten van overheidsinformatie en/of functionaliteit.*
 
 Dit kan beschouwd worden als een 'minimaal verplichte' scope.
 De standaard is echter zo generiek opgesteld dat deze breder toegepast kan worden.
+
+In november 2025 is het functioneel toepassingsgebied in de werkversie verbreed naar:
+
+*De standaard kan worden toegepast bij het uitvoeren van dataverwerkingen en het aan elkaar relateren van dataverwerkingen van verschillende verwerkingsverantwoordelijken.*
+
+Daarmee is de standaard niet langer beperkt tot de verwerking van persoonsgegevens. De attributen in de `dpl.core`-namespace blijven wel gericht op persoonsgegevens en het register van verwerkingsactiviteiten.
 
 ## Gewenste situatie
 
@@ -43,7 +49,7 @@ In het kader van het NORA Nationaal Semantisch Vlak kan de standaard Logboek dat
 
 ## Aandachtsgebieden
 
-De voorlopige conclusie is dat de kern van de standaard zodanig generiek is dat deze in principe ook toegepast kan worden voor het loggen van (geo)objecten.
+De conclusie is dat de kern van de standaard zodanig generiek is dat deze in principe ook toegepast kan worden voor het loggen van (geo)objecten.
 De aandachtspunten liggen vooral in de te maken keuzes in de implementatie of het uitbreiden met een extensie voor inzage.
 
 <aside class="note">
@@ -71,11 +77,16 @@ In de kern van de standaard wordt een [Register](https://logius-standaarden.gith
 Als een organisatie dataverwerkingen doet in het kader van een algoritme dat in het Algoritmeregister is geregistreerd, dan zouden deze dataverwerkingen gelogd moeten worden op basis van deze standaard.
 </aside>
 
-### Volwassenheidsniveaus
+### Detailniveaus
 
-Een ander aandachtspunt bij het beschrijven van de functionaliteit voor het loggen van objectgegevens betreft de volwassenheidsniveaus. Logging kan op verschillende volwassenheidsniveaus: hoe hoger het volwassenheidsniveau, hoe meer data er wordt gelogd.
+Een ander aandachtspunt bij het beschrijven van de functionaliteit voor het loggen van objectgegevens betreft de detailniveaus. Logging kan op verschillende detailniveaus: hoe hoger het detailniveau, hoe gedetailleerder er wordt gelogd.
 
-Welk volwassenheidsniveau gebruikt wordt hangt van meerdere factoren af. De informatiebehoefte van de verantwoording, maar zeker ook wat er technisch gezien mogelijk is om te implementeren.
+<aside class="note">
+
+In eerdere werkversies van Logboek dataverwerkingen heetten deze niveaus 'volwassenheidsniveaus'. In juni 2025 zijn ze hernoemd naar 'detailniveaus'. Dit document volgt de nieuwe term.
+</aside>
+
+Welk detailniveau gebruikt wordt hangt van meerdere factoren af. De informatiebehoefte van de verantwoording, maar zeker ook wat er technisch gezien mogelijk is om te implementeren.
 
 De volgende niveaus worden gehanteerd:
 
@@ -101,10 +112,10 @@ Positionering extensies
 __Voor het loggen van (geo)objectgegevens definiëren we de volgende extensie:
 `dpl.objects`__
 
-De uitwerking van de te gebruiken attributen in deze namespace staat in [](#H3).
+De uitwerking van de te gebruiken attributen in deze namespace staat in [](#H3). Deze uitwerking is in juni 2025 als werkversie van een extensie ondergebracht bij Logius [[LDV_OBJECTEN]].
 
 
-### Extensie Metadata
+### Mapping naar PROV-O
 
 Om de interoperabiliteit tussen de standaard Logboek dataverwerkingen en andere systemen te verbeteren kijken we naar de mapping van het gebruikte model (op basis van OpenTelemetry) naar [[PROV-O]]. [[PROV-O]] wordt op diverse plaatsen, zowel nationaal als internationaal gebruikt om 'provenance' vast te leggen. 
   
