@@ -6,7 +6,7 @@ De standaard Logboek dataverwerkingen gaat over het verantwoorden van het gebrui
 
 De standaard Logboek dataverwerkingen [[LDV]] beschrijft als werkingsgebied:
 
-*Functioneel toepassingsgebied: De standaard Logboek Dataverwerkingen moet worden toegepast als persoonsgegevens worden verwerkt ten behoeve van het ontsluiten van overheidsinformatie en/of functionaliteit.*
+*Functioneel toepassingsgebied: De standaard Logboek dataverwerkingen moet worden toegepast als persoonsgegevens worden verwerkt ten behoeve van het ontsluiten van overheidsinformatie en/of functionaliteit.*
 
 Dit kan beschouwd worden als een 'minimaal verplichte' scope.
 De standaard is echter zo generiek opgesteld dat deze breder toegepast kan worden.
@@ -23,7 +23,7 @@ Met de uitbreiding van de scope van de te loggen verwerkingen wordt de semantisc
 Als er uit de log blijkt dat er een object 'Station' gebruikt is, gaat het dan om een 'Waarnemingsstation' in de context van een sensor waarneming, of over een 'Treinstation' in de context van vertraging op het spoor?
 </aside><!-- markdownlint-disable-line -->
 
-Daarom is het voor het loggen van (geo)objectgegevens extra interessant om een uitbreiding op de standaard te realiseren die specificeert op welke manier het objectgegeven geinterpreteerd moet worden. Voor deze uitbreiding denken we dat het meerwaarde heeft om de gegevens te kunnen definieren in termen van de [PROV-O](https://www.w3.org/TR/prov-o/) standaard. Vanuit deze mapping is een verbinding naar bijvoorbeeld de  [[NL_SBB]] of de [[DCAT_AP_NL]] standaard interessant.
+Daarom is het voor het loggen van (geo)objectgegevens extra interessant om een uitbreiding op de standaard te realiseren die specificeert op welke manier het objectgegeven geïnterpreteerd moet worden. Voor deze uitbreiding denken we dat het meerwaarde heeft om de gegevens te kunnen definiëren in termen van de PROV-O-standaard [[PROV-O]]. Vanuit deze mapping is een verbinding naar bijvoorbeeld de [[NL_SBB]] of de [[DCAT_AP_NL]] standaard interessant.
 
 ## Positionering
 
@@ -32,14 +32,14 @@ Daarom is het voor het loggen van (geo)objectgegevens extra interessant om een u
 ![GDI Gegevensuitwisseling Bedrijfsobjectenmodel](media/gdi-gegevensuitwisseling-bedrijfsobjectenmodel.png)
 [Bedrijfsobjectenmodel GDI Gegevensuitwisseling](https://minbzk.github.io/gdi-gegevensuitwisseling/?view=id-efc531031d114860a309f6eeacdad289)
 
-De logboek dataverwerking standaard kan gepositioneerd worden in de GDI Gegevensuitwisseling als standaard waarin een 'Uitwisselingsafspraak' geformaliseerd wordt. Waarbij de daadwerkelijke logging betrekking heeft op de 'Operatie'.
+De standaard Logboek dataverwerkingen kan gepositioneerd worden in de GDI Gegevensuitwisseling als standaard waarin een 'Uitwisselingsafspraak' geformaliseerd wordt. Waarbij de daadwerkelijke logging betrekking heeft op de 'Operatie'.
 
 ### NORA Nationaal Semantisch Vlak
 
-![Nora Nationaal Semantisch Vlak](media/Nora-Nationaal_semantisch_vlak.png)
-[Nora Nationaal Semantisch Vlak](https://www.noraonline.nl/wiki/Nationaal_Semantisch_Vlak)
+![NORA Nationaal Semantisch Vlak](media/Nora-Nationaal_semantisch_vlak.png)
+[NORA Nationaal Semantisch Vlak](https://www.noraonline.nl/wiki/Nationaal_Semantisch_Vlak)
 
-In het kader van het NORA Nationaal Semantisch Vlak kan de logboek dataverwerking standaard gepositioneerd worden als het vastleggen van een gebeurtenis die betrekking heeft op een informatieobject.
+In het kader van het NORA Nationaal Semantisch Vlak kan de standaard Logboek dataverwerkingen gepositioneerd worden als het vastleggen van een gebeurtenis die betrekking heeft op een informatieobject.
 
 ## Aandachtsgebieden
 
@@ -48,32 +48,32 @@ De aandachtspunten liggen vooral in de te maken keuzes in de implementatie of he
 
 <aside class="note">
 
-Vanuit het juridisch beleidskader wordt duidelijk dat `dpl.core.data_subject_id` alleen gebruikt dient te worden voor het verwijzen naar een persoonsgegeven. Bij het loggen van (geo)objecten maken we dan ook geen gebruik van `dpl.core.data_subject_id` maar definieren we een extensie: `dpl.objects` om informatie over (geo)objecten te loggen. `dpl.core.data_subject_id` blijft leeg als er niet naar een persoonsgegeven verwezen wordt.
+Vanuit het juridisch beleidskader [[JB_LDV]] wordt duidelijk dat `dpl.core.data_subject_id` alleen gebruikt dient te worden voor het verwijzen naar een persoonsgegeven. Bij het loggen van (geo)objecten maken we dan ook geen gebruik van `dpl.core.data_subject_id` maar definiëren we een extensie: `dpl.objects` om informatie over (geo)objecten te loggen. `dpl.core.data_subject_id` blijft leeg als er niet naar een persoonsgegeven verwezen wordt.
 </aside>
 
-### Implementatie keuzes
+### Implementatiekeuzes
 
-Voor dit onderzoek kiezen we ervoor om de standaard te beproeven met een implementatie in een Digitale Tweeling.
+Voor dit onderzoek kiezen we ervoor om de standaard te beproeven met een implementatie in een digitale tweeling.
 
 [Digitale tweelingen zijn een praktisch hulpmiddel om alles wat bekend is over de leefomgeving, integraal inzichtelijk te maken.](https://www.geonovum.nl/themas/digital-twins) Een digitale tweeling wordt gevormd door een aantal bouwblokken. Door de functionaliteit van Logboek dataverwerkingen in te zetten in het bouwblok 'rekenen' leggen we data vast die gebruikt kan worden in het bouwblok 'vertrouwen'. Zie het rapport [Beleidsprocessen en bouwblokken voor Digitale Tweelingen](https://www.geonovum.nl/uploads/documents/Eindrapport%20Advies%20Beleid%20en%20Digital%20Twins%20-%20provincie%20Utrecht%20v1.3d.pdf) voor een uitleg van de verschillende bouwblokken.
 
-Bij het onderzoek naar het implementeren van de Logboek dataverwerkingen standaard speelt de dynamiek van het digitale tweelingen ecosysteem een grote rol. In de beoogde architectuur ontstaat er een catalogus (of 'appstore') van rekenmodellen die een gebruiker naar behoefte kan inzetten. Het is vooraf dus nog niet duidelijk welke organisatie welk aangeboden rekenmodel gaat inzetten voor het analyseren van een bepaald beleidsvraagstuk. De verwerkingsketen is daarmee op voorhand nog niet bekend en er is een scheiding van de verantwoordelijke organisatie en de aanbieder van het rekenmodel. Dit brengt implementatievraagstukken met zich mee waar we meer inzicht in willen krijgen.
+Bij het onderzoek naar het implementeren van de standaard Logboek dataverwerkingen speelt de dynamiek van het ecosysteem van digitale tweelingen een grote rol. In de beoogde architectuur ontstaat er een catalogus (of 'appstore') van rekenmodellen die een gebruiker naar behoefte kan inzetten. Het is vooraf dus nog niet duidelijk welke organisatie welk aangeboden rekenmodel gaat inzetten voor het analyseren van een bepaald beleidsvraagstuk. De verwerkingsketen is daarmee op voorhand nog niet bekend en er is een scheiding van de verantwoordelijke organisatie en de aanbieder van het rekenmodel. Dit brengt implementatievraagstukken met zich mee waar we meer inzicht in willen krijgen.
 
-![Dynamiek in Digitaal Tweelingen Ecosysteem](media/Front-Backend_achtergrond.png)
-Illustratieve indicatie van de verschillende bouwblokken in een digitale tweelingen ecosysteem. bron: Geonovum
+![Dynamiek in het ecosysteem van digitale tweelingen](media/Front-Backend_achtergrond.png)
+Illustratieve indicatie van de verschillende bouwblokken in een ecosysteem van digitale tweelingen. Bron: Geonovum
 
 ### Afwegingskader
 
-In de kern van de standaard wordt een [Register](https://logius-standaarden.github.io/logboek-dataverwerkingen/#register) gedefinieerd. Als de standaard toegepast wordt voor het loggen van persoonsgegevens wordt hier het Register van Verwerkingsactiviteiten in het kader van de AVG voor gebruikt. Voor het bepalen of een dataverwerking van een objectgegeven gelogd moet worden gaan wij in dit onderzoek uit van het Algoritmeregister als afwegingskader.
+In de kern van de standaard wordt een [Register](https://logius-standaarden.github.io/logboek-dataverwerkingen/#register) gedefinieerd. Als de standaard toegepast wordt voor het loggen van persoonsgegevens wordt hier het register van verwerkingsactiviteiten in het kader van de AVG voor gebruikt. Voor het bepalen of een dataverwerking van een objectgegeven gelogd moet worden gaan wij in dit onderzoek uit van het Algoritmeregister als afwegingskader.
 
 <aside class="note">
 
-Als een organisatie dataverwerkingen doet in het kader van een algoritme wat in het Algoritmeregister is geregistreerd, dan zouden deze dataverwerkingen gelogd moeten worden op basis van deze standaard.
+Als een organisatie dataverwerkingen doet in het kader van een algoritme dat in het Algoritmeregister is geregistreerd, dan zouden deze dataverwerkingen gelogd moeten worden op basis van deze standaard.
 </aside>
 
 ### Volwassenheidsniveaus
 
-Een ander aandachtspunt bij het beschrijven van de functionaliteit voor het loggen van objectgegevens betreft de volwassenheidsniveaus. Logging kan op verschillende Volwassenheidsniveaus: hoe hoger het volwassenheidsniveau, hoe meer data er wordt gelogd.
+Een ander aandachtspunt bij het beschrijven van de functionaliteit voor het loggen van objectgegevens betreft de volwassenheidsniveaus. Logging kan op verschillende volwassenheidsniveaus: hoe hoger het volwassenheidsniveau, hoe meer data er wordt gelogd.
 
 Welk volwassenheidsniveau gebruikt wordt hangt van meerdere factoren af. De informatiebehoefte van de verantwoording, maar zeker ook wat er technisch gezien mogelijk is om te implementeren.
 
@@ -83,31 +83,31 @@ De volgende niveaus worden gehanteerd:
 - Niveau 2: kolomverwijzing
 - Niveau 3: concrete data
 
-Zie [Volwassenheidsniveaus](https://logius-standaarden.github.io/logboek-dataverwerkingen/#volwassenheidsniveaus) in de Logboek dataverwerkingen standaard voor de verdere toelichting hierop.
+Zie [Detailniveaus](https://logius-standaarden.github.io/logboek-dataverwerkingen/#detailniveaus) in de standaard Logboek dataverwerkingen voor de verdere toelichting hierop.
 
 
 ## Extensies
 
-In de standaard wordt de basisfunctionaliteit beschreven, en wordt een [extensie aanpak](https://logius-standaarden.github.io/logboek-dataverwerkingen/#extensies) beschreven om de standaard uit te breiden. 
+In de standaard wordt de basisfunctionaliteit beschreven, en wordt een [extensieaanpak](https://logius-standaarden.github.io/logboek-dataverwerkingen/#extensies) beschreven om de standaard uit te breiden. 
 
-![postionering extensies](media/extensie-metadata.drawio.png)
+![Positionering extensies](media/extensie-metadata.drawio.png)
 
-postionering extensies
+Positionering extensies
 
 ### Extensie (geo)objecten
 
-`dpl.core.processing_activity_id` is gereserveerd voor het verwijzen naar een verwerkingsregister in het kader van de AVG en `dpl.core.data_subject_id` is gereserveerd voor het verwijzen naar een persoonsgegeven.
+`dpl.core.processing_activity_id` is gereserveerd voor het verwijzen naar het register van verwerkingsactiviteiten in het kader van de AVG en `dpl.core.data_subject_id` is gereserveerd voor het verwijzen naar een persoonsgegeven.
 
-__Voor het loggen van (geo)objectgegevens definieren we de volgende extensie:
+__Voor het loggen van (geo)objectgegevens definiëren we de volgende extensie:
 `dpl.objects`__
 
-De uitwerking van de te gebruiken attributes in deze namespace staat in [hoofdstuk 3](#H3)
+De uitwerking van de te gebruiken attributen in deze namespace staat in [](#H3).
 
 
 ### Extensie Metadata
 
-Om de interoperabiliteit tussen de standaard Logboek dataverwerkingen en andere systemen te verbeteren kijken we naar de mapping van het gebruikte model (op basis van open telemetry) naar [[PROV-O]]. [[PROV-O]] wordt op diverse plaatsen, zowel nationaal als internationaal gebruikt om 'provenance' vast te leggen. 
+Om de interoperabiliteit tussen de standaard Logboek dataverwerkingen en andere systemen te verbeteren kijken we naar de mapping van het gebruikte model (op basis van OpenTelemetry) naar [[PROV-O]]. [[PROV-O]] wordt op diverse plaatsen, zowel nationaal als internationaal gebruikt om 'provenance' vast te leggen. 
   
 Behalve naar [[PROV-O]] onderzoeken we ook de relatie naar de [[NL_SBB]] standaard, deze standaard voor het beschrijven van begrippen, wordt samen met [[DCAT_AP_NL]] bijvoorbeeld ingezet in het Federatief Datastelsel om metadata te beschrijven.
 
-De mapping is uitgewerk in [hoofdstuk 4](#H4). 
+De mapping is uitgewerkt in [](#H4). 

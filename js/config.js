@@ -79,13 +79,13 @@ let respecConfig = {
   localBiblio: {
         
         LDV: {
-            title: "Logboek Dataverwerkingen",
+            title: "Logboek dataverwerkingen",
             href: "https://logius-standaarden.github.io/logboek-dataverwerkingen/",
             publisher: "Logius"
         },
         JB_LDV: {
-            title: "Juridisch Beleidskader - Logboek Dataverwerking",
-            href: "https://logius-standaarden.github.io/publicatie/api/Logboek_Juridisch/",
+            title: "Logboek dataverwerkingen - Juridisch beleidskader",
+            href: "https://logius-standaarden.github.io/logboek-dataverwerkingen-juridisch-beleidskader/",
             publisher: "Logius"
         },
         NL_SBB: {
@@ -98,20 +98,12 @@ let respecConfig = {
             href: "https://docs.geostandaarden.nl/dcat/dcat-ap-nl30/",
             publisher: "Geonovum"
         },
-        PROV_O: {
-            title: "PROV-O: The PROV Ontology",
-            href: "https://www.w3.org/TR/prov-o/",
-            publisher: "W3C"
-        },
-        PROV_DM: {
-            title: "PROV-DM: The PROV Data Model",
-            href: "https://www.w3.org/TR/prov-dm/",
-            publisher: "W3C"
-        },
         DPV: {
-            title: "Data Privacy Vocabulary",
-            href: "https://w3c.github.io/dpv/2.1/dpv/",
-            publisher: "W3C Community Group"
+            title: "Data Privacy Vocabulary (DPV) v2.2",
+            href: "https://w3c-cg.github.io/dpv/2.2/dpv/",
+            publisher: "W3C Data Privacy Vocabularies and Controls Community Group",
+            status: "Final Community Group Report",
+            date: "2025-10-31"
         },
         GDPR: {
             title: "General Data Protection Regulation",
@@ -120,7 +112,7 @@ let respecConfig = {
         },
         DPROD: {
             title: "Data Product Ontology (DPROD)",
-            href: "https://ekgf.github.io/dprod/",
+            href: "https://ekgf.org/dprod/",
             publisher: "Enterprise Knowledge Graph Forum, Object Management Group® (OMG®)"
         },
   },
