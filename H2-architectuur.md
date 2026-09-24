@@ -29,14 +29,14 @@ Daarom is het voor het loggen van (geo)objectgegevens extra interessant om een u
 
 ### GDI Gegevensuitwisseling
 
-![GDI Gegevensuitwisseling Bedrijfsobjectenmodel](./respec/media/gdi-gegevensuitwisseling-bedrijfsobjectenmodel.png)
+![GDI Gegevensuitwisseling Bedrijfsobjectenmodel](media/gdi-gegevensuitwisseling-bedrijfsobjectenmodel.png)
 [Bedrijfsobjectenmodel GDI Gegevensuitwisseling](https://minbzk.github.io/gdi-gegevensuitwisseling/?view=id-efc531031d114860a309f6eeacdad289)
 
 De logboek dataverwerking standaard kan gepositioneerd worden in de GDI Gegevensuitwisseling als standaard waarin een 'Uitwisselingsafspraak' geformaliseerd wordt. Waarbij de daadwerkelijke logging betrekking heeft op de 'Operatie'.
 
 ### NORA Nationaal Semantisch Vlak
 
-![Nora Nationaal Semantisch Vlak](./respec/media/Nora-Nationaal_semantisch_vlak.png)
+![Nora Nationaal Semantisch Vlak](media/Nora-Nationaal_semantisch_vlak.png)
 [Nora Nationaal Semantisch Vlak](https://www.noraonline.nl/wiki/Nationaal_Semantisch_Vlak)
 
 In het kader van het NORA Nationaal Semantisch Vlak kan de logboek dataverwerking standaard gepositioneerd worden als het vastleggen van een gebeurtenis die betrekking heeft op een informatieobject.
@@ -59,7 +59,7 @@ Voor dit onderzoek kiezen we ervoor om de standaard te beproeven met een impleme
 
 Bij het onderzoek naar het implementeren van de Logboek dataverwerkingen standaard speelt de dynamiek van het digitale tweelingen ecosysteem een grote rol. In de beoogde architectuur ontstaat er een catalogus (of 'appstore') van rekenmodellen die een gebruiker naar behoefte kan inzetten. Het is vooraf dus nog niet duidelijk welke organisatie welk aangeboden rekenmodel gaat inzetten voor het analyseren van een bepaald beleidsvraagstuk. De verwerkingsketen is daarmee op voorhand nog niet bekend en er is een scheiding van de verantwoordelijke organisatie en de aanbieder van het rekenmodel. Dit brengt implementatievraagstukken met zich mee waar we meer inzicht in willen krijgen.
 
-![Dynamiek in Digitaal Tweelingen Ecosysteem](./respec/media/Front-Backend_achtergrond.png)
+![Dynamiek in Digitaal Tweelingen Ecosysteem](media/Front-Backend_achtergrond.png)
 Illustratieve indicatie van de verschillende bouwblokken in een digitale tweelingen ecosysteem. bron: Geonovum
 
 ### Afwegingskader
@@ -90,7 +90,7 @@ Zie [Volwassenheidsniveaus](https://logius-standaarden.github.io/logboek-dataver
 
 In de standaard wordt de basisfunctionaliteit beschreven, en wordt een [extensie aanpak](https://logius-standaarden.github.io/logboek-dataverwerkingen/#extensies) beschreven om de standaard uit te breiden. 
 
-![postionering extensies](./respec/media/extensie-metadata.drawio.png)
+![postionering extensies](media/extensie-metadata.drawio.png)
 
 postionering extensies
 
@@ -101,7 +101,7 @@ postionering extensies
 __Voor het loggen van (geo)objectgegevens definieren we de volgende extensie:
 `dpl.objects`__
 
-De uitwerking van de te gebruiken attributes in deze namespace staat in [hoofdstuk 3](./H3-extensie-objecten.md)
+De uitwerking van de te gebruiken attributes in deze namespace staat in [hoofdstuk 3](#H3)
 
 
 ### Extensie Metadata
@@ -110,4 +110,4 @@ Om de interoperabiliteit tussen de standaard Logboek dataverwerkingen en andere 
   
 Behalve naar [[PROV-O]] onderzoeken we ook de relatie naar de [[NL_SBB]] standaard, deze standaard voor het beschrijven van begrippen, wordt samen met [[DCAT_AP_NL]] bijvoorbeeld ingezet in het Federatief Datastelsel om metadata te beschrijven.
 
-De mapping is uitgewerk in [hoofdstuk 4](./H4-extensie-metadata.md). 
+De mapping is uitgewerk in [hoofdstuk 4](#H4). 

@@ -3,7 +3,7 @@
 
 De kern van het [[PROV_O]] model bestaat uit een Activiteit, een Entiteit en een Agent.
 
-![prov-dm](./respec/media/prov-dm.png)
+![prov-dm](media/prov-dm.png)
 
 [Illustratie van het prov kernmodel](https://www.w3.org/TR/prov-dm/#prov-core-structures)
 
@@ -11,7 +11,7 @@ Om een goede mapping te kunnen maken tussen de standaard Logboek dataverwerkinge
 
 De basis van de standaard kent het Logboek (met de [interface](https://logius-standaarden.github.io/logboek-dataverwerkingen/#interface) beschrijving), de Applicatie die naar het Logboek schrijft en het Register waarnaar verwezen wordt ter verantwoording van de verwerkingsactiviteit.
 
-![ldv](./respec/media/architecture-grenzen.svg)
+![ldv](media/architecture-grenzen.svg)
 
 [Illustratie uit de Logboek dataverwerkingen standaard, componenten in context](https://logius-standaarden.github.io/logboek-dataverwerkingen/#fig-componenten-in-context)
 
@@ -68,7 +68,7 @@ prov:qualifiedUsage [
     :verwerkingsactiviteit_naam "uitgeven paspoort" 
 .
 ```
-![qualified usage voorbeeld](./respec/media/qualified_usage_voorbeeld.png)
+![qualified usage voorbeeld](media/qualified_usage_voorbeeld.png)
 
 qualified usage voorbeeld
 
@@ -188,4 +188,4 @@ Deze trace zou er in RDF als volgt uit kunnen zien:
     prov:qualifiedAssociation <http://trace.example.com/association/Meneer%20van%20Eik> .
 ```
 
-![RML naar PROV-O voorbeeld](./respec/media/RML-prov-o-result.png)
+![RML naar PROV-O voorbeeld](media/RML-prov-o-result.png)

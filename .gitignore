@@ -1,2 +1,4 @@
 mvp_pygeoapi_logging_demo/client/meetstations.geojson
 .vscode/settings.json
+
+.github/mermaid-svg/node_modules/

@@ -261,7 +261,7 @@ Deze beproeving dient vooral om de context zoals die in [2.4.1](#implementatie-k
 De scenarios worden geplaatst in de context van de [NLDT architectuur](https://geonovum.github.io/NLDT-Architectuur/). 
 Deze architectuur kent een basispatroon zoals getoond in de volgende afbeelding:
 
-<img src="./respec/media/architectuur_driehoek.png" alt="Basis bouwblokken NLDT Architectuur" width="900">
+<img src="media/architectuur_driehoek.png" alt="Basis bouwblokken NLDT Architectuur" width="900">
 
 
 
@@ -270,7 +270,7 @@ Deze architectuur kent een basispatroon zoals getoond in de volgende afbeelding:
 De Planspace Simulator software van Imagem wordt hier gebruikt als visualisatie component, waarbij rekenmodules van Nelen & Schuurmans, en Tygron worden aangeroepen.
 In de user interface van Imagem wordt een knop getoond waarmee een 'besluit' vastgelegd kan worden. De stappen om dit besluit vast te leggen bestaan uit het laden van de relevante data lagen, het aanroepen van een rekenmodel, het tonen van het resultaat van het rekenmodel en het vastleggen van de conclusie die uit de resultaten getrokken worden. 
 
-<img src="./respec/media/diagram-logging.png" alt="logging flow in Planspace Simulator" width="900">
+<img src="media/diagram-logging.png" alt="logging flow in Planspace Simulator" width="900">
 
 
 
@@ -300,7 +300,7 @@ Een voorbeeld van de log zoals deze door Nelen & Schuurmans is vastgelegd is [hi
 
 Behalve de implementatie van de logging heeft Nelen & Schuurmans ook een Proof-of-Concept opgeleverd van een 'logviewer', een applicatie om de verschillende logfiles aan elkaar te relateren en een integraal beeld te geven van de gevolgde stappen.
 
-<img src="./respec/media/otel-trace-viewer.png" alt="Demo viewer that aggregates different trace files" width="900">
+<img src="media/otel-trace-viewer.png" alt="Demo viewer that aggregates different trace files" width="900">
 
 #### Tygron
 
