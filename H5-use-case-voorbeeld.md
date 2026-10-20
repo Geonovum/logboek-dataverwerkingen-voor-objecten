@@ -5,7 +5,7 @@
 In de [GitHub-repository](https://github.com/Geonovum/logboek-dataverwerkingen-voor-objecten/tree/main/mvp_pygeoapi_logging_demo) staat een Minimum Viable Product (MVP) waarin 
 gedemonstreerd wordt hoe het OpenTelemetry-protocol geïmplementeerd kan worden in een OGC API Processes-functie.
 
-__Use cases volwassenheidsniveaus__
+__Use cases detailniveaus__
 
 Om de eigenschappen voor de extensie (geo)objecten goed uit te werken helpt het om te kijken naar een aantal voorbeelden en wat er dan gewenst is om vast te leggen.
 
@@ -19,7 +19,7 @@ een defect aan een sensor kunnen de classificatie beïnvloed hebben en dan wil j
 Dit kan als Niveau 2: 'kolomverwijzing' beschouwd worden. Met dien verstande dat er verwezen wordt naar het type remote-sensingdata (bv Sentinel-2, LIDAR) en niet de gebruikte beeldwaarden 
 van de remote-sensingbeelden. Er dient wel metadata van het gebruikte dataproduct vastgelegd te worden (timestamp, series) of een identifier die het specifieke dataproduct uniek identificeert.
 
-minimale implementatie:
+Minimale implementatie (niveau 1):
 
 - dpl.objects.algorithm_id
 - dpl.objects.dataproduct_id
@@ -30,7 +30,7 @@ dpl.objects.algorithm_id: Str(http://localhost/processes/Satellite_classifier)
 dpl.objects.dataproduct_id: Str(http://localhost/collections/imagery/dune_images)
 </aside>
 
-uitgebreidere implementatie:
+Uitgebreidere implementatie (niveau 2):
 
 - dpl.objects.algorithm_id
 - dpl.objects.dataproduct_id
@@ -291,7 +291,7 @@ In de uitgewerkte scenario's acteert het 3Di platform van Nelen & Schuurmans als
 
 De aanroep van het Imagem Planspace Simulator platform resulteert in het aanleggen van een logfile van de berekening, waarbij het trace_id van de aanroepende applicatie vastgelegd wordt om de logfiles op een later moment aan elkaar te kunnen relateren.
 
-Er is hierbij gekeken naar het implementeren van de verschillende [volwassenheidsniveaus](#volwassenheidsniveaus) van logging en de wijze waarop een hoger volwassenheidsniveau (2/3) gelogd zou kunnen worden.
+Er is hierbij gekeken naar het implementeren van de verschillende [detailniveaus](#detailniveaus) van logging en de wijze waarop een hoger detailniveau (2/3) gelogd zou kunnen worden.
 
 - de eerste implementatie is de mogelijkheid om in de log de uitgevoerde stappen te loggen op basis van de specificatie in dit document.
 - de tweede implementatie is de mogelijkheid om in de log te verwijzen naar de interne log van het 3Di systeem, waar toch al alle details vastgelegd worden.
@@ -338,7 +338,7 @@ Het inzicht dat de standaard Logboek dataverwerkingen geeft in de context van de
 
 #### Tracecontext: één overkoepelend trace_id of per systeem een eigen trace_id
 
-Bij het implementeren van de tracecontext over systemen heen kwam een onduidelijkheid in de specificatie naar boven. Het standaard gedrag van een OpenTelemetry SDK implementatie is het overnemen van hetzelfde trace_id in de verschillende applicaties. In de [LDV-specificatie](https://logius-standaarden.github.io/logboek-dataverwerkingen/#interface) staat dat de applicatie van een andere organisatie het trace_id van de aanroepende applicatie moet vastleggen in een 'foreign_operation.trace_id'. Dit kan geïmplementeerd worden maar vergt een specifieke implementatie, afwijkend van het standaard gedrag.
+Bij het implementeren van de tracecontext over systemen heen kwam een onduidelijkheid in de specificatie naar boven. Het standaard gedrag van een OpenTelemetry SDK implementatie is het overnemen van hetzelfde trace_id in de verschillende applicaties. In de [LDV-specificatie](https://logius-standaarden.github.io/logboek-dataverwerkingen/#interface) stond ten tijde van de implementatie dat de applicatie van een andere organisatie het trace_id van de aanroepende applicatie moest vastleggen in een 'foreign_operation.trace_id'. Dit kan geïmplementeerd worden maar vergt een specifieke implementatie, afwijkend van het standaard gedrag. In oktober 2025 is `dpl.core.foreign_operation.trace_id` uit de normatieve tekst van de standaard verwijderd.
 
 #### Granulariteit van verantwoording: register versus modules in de tooling
 
@@ -352,7 +352,7 @@ Het ecosysteem van digitale tweelingen werkt toe naar een omgeving waar organisa
 
 #### Loggen in LDV log of verwijzen naar systeemlog
 
-De rekenmodellen leggen standaard in hun implementaties al een uitgebreide log aan waarmee de scenario's opnieuw opgebouwd of afgespeeld kunnen worden. Dit is leverancierspecifiek ingericht. De platformen zijn zeer flexibel en dynamisch ingericht waardoor het niet triviaal is om vast te leggen welke gegevens er op een gegeven moment betrokken zijn bij het komen tot een besluit. Om al deze gegevens via Logboek dataverwerkingen voor (geo)objecten vast te leggen is daarmee ook een complexe opgave. De vraag dient zich aan of de hogere volwassenheidsniveaus haalbaar zijn om te implementeren, en of het verwijzen naar de implementatiespecifieke systeemlogs een oplossing zou kunnen zijn. 
+De rekenmodellen leggen standaard in hun implementaties al een uitgebreide log aan waarmee de scenario's opnieuw opgebouwd of afgespeeld kunnen worden. Dit is leverancierspecifiek ingericht. De platformen zijn zeer flexibel en dynamisch ingericht waardoor het niet triviaal is om vast te leggen welke gegevens er op een gegeven moment betrokken zijn bij het komen tot een besluit. Om al deze gegevens via Logboek dataverwerkingen voor (geo)objecten vast te leggen is daarmee ook een complexe opgave. De vraag dient zich aan of de hogere detailniveaus haalbaar zijn om te implementeren, en of het verwijzen naar de implementatiespecifieke systeemlogs een oplossing zou kunnen zijn. 
 
 #### Granulariteit in het Algoritmeregister en juridische kaders
 
@@ -364,7 +364,7 @@ Een mogelijke oplossing zou kunnen zijn om een extra eigenschap op te nemen in d
 
 #### Voorstel aanvullende eigenschap om op te nemen in de log
 
-Behalve de verwijzing naar een formele catalogus of het Algoritmeregister hebben platformleveranciers vaak ook een plek waar documentatie of aanvullende informatie van een rekenmodel of algoritme te vinden is. Hiervoor nemen we een aanvullende eigenschap op: `dpl.objects.vendor_operation_ref`.
+Behalve de verwijzing naar een formele catalogus of het Algoritmeregister hebben platformleveranciers vaak ook een plek waar documentatie of aanvullende informatie van een rekenmodel of algoritme te vinden is. Hiervoor nemen we een aanvullende eigenschap op: `dpl.objects.vendor_operation_ref` (zie [](#H3)). Deze eigenschap is geen onderdeel van de werkversie van de extensie bij Logius [[LDV_OBJECTEN]].
 
 #### processing_activity_id gelijk houden over namespaces heen of specifiek houden
 
