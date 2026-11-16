@@ -28,7 +28,7 @@ let respecConfig = {
   useLabel: true,
 
   title: "Onderzoek logboek dataverwerkingen voor (geo) objecten",
-  specStatus: "basis",
+  specStatus: "ld",
   specType: "hr",
   pubDomain: "ldv",
   shortName: "logboek-dataverwerkingen-voor-objecten",
